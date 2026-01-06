@@ -1,0 +1,12 @@
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## plaidx-neuclir | -> none  | Human     | 0.2081 |0.3176 |0.1632 |0.0141 |0.2121 |
+## plaidx-neuclir | -> none  | crux_0620 | 0.3488 |0.4339 |0.1579 |0.0134 |0.2063 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## qwen3-neuclir | -> none  | Human     | 0.2652 |0.4133 |0.2368 |0.0173 |0.2614 |
+## qwen3-neuclir | -> none  | crux_0620 | 0.3672 |0.4752 |0.2211 |0.0168 |0.2438 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## lsr-neuclir-mt | -> none  | Human     | 0.2469 |0.3863 |0.2105 |0.0177 |0.2627 |
+## lsr-neuclir-mt | -> none  | crux_0620 | 0.3753 |0.4681 |0.2000 |0.0177 |0.2548 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## lsr-neuclir | -> none  | Human     | 0.2407 |0.3114 |0.1789 |0.0183 |0.2349 |
+## lsr-neuclir | -> none  | crux_0620 | 0.3392 |0.3996 |0.1737 |0.0160 |0.2233 |

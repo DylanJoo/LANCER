@@ -1,0 +1,1535 @@
+Waiting for vLLM server (PID=939461) to start...
+Start runnning
+Starting evaluation for bm25-mds-duc04 at localhost:5000
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A1931it [00:00, 178290.47it/s]
+
+0it [00:00, ?it/s][A
+16842it [00:00, 168406.91it/s][A
+33905it [00:00, 169710.62it/s][A
+50877it [00:00, 167573.11it/s][A62237it [00:00, 167404.84it/s]
+ 67%|██████▋   | 2/3 [00:00<00:00,  5.21it/s]
+0it [00:00, ?it/s][A
+15969it [00:00, 159674.54it/s][A
+31937it [00:00, 158143.56it/s][A
+48347it [00:00, 160846.18it/s][A
+64480it [00:00, 161024.70it/s][A
+81025it [00:00, 162614.69it/s][A
+97338it [00:00, 162787.86it/s][A
+113618it [00:00, 161196.83it/s][A
+138799it [00:00, 189829.97it/s][A
+164542it [00:00, 210848.26it/s][A
+190150it [00:01, 224760.50it/s][A
+214929it [00:01, 231783.00it/s][A
+239361it [00:01, 235583.85it/s][A
+263246it [00:01, 236570.59it/s][A
+286913it [00:01, 233579.37it/s][A
+312171it [00:01, 239248.00it/s][A
+336863it [00:01, 241539.09it/s][A
+361303it [00:01, 242390.71it/s][A
+386036it [00:01, 243868.85it/s][A
+410701it [00:01, 244701.05it/s][A
+435345it [00:02, 245221.32it/s][A
+459949it [00:02, 245463.87it/s][A
+484498it [00:02, 245311.12it/s][A500847it [00:02, 220016.96it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.06s/it]100%|██████████| 3/3 [00:02<00:00,  1.13it/s]
+Reranking with query batch size 32:   0%|          | 0/2 [00:00<?, ?it/s]
+Listwise Window Bubble (the 1 run):   0%|          | 0/10 [00:00<?, ?it/s][A2025-09-21 14:34:54,082 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:34:55,078 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:34:56,076 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:34:56,078 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:34:57,075 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:34:58,076 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:34:59,074 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:00,069 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:01,069 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:10,148 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:11,150 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:12,156 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:14,175 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:15,178 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:16,183 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:17,193 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:19,206 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:20,213 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:25,521 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:27,615 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:28,759 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:29,775 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:30,787 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:32,804 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:33,453 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:33,516 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:37,624 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:38,003 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:38,182 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:38,301 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:38,358 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:38,413 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  10%|█         | 1/10 [01:01<09:12, 61.42s/it][A2025-09-21 14:35:55,251 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:56,689 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:57,752 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:58,945 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:35:59,982 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:01,017 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:03,103 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:04,149 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:08,253 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:12,040 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:13,516 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:14,846 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:16,620 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:17,688 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:18,737 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:19,779 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:22,386 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:25,138 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:28,936 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:30,769 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:31,838 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:33,362 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:34,415 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:35,468 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:36,370 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:36,815 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:38,205 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:40,663 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:41,021 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:41,081 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:41,197 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:41,253 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  20%|██        | 2/10 [02:04<08:18, 62.25s/it][A2025-09-21 14:36:58,132 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:36:59,185 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:00,263 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:01,322 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:03,425 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:04,469 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:05,517 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:06,574 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:08,684 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:15,145 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:16,209 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:17,421 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:18,480 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:19,531 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:21,628 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:22,687 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:26,694 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:28,879 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:31,673 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:32,865 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:35,049 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:36,111 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:37,169 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:39,287 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:40,723 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:42,382 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:44,155 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:44,281 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:44,401 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:44,461 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:44,463 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:37:44,572 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  30%|███       | 3/10 [03:07<07:19, 62.74s/it][A2025-09-21 14:38:01,936 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:03,000 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:04,083 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:06,154 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:07,216 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:08,283 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:09,336 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:11,445 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:13,515 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:19,101 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:19,102 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:20,178 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:21,327 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:24,549 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:25,668 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:26,719 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:27,781 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:32,038 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:35,441 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:37,676 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:38,750 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:39,820 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:41,949 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:43,076 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:44,009 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:46,174 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:48,580 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:48,643 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:48,703 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:48,822 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:48,880 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:38:48,990 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  40%|████      | 4/10 [04:11<06:20, 63.40s/it][A2025-09-21 14:39:06,196 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:07,550 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:08,653 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:09,736 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:11,894 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:12,962 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:14,038 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:16,176 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:21,670 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:23,544 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:24,647 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:26,812 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:27,894 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:28,976 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:31,138 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:32,206 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:36,805 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:38,647 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:41,167 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:42,247 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:43,337 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:44,426 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:46,577 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:47,665 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:52,223 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:53,064 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:53,382 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:53,446 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:53,566 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:53,625 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:53,684 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:39:53,739 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  50%|█████     | 5/10 [05:16<05:19, 63.89s/it][A2025-09-21 14:40:11,096 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:12,164 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:13,271 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:15,452 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:16,534 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:17,607 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:17,608 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:18,675 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:20,810 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:28,362 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:29,463 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:30,580 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:30,582 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:32,741 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:33,815 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:35,998 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:37,071 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:41,425 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:45,364 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:46,386 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:47,512 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:48,566 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:49,605 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:52,520 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:52,583 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:52,648 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:57,077 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:57,140 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:57,259 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:57,378 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:57,437 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:40:57,492 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  60%|██████    | 6/10 [06:20<04:15, 63.84s/it][A2025-09-21 14:41:14,513 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:15,584 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:16,690 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:18,719 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:19,797 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:20,858 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:21,923 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:24,055 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:25,123 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:31,894 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:33,001 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:34,100 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:35,240 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:36,308 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:37,353 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:38,401 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:40,505 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:44,335 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:48,052 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:49,091 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:51,238 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:53,064 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:54,132 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:55,170 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:56,036 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:41:57,835 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:00,557 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:00,683 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:00,743 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:00,803 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:00,919 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:00,975 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  70%|███████   | 7/10 [07:23<03:11, 63.72s/it][A2025-09-21 14:42:18,157 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:19,230 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:20,362 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:22,365 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:23,415 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:24,471 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:25,535 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:27,634 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:28,677 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:35,305 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:36,322 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:37,370 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:38,493 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:39,536 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:41,603 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:42,638 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:43,682 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:49,076 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:51,888 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:52,917 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:54,102 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:55,154 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:56,188 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:57,223 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:42:59,045 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:01,174 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:03,576 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:03,639 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:03,878 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:03,937 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:03,996 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:04,051 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  80%|████████  | 8/10 [08:27<02:07, 63.52s/it][A2025-09-21 14:43:20,890 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:21,907 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:22,922 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:24,983 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:26,003 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:27,022 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:29,076 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:30,101 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:34,350 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:36,654 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:37,672 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:39,731 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:40,776 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:41,818 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:42,849 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:44,916 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:50,442 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:52,751 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:53,871 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:54,939 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:57,028 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:58,072 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:43:59,112 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:00,142 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:03,820 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:06,306 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:06,433 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:06,560 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:06,620 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:06,739 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:06,798 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:06,853 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [09:29<01:03, 63.29s/it][AListwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [09:29<01:03, 63.32s/it]
+Reranking with query batch size 32:  50%|█████     | 1/2 [09:30<09:30, 570.01s/it]
+Listwise Window Bubble (the 1 run):   0%|          | 0/10 [00:00<?, ?it/s][A2025-09-21 14:44:22,809 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:23,831 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:25,862 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:26,879 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:27,900 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:29,940 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:31,048 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:31,973 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:38,608 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:39,940 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:40,427 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:40,490 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:40,553 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:40,679 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:40,739 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:40,799 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:40,915 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:44:44,847 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  10%|█         | 1/10 [00:37<05:41, 37.97s/it][A2025-09-21 14:45:01,556 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:02,570 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:03,652 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:04,697 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:05,746 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:05,748 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:06,799 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:08,857 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:13,643 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:17,173 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:18,708 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:18,836 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:18,900 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:18,963 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:19,083 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:19,143 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:20,703 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:22,974 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  20%|██        | 2/10 [01:16<05:04, 38.06s/it][A2025-09-21 14:45:39,881 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:40,895 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:42,641 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:43,681 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:44,719 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:45,747 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:46,779 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:48,823 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:49,976 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:56,319 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:56,747 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:56,811 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:57,000 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:57,064 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:57,183 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:57,243 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:45:57,417 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:00,953 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  30%|███       | 3/10 [01:54<04:26, 38.02s/it][A2025-09-21 14:46:17,732 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:18,760 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:19,823 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:21,932 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:22,974 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:24,017 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:25,131 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:26,175 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:29,747 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:33,684 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:34,747 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:34,856 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:35,046 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:35,110 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:35,288 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:35,348 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:36,731 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:39,327 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  40%|████      | 4/10 [02:32<03:48, 38.16s/it][A2025-09-21 14:46:56,538 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:57,617 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:58,737 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:46:59,830 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:01,950 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:02,996 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:04,042 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:06,140 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:07,430 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:12,695 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:13,713 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:14,046 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:14,110 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:14,173 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:14,292 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:14,351 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:14,640 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:18,393 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  50%|█████     | 5/10 [03:11<03:12, 38.49s/it][A2025-09-21 14:47:35,218 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:36,242 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:36,245 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:38,384 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:39,438 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:39,440 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:42,608 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:44,725 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:47,783 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:51,595 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:52,673 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:53,247 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:53,311 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:53,375 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:53,495 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:53,555 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:55,458 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:47:57,671 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  60%|██████    | 6/10 [03:50<02:35, 38.76s/it][A2025-09-21 14:48:14,942 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:16,006 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:17,085 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:19,195 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:20,234 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:21,277 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:22,323 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:24,390 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:26,136 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:30,920 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:32,463 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:32,527 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:32,590 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:32,717 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:32,897 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:32,957 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:33,709 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:36,861 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  70%|███████   | 7/10 [04:29<01:56, 38.90s/it][A2025-09-21 14:48:53,629 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:54,643 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:55,677 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:57,750 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:58,788 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:48:59,821 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:00,859 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:02,927 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:05,185 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:09,504 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:10,542 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:10,814 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:10,877 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:10,941 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:11,061 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:11,120 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:12,276 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:15,213 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  80%|████████  | 8/10 [05:08<01:17, 38.72s/it][A2025-09-21 14:49:32,249 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:33,303 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:34,382 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:35,504 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:36,550 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:37,588 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:39,672 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:40,703 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:45,346 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:48,322 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:49,336 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:49,807 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:49,871 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:49,935 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:50,055 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:50,114 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:52,539 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:49:54,199 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [05:47<00:38, 38.81s/it][AListwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [05:47<00:38, 38.59s/it]
+Reranking with query batch size 32: 100%|██████████| 2/2 [15:17<00:00, 439.02s/it]Reranking with query batch size 32: 100%|██████████| 2/2 [15:17<00:00, 458.67s/it]
+2025-09-21 14:49:54,377 - WARNING -  #Topics in qrels and rac_data are not consistent. Got 19 and 50.
+RAC Evaluating: 0it [00:00, ?it/s]RAC Evaluating: 0it [00:00, ?it/s]
+/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+RAC Evaluating:   0%|          | 0/50 [00:00<?, ?it/s]RAC Evaluating: 100%|██████████| 50/50 [00:00<00:00, 2181.56it/s]
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## bm25-mds-duc04 | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct | crux_0620 | 0.6030 |0.6147 |0.7460 |0.2306 |0.7712 |
+## bm25-mds-duc04 | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct | Cov@k (crux_0620) | 0.0000 |0.2693 |0.3627 |0.4320 |0.4760 |0.5107 |0.5293 |0.5627 |0.5960 |0.6147 |
+Starting evaluation for qwen3-mds-duc04 at 10.162.95.158:5000
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A1931it [00:00, 157498.46it/s]
+
+0it [00:00, ?it/s][A
+16706it [00:00, 167032.68it/s][A
+33582it [00:00, 168040.06it/s][A
+50462it [00:00, 168377.77it/s][A62237it [00:00, 168413.37it/s]
+ 67%|██████▋   | 2/3 [00:00<00:00,  5.22it/s]
+0it [00:00, ?it/s][A
+16168it [00:00, 161666.66it/s][A
+32473it [00:00, 162470.66it/s][A
+48869it [00:00, 163145.25it/s][A
+65320it [00:00, 163678.37it/s][A
+81810it [00:00, 164117.52it/s][A
+98260it [00:00, 164243.75it/s][A
+114685it [00:00, 162360.56it/s][A
+131446it [00:00, 164016.76it/s][A
+148076it [00:00, 164725.24it/s][A
+164552it [00:01, 162202.12it/s][A
+180859it [00:01, 162463.31it/s][A
+197113it [00:01, 162291.02it/s][A
+213347it [00:01, 160528.80it/s][A
+229407it [00:01, 158926.69it/s][A
+245306it [00:01, 158296.37it/s][A
+261140it [00:01, 156909.31it/s][A
+276835it [00:01, 156175.66it/s][A
+297147it [00:01, 170073.71it/s][A
+320311it [00:01, 188372.63it/s][A
+344373it [00:02, 203943.36it/s][A
+368668it [00:02, 215590.75it/s][A
+393011it [00:02, 223914.53it/s][A
+417151it [00:02, 229138.58it/s][A
+441561it [00:02, 233618.94it/s][A
+465715it [00:02, 235989.64it/s][A
+489692it [00:02, 237109.87it/s][A500847it [00:02, 187648.91it/s]
+100%|██████████| 3/3 [00:03<00:00,  1.22s/it]100%|██████████| 3/3 [00:03<00:00,  1.02s/it]
+Reranking with query batch size 64:   0%|          | 0/1 [00:00<?, ?it/s]
+Listwise Window Bubble (the 1 run):   0%|          | 0/10 [00:00<?, ?it/s][A2025-09-21 14:50:25,662 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:26,667 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:27,677 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:27,679 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:28,686 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:30,729 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:32,807 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:33,844 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:35,917 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:41,721 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:42,755 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:43,814 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:44,873 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:47,047 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:48,090 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:49,141 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:50,188 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:54,121 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:58,132 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:50:59,185 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:00,253 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:01,314 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:03,544 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:04,598 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:05,667 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:06,722 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:10,661 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:14,670 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:16,023 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:17,124 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:19,326 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:20,444 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:21,497 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:22,561 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:23,613 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:27,561 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:31,219 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:32,445 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:34,025 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:35,414 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:36,785 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:37,848 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:38,191 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:38,255 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:40,090 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:42,612 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:42,732 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:42,911 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:43,026 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:51:43,137 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  10%|█         | 1/10 [01:34<14:10, 94.46s/it][A2025-09-21 14:52:00,148 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:01,254 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:02,371 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:03,451 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:04,528 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:05,591 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:06,663 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:07,750 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:09,882 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:16,786 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:17,879 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:18,986 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:20,066 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:21,135 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:23,257 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:24,317 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:25,377 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:26,442 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:33,813 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:34,882 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:36,020 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:37,919 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:39,016 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:40,086 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:41,154 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:43,276 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:46,908 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:50,673 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:52,068 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:53,564 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:55,098 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:56,174 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:57,256 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:52:59,418 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:00,537 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:04,121 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:07,691 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:09,329 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:10,974 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:12,365 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:13,445 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:14,527 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:15,163 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:15,291 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:17,441 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:19,583 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:19,643 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:19,940 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:20,056 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:20,112 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  20%|██        | 2/10 [03:11<12:47, 95.94s/it][A2025-09-21 14:53:37,552 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:38,659 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:39,843 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:42,035 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:43,119 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:44,234 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:45,317 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:47,457 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:48,545 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:54,652 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:55,798 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:56,923 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:53:58,020 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:00,182 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:01,264 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:02,343 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:03,419 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:05,531 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:11,783 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:11,785 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:12,837 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:12,839 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:13,910 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:18,085 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:20,160 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:21,204 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:22,239 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:28,457 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:29,473 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:30,495 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:32,565 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:33,601 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:34,626 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:35,652 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:37,699 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:38,726 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:44,715 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:45,729 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:46,748 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:48,819 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:49,849 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:50,873 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:51,701 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:51,828 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:51,892 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:56,361 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:56,422 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:56,540 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:56,598 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:54:56,653 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  30%|███       | 3/10 [04:47<11:13, 96.21s/it][A2025-09-21 14:55:13,174 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:14,565 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:15,653 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:17,236 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:18,620 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:19,651 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:20,683 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:21,713 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:23,774 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:29,668 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:31,027 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:32,044 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:32,046 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:34,122 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:36,537 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:36,539 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:37,556 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:38,580 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:46,331 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:47,410 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:48,430 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:49,477 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:51,547 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:53,352 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:54,375 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:55,398 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:55:56,488 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:02,908 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:03,927 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:05,036 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:06,084 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:07,124 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:09,180 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:10,212 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:12,288 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:18,430 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:19,457 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:21,176 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:22,832 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:23,868 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:24,904 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:25,938 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:26,845 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:26,909 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:31,352 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:31,416 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:31,537 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:31,657 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:31,716 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:31,772 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  40%|████      | 4/10 [06:23<09:34, 95.78s/it][A2025-09-21 14:56:48,448 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:49,461 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:50,475 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:51,499 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:53,572 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:54,594 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:55,614 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:56,633 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:56:58,727 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:04,896 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:05,907 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:06,928 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:09,014 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:10,039 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:11,062 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:12,087 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:14,142 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:15,163 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:21,552 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:22,569 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:23,615 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:23,617 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:25,726 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:26,749 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:28,862 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:29,905 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:34,841 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:38,103 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:39,148 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:40,292 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:41,356 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:42,396 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:44,495 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:46,585 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:49,390 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:53,777 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:54,824 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:55,916 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:58,155 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:57:59,196 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:00,242 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:02,233 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:02,299 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:03,898 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:06,760 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:06,824 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:06,884 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:06,945 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:07,119 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:07,232 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  50%|█████     | 5/10 [07:58<07:58, 95.67s/it][A2025-09-21 14:58:23,982 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:25,001 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:26,071 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:27,118 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:29,238 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:30,260 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:31,310 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:32,382 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:34,460 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:40,898 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:41,945 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:43,024 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:44,092 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:46,179 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:47,227 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:49,117 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:50,190 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:52,979 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:57,953 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:58:58,992 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:00,763 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:01,822 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:02,871 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:03,963 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:06,089 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:07,137 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:10,962 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:15,114 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:16,174 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:17,891 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:18,948 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:20,016 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:22,173 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:23,221 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:25,728 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:28,089 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:31,961 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:33,031 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:35,088 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:36,166 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:36,168 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:37,220 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:39,317 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:40,464 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:41,478 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:44,003 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:44,063 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:44,182 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:44,240 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 14:59:44,296 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  60%|██████    | 6/10 [09:35<06:24, 96.14s/it][A2025-09-21 15:00:01,363 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:02,467 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:03,610 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:05,770 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:06,832 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:07,886 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:07,888 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:08,946 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:11,077 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:18,531 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:19,602 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:20,693 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:22,852 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:23,909 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:24,973 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:26,033 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:28,154 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:29,205 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:35,666 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:36,711 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:38,736 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:39,804 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:40,856 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:41,929 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:44,049 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:45,112 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:47,778 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:52,747 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:53,817 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:55,055 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:57,220 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:58,301 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:00:59,379 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:01,574 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:04,303 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:09,360 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:10,445 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:11,671 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:12,749 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:14,630 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:15,688 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:16,752 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:17,640 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:19,173 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:21,962 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:22,026 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:22,266 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:22,268 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:22,324 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:22,434 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  70%|███████   | 7/10 [11:13<04:50, 96.79s/it][A2025-09-21 15:01:39,624 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:40,682 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:41,762 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:43,873 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:44,930 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:45,978 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:47,022 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:49,133 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:50,184 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:56,560 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:57,618 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:57,622 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:58,711 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:01:59,793 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:02,962 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:04,008 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:06,102 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:07,145 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:12,666 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:13,686 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:14,736 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:16,851 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:17,890 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:19,928 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:20,955 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:22,003 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:29,239 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:30,256 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:31,284 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:32,350 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:33,394 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:34,427 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:35,463 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:35,464 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:38,552 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:45,712 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:46,727 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:47,771 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:48,813 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:50,890 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:51,931 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:52,972 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:54,215 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:54,280 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:58,778 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:58,842 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:58,903 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:59,021 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:59,080 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:02:59,190 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  80%|████████  | 8/10 [12:50<03:13, 96.78s/it][A2025-09-21 15:03:16,216 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:17,234 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:18,252 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:20,292 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:21,318 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:22,343 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:23,373 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:25,462 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:26,743 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:32,005 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:33,030 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:34,067 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:36,152 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:37,187 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:39,251 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:40,290 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:42,548 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:48,268 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:49,346 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:50,373 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:51,442 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:53,534 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:54,568 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:55,608 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:03:58,421 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:03,245 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:05,153 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:06,175 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:07,299 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:08,344 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:09,374 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:11,425 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:12,454 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:15,328 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:20,885 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:21,901 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:23,710 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:24,833 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:25,858 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:26,916 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:28,994 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:30,027 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:32,199 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:35,512 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:35,576 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:35,765 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:35,826 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:35,945 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:36,003 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:04:36,058 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [14:27<01:36, 96.81s/it][AListwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [14:27<01:36, 96.38s/it]
+Reranking with query batch size 64: 100%|██████████| 1/1 [14:27<00:00, 867.52s/it]Reranking with query batch size 64: 100%|██████████| 1/1 [14:27<00:00, 867.52s/it]
+2025-09-21 15:04:36,246 - WARNING -  #Topics in qrels and rac_data are not consistent. Got 19 and 50.
+RAC Evaluating: 0it [00:00, ?it/s]RAC Evaluating: 0it [00:00, ?it/s]
+/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+RAC Evaluating:   0%|          | 0/50 [00:00<?, ?it/s]RAC Evaluating: 100%|██████████| 50/50 [00:00<00:00, 2201.80it/s]
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## qwen3-mds-duc04 | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct | crux_0620 | 0.6316 |0.6387 |0.8140 |0.2500 |0.8165 |
+## qwen3-mds-duc04 | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct | Cov@k (crux_0620) | 0.0000 |0.2773 |0.3693 |0.4147 |0.4747 |0.5067 |0.5547 |0.5800 |0.6053 |0.6387 |
+Starting evaluation for lsr-mds-duc04 at 10.162.95.158:5000
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A1931it [00:00, 178200.24it/s]
+
+0it [00:00, ?it/s][A
+16800it [00:00, 167989.35it/s][A
+33968it [00:00, 170154.39it/s][A
+51246it [00:00, 171342.70it/s][A62237it [00:00, 171384.85it/s]
+ 67%|██████▋   | 2/3 [00:00<00:00,  5.33it/s]
+0it [00:00, ?it/s][A
+16443it [00:00, 164418.79it/s][A
+33244it [00:00, 166525.23it/s][A
+50164it [00:00, 167738.03it/s][A
+66938it [00:00, 164781.41it/s][A
+83547it [00:00, 165246.02it/s][A
+100078it [00:00, 164506.27it/s][A
+116533it [00:00, 161408.88it/s][A
+133211it [00:00, 163085.70it/s][A
+150168it [00:00, 165084.43it/s][A
+166826it [00:01, 165534.23it/s][A
+183728it [00:01, 166592.89it/s][A
+200394it [00:01, 166067.61it/s][A
+217006it [00:01, 164709.17it/s][A
+233482it [00:01, 163125.78it/s][A
+249800it [00:01, 162161.66it/s][A
+266020it [00:01, 162144.17it/s][A
+288524it [00:01, 180871.62it/s][A
+313926it [00:01, 202698.66it/s][A
+338947it [00:01, 216898.34it/s][A
+363895it [00:02, 226645.46it/s][A
+388781it [00:02, 233296.06it/s][A
+413437it [00:02, 237268.24it/s][A
+438119it [00:02, 240129.05it/s][A
+462943it [00:02, 242557.23it/s][A
+487641it [00:02, 243880.39it/s][A500847it [00:02, 194430.29it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.18s/it]100%|██████████| 3/3 [00:02<00:00,  1.02it/s]
+Reranking with query batch size 64:   0%|          | 0/1 [00:00<?, ?it/s]
+Listwise Window Bubble (the 1 run):   0%|          | 0/10 [00:00<?, ?it/s][A2025-09-21 15:05:07,270 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:08,685 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:09,691 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:11,350 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:12,579 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:13,588 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:14,597 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:16,620 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:17,633 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:23,424 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:24,435 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:26,463 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:27,485 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:28,784 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:30,162 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:31,172 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:32,924 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:33,934 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:39,931 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:40,942 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:41,954 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:43,991 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:45,284 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:46,767 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:47,779 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:49,372 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:50,383 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:56,557 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:57,573 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:05:58,718 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:00,761 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:02,324 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:03,339 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:04,963 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:07,422 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:09,330 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:13,256 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:14,524 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:15,545 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:16,709 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:17,723 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:19,757 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:21,827 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:22,657 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:23,543 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:25,240 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:25,300 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:25,538 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:25,596 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:25,651 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  10%|█         | 1/10 [01:35<14:19, 95.51s/it][A2025-09-21 15:06:42,474 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:44,046 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:45,059 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:46,072 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:48,139 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:49,159 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:50,772 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:51,788 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:54,856 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:06:59,070 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:00,499 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:01,509 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:01,511 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:02,533 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:05,997 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:07,364 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:08,382 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:11,441 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:15,460 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:17,029 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:18,055 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:19,106 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:21,228 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:22,648 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:23,952 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:24,991 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:28,328 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:32,337 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:33,549 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:34,610 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:36,710 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:37,742 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:39,510 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:40,895 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:41,927 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:47,628 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:49,309 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:50,346 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:52,439 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:53,479 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:54,523 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:55,630 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:56,775 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:07:57,220 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:01,272 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:01,335 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:01,456 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:01,515 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:01,573 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:01,740 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  20%|██        | 2/10 [03:11<12:46, 95.85s/it][A2025-09-21 15:08:18,972 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:20,018 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:21,081 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:21,084 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:23,179 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:24,232 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:24,234 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:27,360 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:29,438 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:35,905 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:36,966 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:38,042 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:39,122 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:40,180 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:41,232 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:43,351 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:45,500 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:49,416 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:52,556 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:53,613 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:54,700 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:55,777 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:57,960 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:08:59,014 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:00,075 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:01,132 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:06,270 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:09,464 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:10,524 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:11,602 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:11,604 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:12,673 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:16,317 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:17,396 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:19,067 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:23,284 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:26,336 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:27,813 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:28,877 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:30,069 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:31,124 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:33,232 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:33,727 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:33,854 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:36,579 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:38,218 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:38,338 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:38,516 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:38,631 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:38,687 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  30%|███       | 3/10 [04:48<11:14, 96.35s/it][A2025-09-21 15:09:55,395 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:56,417 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:57,747 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:09:59,854 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:00,897 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:01,945 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:02,991 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:05,093 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:06,145 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:12,354 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:12,356 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:15,282 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:16,348 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:17,405 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:19,525 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:20,924 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:21,974 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:24,307 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:29,480 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:30,539 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:31,806 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:31,808 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:32,853 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:33,897 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:37,896 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:38,919 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:41,227 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:46,349 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:47,808 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:49,125 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:50,154 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:51,186 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:52,220 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:54,353 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:55,378 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:10:58,210 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:02,919 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:04,487 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:05,577 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:06,615 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:07,654 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:08,694 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:10,348 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:10,412 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:10,920 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:14,700 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:14,998 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:15,058 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:15,174 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:15,229 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  40%|████      | 4/10 [06:25<09:38, 96.43s/it][A2025-09-21 15:11:32,193 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:32,195 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:33,203 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:34,216 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:37,286 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:38,303 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:39,315 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:41,371 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:42,393 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:48,792 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:49,807 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:50,822 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:52,762 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:53,786 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:54,827 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:56,882 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:11:57,900 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:00,148 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:05,515 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:06,527 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:07,544 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:09,405 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:10,440 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:11,477 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:13,542 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:14,581 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:16,979 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:22,262 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:23,286 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:24,372 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:26,272 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:27,319 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:28,356 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:30,433 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:31,472 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:33,903 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:38,967 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:40,143 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:41,267 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:42,387 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:43,454 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:44,511 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:46,599 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:46,663 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:48,185 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:51,151 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:51,270 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:51,448 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:51,506 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:12:51,562 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  50%|█████     | 5/10 [08:01<08:01, 96.39s/it][A2025-09-21 15:13:08,685 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:09,696 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:10,711 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:12,381 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:13,424 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:14,447 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:15,476 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:17,534 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:19,364 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:25,215 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:26,230 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:27,272 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:28,383 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:28,386 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:29,411 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:29,413 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:30,430 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:36,281 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:41,936 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:42,954 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:44,781 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:46,300 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:47,333 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:48,365 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:50,448 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:51,484 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:54,946 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:58,965 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:13:59,992 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:01,186 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:03,283 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:04,314 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:05,357 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:07,457 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:09,431 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:14,421 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:15,970 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:17,609 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:18,657 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:19,778 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:20,839 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:21,887 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:23,797 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:24,689 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:28,053 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:28,369 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:28,489 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:28,549 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:28,607 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:28,718 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  60%|██████    | 6/10 [09:38<06:26, 96.65s/it][A2025-09-21 15:14:45,722 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:46,763 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:47,841 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:48,906 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:51,012 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:52,057 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:53,104 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:54,151 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:14:56,245 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:02,654 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:03,710 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:04,770 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:06,778 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:07,827 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:08,877 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:10,976 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:12,017 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:16,517 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:19,351 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:20,411 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:22,363 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:23,742 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:24,808 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:25,868 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:28,053 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:29,096 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:33,647 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:36,412 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:37,485 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:39,264 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:40,557 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:41,610 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:42,661 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:44,879 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:45,945 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:51,018 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:53,567 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:54,654 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:56,000 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:57,147 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:58,228 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:59,293 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:15:59,294 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:01,464 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:04,375 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:05,764 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:06,003 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:06,063 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:06,294 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:06,351 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  70%|███████   | 7/10 [11:16<04:50, 96.97s/it][A2025-09-21 15:16:23,789 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:24,872 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:25,983 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:28,148 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:29,227 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:30,302 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:31,373 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:33,501 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:34,564 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:40,719 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:42,330 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:43,416 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:44,988 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:46,046 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:47,103 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:49,203 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:50,251 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:51,292 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:57,812 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:16:59,191 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:00,231 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:01,344 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:02,382 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:03,451 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:05,513 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:06,544 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:07,583 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:14,373 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:15,653 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:17,434 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:18,799 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:19,843 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:20,892 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:21,946 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:24,027 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:28,809 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:31,711 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:32,754 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:33,892 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:34,946 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:35,985 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:37,019 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:38,998 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:39,062 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:41,970 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:43,547 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:43,667 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:43,786 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:43,844 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:17:43,900 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  80%|████████  | 8/10 [12:53<03:14, 97.16s/it][A2025-09-21 15:18:01,067 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:02,084 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:03,127 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:04,247 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:05,281 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:06,308 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:07,338 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:09,396 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:11,744 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:17,743 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:18,761 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:20,541 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:21,596 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:22,638 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:23,674 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:25,760 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:26,809 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:27,925 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:34,294 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:35,338 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:36,558 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:37,627 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:38,680 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:40,791 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:41,851 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:44,043 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:49,413 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:50,487 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:52,778 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:53,839 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:54,898 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:57,011 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:18:58,078 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:00,200 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:06,328 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:07,393 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:08,632 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:09,708 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:11,823 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:12,879 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:13,938 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:16,052 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:17,124 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:20,973 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:21,163 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:21,288 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:21,349 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:21,408 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:21,523 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+2025-09-21 15:19:21,579 - INFO - HTTP Request: POST http://localhost:8000/v1/completions "HTTP/1.1 200 OK"
+
+Listwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [14:31<01:37, 97.32s/it][AListwise Window Bubble (the 1 run):  90%|█████████ | 9/10 [14:31<01:36, 96.83s/it]
+Reranking with query batch size 64: 100%|██████████| 1/1 [14:31<00:00, 871.57s/it]Reranking with query batch size 64: 100%|██████████| 1/1 [14:31<00:00, 871.57s/it]
+2025-09-21 15:19:21,761 - WARNING -  #Topics in qrels and rac_data are not consistent. Got 19 and 50.
+RAC Evaluating: 0it [00:00, ?it/s]RAC Evaluating: 0it [00:00, ?it/s]
+/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+RAC Evaluating:   0%|          | 0/50 [00:00<?, ?it/s]RAC Evaluating: 100%|██████████| 50/50 [00:00<00:00, 2228.17it/s]
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## lsr-mds-duc04 | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct | crux_0620 | 0.6109 |0.6333 |0.7980 |0.2470 |0.8061 |
+## lsr-mds-duc04 | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct | Cov@k (crux_0620) | 0.0000 |0.2747 |0.3467 |0.4040 |0.4707 |0.5120 |0.5373 |0.5707 |0.5907 |0.6333 |

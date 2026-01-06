@@ -1,0 +1,6 @@
+## bm25-neuclir | -> crux_reranking:sum:2 | Human     | 0.6552 |0.7271 |0.8579 |0.1116 |0.8619 |
+## qwen3-neuclir | -> crux_reranking:sum:2 | Human     | 0.7071 |0.7531 |0.8526 |0.1164 |0.8795 |
+## lsr-neuclir | -> crux_reranking:sum:2 | Human     | 0.7242 |0.7729 |0.9158 |0.1255 |0.9288 |
+## bm25-mds-duc04 | -> crux_reranking:sum:2 | crux_0620 | 0.6054 |0.6643 |0.7240 |0.2158 |0.7378 |
+## qwen3-mds-duc04 | -> crux_reranking:sum:2 | crux_0620 | 0.6440 |0.6846 |0.8000 |0.2454 |0.8078 |
+## lsr-mds-duc04 | -> crux_reranking:sum:2 | crux_0620 | 0.6352 |0.6878 |0.7800 |0.2358 |0.7888 |

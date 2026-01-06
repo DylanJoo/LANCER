@@ -1,0 +1,63 @@
+## bm25 | -> crux_reranking:sum-tau=1:human | Human     | 0.7674 |0.7909 |0.8579 |0.1263 |0.8801 |
+## bm25 | -> crux_reranking:greedy-sum-tau=1:human | Human     | 0.7558 |0.7970 |0.8211 |0.1136 |0.8409 |
+## bm25 | -> crux_reranking:greedy-alpha-tau=1:human | Human     | 0.6742 |0.7143 |0.7368 |0.1021 |0.7733 |
+## bm25 | -> crux_reranking:sum-tau=3:human | Human     | 0.7628 |0.7833 |0.8789 |0.1254 |0.8977 |
+## bm25 | -> crux_reranking:greedy-sum-tau=3:human | Human     | 0.7534 |0.8077 |0.8316 |0.1109 |0.8478 |
+## bm25 | -> crux_reranking:greedy-alpha-tau=3:human | Human     | 0.7502 |0.7983 |0.8000 |0.1135 |0.8430 |
+## bm25 | -> crux_reranking:rrf:human | Human     | 0.7402 |0.7324 |0.8316 |0.1177 |0.8599 |
+## plaidx-neuclir | -> crux_reranking:sum-tau=1:human | Human     | 0.7050 |0.7214 |0.8263 |0.1193 |0.8352 |
+## plaidx-neuclir | -> crux_reranking:greedy-sum-tau=1:human | Human     | 0.7108 |0.7248 |0.8158 |0.1191 |0.8263 |
+## plaidx-neuclir | -> crux_reranking:greedy-alpha-tau=1:human | Human     | 0.6089 |0.7089 |0.7263 |0.0987 |0.7450 |
+## plaidx-neuclir | -> crux_reranking:sum-tau=3:human | Human     | 0.6995 |0.7189 |0.8158 |0.1168 |0.8261 |
+## plaidx-neuclir | -> crux_reranking:greedy-sum-tau=3:human | Human     | 0.7167 |0.7311 |0.8000 |0.1163 |0.8195 |
+## plaidx-neuclir | -> crux_reranking:greedy-alpha-tau=3:human | Human     | 0.7007 |0.7310 |0.7737 |0.1094 |0.7915 |
+## plaidx-neuclir | -> crux_reranking:rrf:human | Human     | 0.6697 |0.6970 |0.8000 |0.1095 |0.8073 |
+## lsr-neuclir | -> crux_reranking:sum-tau=1:human | Human     | 0.7885 |0.8141 |0.9053 |0.1275 |0.9086 |
+## lsr-neuclir | -> crux_reranking:greedy-sum-tau=1:human | Human     | 0.7866 |0.8199 |0.8684 |0.1222 |0.8766 |
+## lsr-neuclir | -> crux_reranking:greedy-alpha-tau=1:human | Human     | 0.6977 |0.7890 |0.8421 |0.1160 |0.8597 |
+## lsr-neuclir | -> crux_reranking:sum-tau=3:human | Human     | 0.7996 |0.8047 |0.9211 |0.1284 |0.9277 |
+## lsr-neuclir | -> crux_reranking:greedy-sum-tau=3:human | Human     | 0.8114 |0.8328 |0.8684 |0.1211 |0.8844 |
+## lsr-neuclir | -> crux_reranking:greedy-alpha-tau=3:human | Human     | 0.7968 |0.8235 |0.8526 |0.1201 |0.8772 |
+## lsr-neuclir | -> crux_reranking:greedy-coverage:human | Human     | 0.8122 |0.8199 |0.8737 |0.1224 |0.8962 |
+## lsr-neuclir | -> crux_reranking:rrf:human | Human     | 0.7368 |0.7916 |0.9000 |0.1208 |0.9020 |
+## qwen3-neuclir | -> crux_reranking:sum-tau=1:human | Human     | 0.7880 |0.8077 |0.8842 |0.1280 |0.8864 |
+## qwen3-neuclir | -> crux_reranking:greedy-sum-tau=1:human | Human     | 0.7756 |0.8157 |0.8421 |0.1226 |0.8495 |
+## qwen3-neuclir | -> crux_reranking:greedy-alpha-tau=1:human | Human     | 0.7026 |0.7638 |0.8579 |0.1153 |0.8652 |
+## qwen3-neuclir | -> crux_reranking:sum-tau=3:human | Human     | 0.7764 |0.7686 |0.8842 |0.1268 |0.8888 |
+## qwen3-neuclir | -> crux_reranking:greedy-sum-tau=3:human | Human     | 0.7864 |0.8119 |0.8368 |0.1173 |0.8464 |
+## qwen3-neuclir | -> crux_reranking:greedy-alpha-tau=3:human | Human     | 0.7877 |0.8134 |0.8368 |0.1177 |0.8489 |
+## qwen3-neuclir | -> crux_reranking:greedy-coverage:human | Human     | 0.7813 |0.8210 |0.8474 |0.1225 |0.8606 |
+## qwen3-neuclir | -> crux_reranking:rrf:human | Human     | 0.7382 |0.7493 |0.8316 |0.1164 |0.8403 |
+## lsr-neuclir-mt | -> crux_reranking:sum-tau=1:human | Human     | 0.7942 |0.8107 |0.9158 |0.1304 |0.9227 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-sum-tau=1:human | Human     | 0.7880 |0.8070 |0.8684 |0.1235 |0.8836 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-alpha-tau=1:human | Human     | 0.6801 |0.7634 |0.8105 |0.1114 |0.8325 |
+## lsr-neuclir-mt | -> crux_reranking:sum-tau=3:human | Human     | 0.7822 |0.7946 |0.9263 |0.1312 |0.9280 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-sum-tau=3:human | Human     | 0.7906 |0.8356 |0.8842 |0.1266 |0.8968 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-alpha-tau=3:human | Human     | 0.7798 |0.8359 |0.8263 |0.1177 |0.8539 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-coverage:human | Human     | 0.7841 |0.8091 |0.8737 |0.1248 |0.8898 |
+## lsr-neuclir-mt | -> crux_reranking:rrf:human | Human     | 0.7515 |0.7807 |0.8789 |0.1192 |0.8810 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## bm25 | -> crux_reranking:greedy-coverage:human | Human     | 0.7558 |0.7970 |0.8263 |0.1152 |0.8463 |
+## bm25 | -> crux_reranking:greedy-coverage:human | crux_0620 | 0.7908 |0.9408 |0.8263 |0.1159 |0.8463 |
+## bm25 | -> crux_reranking:greedy-coverage:human | Cov@k (Human)     | 0.4344 |0.5919 |0.6759 |0.7110 |0.7518 |0.7564 |0.7689 |0.7844 |0.7970 |0.7970 |
+## bm25 | -> crux_reranking:greedy-coverage:human | Cov@k (crux_0620) | 0.6582 |0.7812 |0.8683 |0.8933 |0.9073 |0.9185 |0.9213 |0.9281 |0.9325 |0.9408 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## plaidx-neuclir | -> crux_reranking:greedy-coverage:human | Human     | 0.7056 |0.7276 |0.8211 |0.1196 |0.8329 |
+## plaidx-neuclir | -> crux_reranking:greedy-coverage:human | crux_0620 | 0.7336 |0.8930 |0.8211 |0.1203 |0.8329 |
+## plaidx-neuclir | -> crux_reranking:greedy-coverage:human | Cov@k (Human)     | 0.4235 |0.5352 |0.6093 |0.6478 |0.6796 |0.6930 |0.6990 |0.7035 |0.7117 |0.7276 |
+## plaidx-neuclir | -> crux_reranking:greedy-coverage:human | Cov@k (crux_0620) | 0.6216 |0.7396 |0.7879 |0.8100 |0.8508 |0.8571 |0.8759 |0.8807 |0.8890 |0.8930 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## lsr-neuclir | -> crux_reranking:greedy-coverage:human | Human     | 0.8122 |0.8199 |0.8737 |0.1224 |0.8962 |
+## lsr-neuclir | -> crux_reranking:greedy-coverage:human | crux_0620 | 0.8223 |0.9610 |0.8737 |0.1231 |0.8962 |
+## lsr-neuclir | -> crux_reranking:greedy-coverage:human | Cov@k (Human)     | 0.4970 |0.6242 |0.6767 |0.7159 |0.7420 |0.7611 |0.7911 |0.8046 |0.8145 |0.8199 |
+## lsr-neuclir | -> crux_reranking:greedy-coverage:human | Cov@k (crux_0620) | 0.7042 |0.8502 |0.8965 |0.9218 |0.9442 |0.9525 |0.9610 |0.9610 |0.9610 |0.9610 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## qwen3-neuclir | -> crux_reranking:greedy-coverage:human | Human     | 0.7813 |0.8210 |0.8474 |0.1225 |0.8606 |
+## qwen3-neuclir | -> crux_reranking:greedy-coverage:human | crux_0620 | 0.7919 |0.9572 |0.8474 |0.1232 |0.8606 |
+## qwen3-neuclir | -> crux_reranking:greedy-coverage:human | Cov@k (Human)     | 0.4604 |0.5864 |0.6571 |0.7190 |0.7561 |0.7577 |0.7741 |0.7943 |0.8082 |0.8210 |
+## qwen3-neuclir | -> crux_reranking:greedy-coverage:human | Cov@k (crux_0620) | 0.6818 |0.8252 |0.8617 |0.9032 |0.9209 |0.9272 |0.9452 |0.9493 |0.9536 |0.9572 |
+## Retrieval | -> Rerank | metrics   | A_nDCG |Cov |P |MAP |nDCG
+## lsr-neuclir-mt | -> crux_reranking:greedy-coverage:human | Human     | 0.7841 |0.8091 |0.8737 |0.1248 |0.8898 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-coverage:human | crux_0620 | 0.8079 |0.9605 |0.8737 |0.1255 |0.8898 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-coverage:human | Cov@k (Human)     | 0.4654 |0.5721 |0.6861 |0.7235 |0.7482 |0.7608 |0.7858 |0.7876 |0.8070 |0.8091 |
+## lsr-neuclir-mt | -> crux_reranking:greedy-coverage:human | Cov@k (crux_0620) | 0.6902 |0.8113 |0.8872 |0.9112 |0.9266 |0.9377 |0.9434 |0.9434 |0.9522 |0.9605 |
