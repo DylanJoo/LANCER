@@ -1,13 +1,6 @@
-# import asyncio
-# from argparse import Namespace
-# from tools.neuclir.create_run_file import create_run_file
-# from tools.search.search import retrieve_with_report_request, retrieve_with_subqueries
-
 from lancer.qg import question_generation
 from lancer.aj import answerability_judment
 from lancer.ca import coverage_based_aggregation
-
-from crux.tools import load_corpus
 
 def rerank(
     run: dict, 
@@ -28,17 +21,17 @@ def rerank(
         documents_all[qid] = [corpus[docid] for docid in runs[qid]]
 
     ## 0. Initialize LLM 
-    from llm.litellm_api import LLM
+    from llm_empty import LLM
     llm = LLM(args)
 
     ## TODO: add outputing generate subQ 
     ## 1. sub-question generation
     if rerun_qg:
         all_subquestions = question_generation(
-            llm=llm
+            llm=llm,
             queries=queries,
             topics=topics,
-            n_subquestions-n_questions,
+            n_subquestions=n_questions,
             use_oracle=use_oracle,
             output_path=qg_path
         )
