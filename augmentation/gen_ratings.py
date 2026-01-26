@@ -27,55 +27,55 @@ from tools.neuclir.load_corpus import load_corpus
 from prompts.mcranker import prompt_rating_gen_mcranker
 from prompts.neuclir import *
 
-def gen_ratings(args: Namespace, 
-                qrel_missing: dict = None,
-                docs_to_rerank: list = None,
-                topic: dict = None):
-
-    # Load the model or setup the API
-    from llm.litellm_api import LLM
-    llm = LLM(
-        model=args.model,
-        temperature=args.temperature,
-        top_p=args.top_p,
-        max_tokens=args.max_new_tokens,
-    )
-
-    # data/neuclir24-all-request.qrel
-    # [NOTE] Generalize this to other datasets
-    logger.info("loading sub-questions, (qrel's) documents...") 
-    if 'human' in args.tag:
-        if args.generate_additional_subtopics:
-            _, _, raw_topics = load_query(args)
-        questions_all = load_subtopics_human('/exp/scale25/neuclir/eval/nuggets',
-                                             args, 
-                                             raw_topics=raw_topics if args.generate_additional_subtopics else None,
-                                             create_new_subtopics=args.generate_additional_subtopics)
-    else:
-        questions_all = load_subtopics(args, topic=topic)
-        questions_all = {topic["request_id"]: questions_all}
-
-    qrels, documents_all = load_data(args, questions_all, topic,
-                                     qrel_missing=qrel_missing, docs_to_rerank=docs_to_rerank)
-
-    data = process_data(args, qrels, questions_all, documents_all)
-
-    for item in data:
-
-        ## Prompts
-        prompts = []
-        for i, document in enumerate(item['documents']):
-            for j, question in enumerate(item['questions']):
-                prompt = prompt_rating_gen(question=question, context=document)
-                prompts.append(prompt)
-
-        outputs = llm.inference_chat(prompts)
-        ratings = [postprocess_output(args, o) for o in outputs]
-        process_ratings(args, ratings, item)
-
-    save_gen_ratings_results(args, data)
-
-    return item
+# def gen_ratings(args: Namespace, 
+#                 qrel_missing: dict = None,
+#                 docs_to_rerank: list = None,
+#                 topic: dict = None):
+#
+#     # Load the model or setup the API
+#     from llm.litellm_api import LLM
+#     llm = LLM(
+#         model=args.model,
+#         temperature=args.temperature,
+#         top_p=args.top_p,
+#         max_tokens=args.max_new_tokens,
+#     )
+#
+#     # data/neuclir24-all-request.qrel
+#     # [NOTE] Generalize this to other datasets
+#     logger.info("loading sub-questions, (qrel's) documents...") 
+#     if 'human' in args.tag:
+#         if args.generate_additional_subtopics:
+#             _, _, raw_topics = load_query(args)
+#         questions_all = load_subtopics_human('/exp/scale25/neuclir/eval/nuggets',
+#                                              args, 
+#                                              raw_topics=raw_topics if args.generate_additional_subtopics else None,
+#                                              create_new_subtopics=args.generate_additional_subtopics)
+#     else:
+#         questions_all = load_subtopics(args, topic=topic)
+#         questions_all = {topic["request_id"]: questions_all}
+#
+#     qrels, documents_all = load_data(args, questions_all, topic,
+#                                      qrel_missing=qrel_missing, docs_to_rerank=docs_to_rerank)
+#
+#     data = process_data(args, qrels, questions_all, documents_all)
+#
+#     for item in data:
+#
+#         ## Prompts
+#         prompts = []
+#         for i, document in enumerate(item['documents']):
+#             for j, question in enumerate(item['questions']):
+#                 prompt = prompt_rating_gen(question=question, context=document)
+#                 prompts.append(prompt)
+#
+#         outputs = llm.inference_chat(prompts)
+#         ratings = [postprocess_output(args, o) for o in outputs]
+#         process_ratings(args, ratings, item)
+#
+#     save_gen_ratings_results(args, data)
+#
+#     return item
 
 async def async_gen_ratings(args: Namespace, 
                             qrel_missing: dict = None,
@@ -161,29 +161,29 @@ async def async_gen_ratings(args: Namespace,
         ## Prompts
         prompts = []
 
-        if use_claims_as_sub_docs:
-            for i, document in enumerate(item['documents']):
-                for j, question in enumerate(item['questions']):
-                    for k, claim in enumerate(document):
-                        prompt = prompt_rating_gen_claims_as_subdocs(question=question, context=claim)
-                        prompts.append(prompt)
-        else:
-            for i, document in enumerate(item['documents']):
-                for j, question in enumerate(item['questions']):
-                    if is_claims:
-                        prompt = prompt_rating_gen_claims(question=question, context=document)
-                    elif reranking:
-                        if args.reranker == "crux_reranking":
-                            # prompt = prompt_rating_gen_reranking(question=question, context=document, topic=topic)
-                            prompt = prompt_rating_gen(question=question, context=document)
-                        elif args.reranker == "mcranker":
-                            prompt = prompt_rating_gen_mcranker(persona_criterias=question, 
-                                                                problem_statement=topic["problem_statement"], context=document)
-                        else:
-                            raise Exception()
-                    else:
+        # if use_claims_as_sub_docs:
+        #     for i, document in enumerate(item['documents']):
+        #         for j, question in enumerate(item['questions']):
+        #             for k, claim in enumerate(document):
+        #                 prompt = prompt_rating_gen_claims_as_subdocs(question=question, context=claim)
+        #                 prompts.append(prompt)
+        # else:
+        for i, document in enumerate(item['documents']):
+            for j, question in enumerate(item['questions']):
+                if is_claims:
+                    prompt = prompt_rating_gen_claims(question=question, context=document)
+                elif reranking:
+                    if args.reranker == "crux_reranking":
+                        # prompt = prompt_rating_gen_reranking(question=question, context=document, topic=topic)
                         prompt = prompt_rating_gen(question=question, context=document)
-                    prompts.append(prompt)
+                    elif args.reranker == "mcranker":
+                        prompt = prompt_rating_gen_mcranker(persona_criterias=question, 
+                                                            problem_statement=topic["problem_statement"], context=document)
+                    else:
+                        raise Exception()
+                else:
+                    prompt = prompt_rating_gen(question=question, context=document)
+                prompts.append(prompt)
 
         outputs = await llm.async_inference_chat(prompts)
         ratings = await asyncio.gather(*[async_postprocess_output(args, o) for o in outputs])
@@ -249,34 +249,9 @@ def process_data(args: Namespace, qrels: dict, questions_all: dict,
     logger.info(f"Start judging {n_total} pairs.")
     return data
 
-def process_ratings(args: Namespace, ratings: list, item: dict, 
-                    use_claims_as_sub_docs=False):
-    if not use_claims_as_sub_docs:
-        nrows, ncols = len(item['documents']), len(item['questions'])
-        matrix = np.array(ratings).reshape(nrows, ncols)
-    else:
-        nrows = n_docs = len(item['documents'])
-        ncols = n_questions = len(item['questions'])
-
-        ratings_nested = []
-        idx = 0
-
-        for i in range(n_docs):
-            doc_claims = item['documents'][i]  # A list of claims (length varies)
-            doc_ratings = []
-            for j in range(n_questions):
-                question_ratings = []
-                for k in range(len(doc_claims)):
-                    question_ratings.append(ratings[idx])
-                    idx += 1
-                
-                # Aggregate scores for all claims
-                doc_ratings.append(max(question_ratings)) # compute max across claims
-                
-                # doc_ratings.append(question_ratings)
-
-            ratings_nested.append(doc_ratings)
-        matrix = np.array(ratings_nested)
+def process_ratings(args: Namespace, ratings: list, item: dict, use_claims_as_sub_docs=False):
+    nrows, ncols = len(item['documents']), len(item['questions'])
+    matrix = np.array(ratings).reshape(nrows, ncols)
 
     ## Report some details
     num_unanswerable_q = np.sum(np.all(matrix <= 0, axis=0))

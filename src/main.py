@@ -8,43 +8,38 @@ from tools.neuclir.ir_utils import (
 from tools.neuclir.load_judgements import load_human_judgements, load_judgements
 
         
-def rerank(args):
+def main(args):
 
-    # TODO: replace the data loading pipeline
-    queries, queries_for_search, raw_topics = load_query(args)
-
-    # QRELS: 
-    ## the document qrels are not available on GRID. download from TREC website:
-    ## wget https://trec.nist.gov/data/neuclir/2023/neuclir-2023-qrels.final.tar.gz
+    ## Load data
+    queries = load_query(args.query)
     qrels = load_qrels(args.qrels)
-    crux_qrels = load_qrels(args.crux_qrels)
-    crux_andor_qrels = load_qrels(args.crux_andor_qrels if args.crux_andor_qrels is not None else args.crux_qrels)
+    judgmenets = load_judgements(args.judge)
+    ## the document qrels are not available on GRID. download from TREC website:
+    # qrels = load_qrels(args.qrels)
+    # crux_qrels = load_qrels(args.crux_qrels)
+    # crux_andor_qrels = load_qrels(args.crux_andor_qrels if args.crux_andor_qrels is not None else args.crux_qrels)
 
-    # Load RAC data. This includes running search or reading retrieved documents from a local file
-    rac_data = load_rac_data(args, queries, queries_for_search, raw_topics, retrieval_service_name=args.service_name)
+    # Retrieval. NOTE: we load the run directly
+    runs = load_runs(args.output_run)
 
-    # We can either (1) covert the human labels to judgements, or (2) run CRUX pipeline to generate ratings.
-    # judgements = load_judgements(args.data.judgement_file) if args.data.judgement_file is not None else None
-    # human_judgements = load_human_judgements(args.nuggets_dir)
-    human_judgements = load_human_judgements(args.qrels, True)
-    crux_judgements = load_judgements(args, rac_data, compute_missing_judgements=False)
+    # Reranking
+    crux_judgements_andor = None
 
-    try:
-        crux_judgements_andor = load_judgements(args, rac_data, load_andor=True)
+    # We can either 
+    # (1) covert the human labels to judgements, or 
+    # (2) run CRUX pipeline to generate ratings.
+    crux_judgements_andor = load_judgements(args, rac_data, load_andor=True)
+    for topicid in crux_judgements.keys():
+        crux_judgements_topic = crux_judgements[topicid]
+        crux_judgements_andor_topic = crux_judgements_andor[topicid]
+        for docid in crux_judgements_topic.keys():
+            crux_judgement = crux_judgements_topic[docid]
+            crux_judgement_andor = crux_judgements_andor_topic[docid]
+            if crux_judgement is None or crux_judgement_andor is None:
+                continue
+            crux_judgement_andor_min = [min(a, b) for a, b in zip(crux_judgement, crux_judgement_andor)]
+            crux_judgements_andor[topicid][docid] = crux_judgement_andor_min
 
-        for topicid in crux_judgements.keys():
-            crux_judgements_topic = crux_judgements[topicid]
-            crux_judgements_andor_topic = crux_judgements_andor[topicid]
-            for docid in crux_judgements_topic.keys():
-                crux_judgement = crux_judgements_topic[docid]
-                crux_judgement_andor = crux_judgements_andor_topic[docid]
-                if crux_judgement is None or crux_judgement_andor is None:
-                    continue
-                crux_judgement_andor_min = [min(a, b) for a, b in zip(crux_judgement, crux_judgement_andor)]
-                crux_judgements_andor[topicid][docid] = crux_judgement_andor_min
-
-    except:
-        crux_judgements_andor = None
 
     # TODO: Replace the evaluation pipeline
     # output_eval = {}

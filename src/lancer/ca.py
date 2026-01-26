@@ -1,110 +1,30 @@
-import os
-import json
-from collections import defaultdict
-
 import numpy as np
 
-from augmentation.gen_ratings import async_gen_ratings
+def coverage_based_aggregation(agg_method):
 
-SUM_SCORES_MEAN = 152.21 # 325.89473
-SUM_SCORES_STDEV = 23.74 # 58.24364
-
-sum_scores_list = []
-
-async def rerank_with_crux(args, ordered_docs, topic, k,
-                           docid_to_score=None,
-                           combine_with_rrf=False,
-                           get_claims_ratings=False,
-                           get_higher_cov_ratings=False):
-
-
-    # NOTE: search for precomputed rating
-    if 'human' in args.tag:
-        rating_file = f"/home/hltcoe/jhueiju/temp/{args.dataset_name}/ratings.{topic['request_id']}.{args.service_name}.human.json"
-    else:
-        rating_file = f"/home/hltcoe/jhueiju/temp/{args.dataset_name}/ratings.{topic['request_id']}.{args.service_name}.n{args.n_subquestions}.json"
-        if args.include_original:
-            rating_file = f"/home/hltcoe/jhueiju/temp/{args.dataset_name}/ratings.{topic['request_id']}.{args.service_name}.n{args.n_subquestions}+1.json"
-
-    if args.overwrite:
-        if os.path.exists(rating_file):
-            os.remove(rating_file)
-
-    if os.path.exists(rating_file) and '70B' in args.model:
-        with open(rating_file, "r") as f:
-            ratings = json.load(f)
-    else:
-        ratings = await async_gen_ratings(args, 
-                                          docs_to_rerank=ordered_docs, 
-                                          topic=topic,
-                                          reranking=True)
-    if (os.path.exists(rating_file) is False) and '70B' in args.model:
-        with open(rating_file, "w") as f:
-            json.dump(ratings, f)
-
-    # if (args.debug) and (args.dataset_name == 'neuclir'):
-    #     # NOTE: debug for alpha ndcg
-    #     ratings_new = defaultdict(list)
-    #     with open('/exp/scale25/neuclir/eval/qrel/neuclir24-test-request.qrel') as f:
-    #         for line in f:
-    #             qid, iteration, docid, score = line.split(' ')
-    #             if qid == topic['request_id']:
-    #                 # only the retrieved
-    #                 # if docid in ratings['docids']:
-    #                 #     ratings_new[docid].append(int(iteration)-1)
-    #                 ratings_new[docid].append(int(iteration)-1)
-    #
-    #     # postprocess into ratings
-    #     max_indices = max([max(ratings_new[docid]) for docid in ratings_new])
-    #
-    #     for docid in ratings_new:
-    #         indices = ratings_new[docid]
-    #         ratings_new[docid] = [0 for _ in range(max_indices+1)]
-    #         for idx in indices:
-    #             ratings_new[docid][idx] = 3
-    #
-    #     ratings = {
-    #         'ratings': [ratings_new[docid] for docid in ratings_new],
-    #         'docids': [docid for docid in ratings_new],
-    #     }
-    #
-    # if (args.debug) and ('mds' in args.dataset_name):
-    #     # NOTE: debug for coverage
-    #     rating_file_oracle = "/exp/scale25/artifacts/crux/temp/neuclir_format/ratings.mds_duc04.jsonl"
-    #     with open(rating_file_oracle, 'r') as f:
-    #         for line in f:
-    #             item = json.loads(line.strip())
-    #             if item['id'] == topic['request_id']:
-    #                 for i, docid in enumerate(item['docids']):
-    #                     if 'report' in docid: # remove the report's answerabiltiy 
-    #                         item['docids'].pop(i)
-    #                         item['ratings'].pop(i)
-    #
-    #                 ratings = {'ratings': item['ratings'], 'docids': item['docids']}
-
-    # NOTE: implement aggregation here
-    if args.agg.startswith('sum'):
-        tau = int(args.agg.split("tau=")[-1]) if 'tau' in args.agg else 1
+    if agg_method.startswith('sum'):
+        tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
         ranked_docs, docid_to_score_rerank = rank_by_sum_of_crux_scores(ratings, tau)
 
-    if args.agg.startswith('greedy-sum'):
-        tau = int(args.agg.split("tau=")[-1]) if 'tau' in args.agg else 1
+    if agg_method.startswith('greedy-sum'):
+        tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
         ranked_docs, docid_to_score_rerank = greedy_sum(ratings, tau)
 
-    if args.agg.startswith('greedy-coverage'): # NOTE: Shall we check the logic again?
-        tau = int(args.agg.split("tau=")[-1]) if 'tau' in args.agg else 1
+    if agg_method.startswith('greedy-coverage'):
+        tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
         # ranked_docs, docid_to_score_rerank_c = rank_by_maximizing_coverage(ratings)
         ranked_docs, docid_to_score_rerank_c = greedy_coverage(ratings, tau)
 
-    if args.agg.startswith('greedy-alpha'): # NOTE: Shall we check the logic again?
-        tau = int(args.agg.split("tau=")[-1]) if 'tau' in args.agg else 1
+    if agg_method.startswith('greedy-alpha'): 
+        tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
         ranked_docs, docid_to_score_rerank_c = greedy_alpha(ratings, tau)
 
-    if args.agg.startswith('rrf'): # NOTE: Shall we check the logic again?
+    if agg_method.startswith('rrf'): # NOTE: Shall we check the logic again?
         ranked_docs, docid_to_score_rerank_c = rank_by_rrf(ratings)
 
     return ranked_docs[:k]
 
+## The logics of different aggregation methods
 def rank_by_sum_of_crux_scores(ratings, tau=0):
     if tau == 0:
         sums = [sum(row) for row in ratings["ratings"]]
@@ -113,18 +33,6 @@ def rank_by_sum_of_crux_scores(ratings, tau=0):
         for row in ratings["ratings"]:
             score = sum( [r * int(r >= tau) for i, r in enumerate(row)] )
             sums.append(score)
-    """
-    sums = []
-    for row in ratings["ratings"]:
-        #if sum(row[2:4]) <= 8:
-        #    _sum = sum(row[0:2])
-        #else:
-        #    _sum = sum(row[0:2]) + 10 # bump up high-quality documents
-        _sum = sum(row[0:2])
-        quality_multiplier = sum(row[2:4]) / 10
-        _sum = _sum * quality_multiplier
-        sums.append(_sum)
-    """
     indexed_sums = list(enumerate(sums))
     ranked = sorted(indexed_sums, key=lambda x: x[1], reverse=True)
     ranked_indices = [index for index, _ in ranked]
@@ -441,34 +349,3 @@ def find_docids_with_gains(rows, tau=0):
 
     return selected_order, remaining_indices
 
-# # weights=[0.65, 0.2, 0.15]
-# def rrf_fusion(ranked_a, ranked_b, ranked_c=None, k=60, weights=[0, 1]):
-#     sorted_ranked_a = sorted(ranked_a.items(), key=lambda item: item[1], reverse=True)
-#     sorted_ranked_b = sorted(ranked_b.items(), key=lambda item: item[1], reverse=True)
-#     if ranked_c:
-#         sorted_ranked_c = sorted(ranked_c.items(), key=lambda item: item[1], reverse=True)
-#     scores = defaultdict(float)
-#     for rank, (doc, _) in enumerate(sorted_ranked_a):
-#         scores[doc] += 2*(weights[0]) / (k + rank + 1)
-#     for rank, (doc, _) in enumerate(sorted_ranked_b):
-#         scores[doc] += 2*(weights[1]) / (k + rank + 1)
-#     if ranked_c:
-#         for rank, (doc, _) in enumerate(sorted_ranked_c):
-#             scores[doc] += 2*(weights[2]) / (k + rank + 1)
-#     rrf_dict = sorted(scores.items(), key=lambda x: x[1], reverse=True)
-#     sorted_rrf = [docid for docid, _ in rrf_dict]
-#     return sorted_rrf
-#
-# def modulate_weights(z_score):
-#
-#     # clip z_score to [-2, 2]
-#     z_clipped = max(min(z_score, 2), -2)
-#     z_clipped = -z_clipped
-#
-#     # map z_score in [-2, 2] to a number in [0.5, 1]
-#     # mapped = 0.5 + (z_clipped + 2) / 4 * 0.5  # scale from [-2, 2] → [0.5, 1]
-#     mapped = 0.7 + (z_clipped) / 2 * 0.1  # scale from [-2, 2] → [0.6, 0.8]
-#
-#     modulated_weights = [mapped, 1-mapped]
-#
-#     return modulated_weights

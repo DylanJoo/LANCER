@@ -13,39 +13,25 @@ from tools.search.reranking import rerank_with_crux
 
 SCALE_ENDPOINT = "http://10.162.95.158:5000"
 
-
-async def async_get_content(collection, doc_id, **kwargs):
-    async with aiohttp.ClientSession() as session:
-        async with session.post(SCALE_ENDPOINT + "/content", json={"collection": collection, "id": doc_id}) as response:
-            doc = await response.json()
-
-    text = doc["text"].replace("\n", "  ")
-    return f"{doc.get('title', '')} {text}".strip()
-
-
-def get_content(collection, doc_id, **kwargs):
-    doc = requests.post(url=SCALE_ENDPOINT + "/content", json={"collection": collection, "id": doc_id}).json()
-    text = doc["text"].replace("\n", "  ")
-    return f"{doc.get('title', '')} {text}".strip()
+# async def async_get_content(collection, doc_id, **kwargs):
+#     async with aiohttp.ClientSession() as session:
+#         async with session.post(SCALE_ENDPOINT + "/content", json={"collection": collection, "id": doc_id}) as response:
+#             doc = await response.json()
+#
+#     text = doc["text"].replace("\n", "  ")
+#     return f"{doc.get('title', '')} {text}".strip()
+#
+#
+# def get_content(collection, doc_id, **kwargs):
+#     doc = requests.post(url=SCALE_ENDPOINT + "/content", json={"collection": collection, "id": doc_id}).json()
+#     text = doc["text"].replace("\n", "  ")
+#     return f"{doc.get('title', '')} {text}".strip()
 
 def search_neuclir(args, query, service_name="plaidx-neuclir", limit=5, **kwargs):
-    data = {
-        'service': service_name,
-        'query': str(query),
-        'limit': limit,
-        **kwargs
-    }
+    data = {'service': service_name, 'query': str(query), 'limit': limit, **kwargs}
     return requests.post(args.host+f":{args.port}/query", json=data).json()
 
-# NOTE: streamlined (this is the same as above one)
-# def search_neuclir(args, query, service_name="plaidx-neuclir", limit=5, **kwargs):
-#     data = {"service": service_name, "query": str(query), "limit": limit, **kwargs}
-#     endpoint = args.host if has_port(args.host) else f"{args.host}:{args.port}"
-#     return requests.post(endpoint + "/query", json=data).json()
-
-
-async def async_search_neuclir(args, query, service_name="plaidx-neuclir", limit=5,
-                               topic=None, **kwargs):
+async def async_search_neuclir(args, query, service_name="plaidx-neuclir", limit=5, topic=None, **kwargs):
     data = {"service": service_name, "query": str(query), "limit": limit, **kwargs}
     if service_name=="crux-neuclir":
         data.update({"topic": {

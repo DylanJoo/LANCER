@@ -1,24 +1,25 @@
 import asyncio
 from argparse import Namespace
-import json
-
-from tools.neuclir.create_run_file import create_run_file
-from tools.search.search import async_get_content, get_content, retrieve_with_report_request, retrieve_with_subqueries
-from tools.neuclir.load_corpus import load_corpus
 import pdb
+import json
+from tools.neuclir.create_run_file import create_run_file
+from tools.search.search import retrieve_with_report_request, retrieve_with_subqueries
 
+    # if args.reranker == "crux_reranking":
+    #     ordered_docs_by_score = await rerank_with_crux(args, ordered_docs_by_score, topic,
+    #                                                    docid_to_score=docs,
+    #                                                    k=top_k_docs, combine_with_rrf=False)
+    # elif args.reranker == "mcranker":
+    #     ordered_docs_by_score = await rerank_with_mcranker(args, ordered_docs_by_score, topic,
+    #                                                        docid_to_score=docs,
+    #                                                        k=top_k_docs, combine_with_rrf=False)
+    # else: # neither crux-reranking or mcraker
+    #     top_k_docs = top_k_passages
 
-# TODO: move the topk-truncation at the later stage, 
-# making it more flexible to different truncation
-def load_rac_data(
-    args: Namespace, 
-    queries: dict, 
-    queries_for_search: dict, 
-    raw_topics: dict,
-    k: int = None, 
-    collection: str = "neuclir", 
-    retrieval_service_name: str = "plaidx-neuclir"
-) -> dict:
+# TODO: move the topk-truncation at the later stage, making it more flexible to different truncation
+def load_rac_data(args: Namespace, queries: dict, queries_for_search: dict, raw_topics: dict,
+                  k: int = None, collection: str = "neuclir", 
+                  retrieval_service_name: str = "plaidx-neuclir") -> dict:
     """Load RAC data
     Args:
         args [Namespace]: args provided as input
@@ -33,8 +34,13 @@ def load_rac_data(
         k = args.top_k
 
     ## async-retrieval or aysnc-retrievak + crux-reranking
-    rac_data = asyncio.run(_async_load_rac_data(args, queries, queries_for_search, raw_topics,
-                                                k, collection, retrieval_service_name))
+    rac_data = asyncio.run(
+            _async_load_rac_data(
+                args, 
+                queries, queries_for_search, raw_topics,
+                k, collection, 
+                retrieval_service_name
+    ))
 
     ## NOTE: the workaround is to separate them -- autoreranking
     if 'autorerank' in args.reranker:
@@ -55,45 +61,6 @@ def load_rac_data(
 
     return rac_data
 
-# NOTE: make this workaround for autoreranker, which only uses the async at the reranking stage.
-def _autorerank(args: Namespace, rac_data: dict, 
-                queries: dict, queries_for_search: dict, raw_topics: dict,
-                k: int = 100) -> dict:
-
-    ## prepare reranker
-    from reranking.wrapper import AutoLLMReranker
-    _, method_name, model_name = args.reranker.split(':')
-    reranker = AutoLLMReranker.from_prebuilt(
-        method_name, model_name, 
-        llm={'max_model_len': 20480, 'backend': 'request'}, 
-        max_doc_length=800 if (method_name=='listwise' or method_name=='rankgpt') else 1024, 
-    )
-
-    ## prepare data  
-    ### covert rac_data to run
-    qids, qs = zip(*queries.items())
-    run = {}
-    for qid in qids:
-        run[qid] = {}
-        for rank, docid in enumerate(rac_data[qid]['docids'], start=1):
-            run[qid][docid] = 1/rank
-
-    queries = {qid: queries_for_search[qid] for qid in qids}
-    if args.dataset_name == 'neuclir':
-        corpus = load_corpus(args, args.corpus_dir, path_prefix="*.mt.jsonl")
-    else:
-        corpus = load_corpus(args, args.corpus_dir, path_prefix="*.jsonl")
-
-    ## rerank # it will rank the top100 candidate
-    reranked_run = reranker.rerank(run=run, queries=queries, corpus=corpus, query_batch_size=64)
-
-    ## reconnect to rac_data
-    for qid in reranked_run:
-        original = rac_data[qid]['docids'] 
-        rac_data[qid]['docids'] = [docid for docid in reranked_run[qid]]
-
-    return rac_data
-
 async def _async_load_rac_data(
     args: Namespace, 
     queries: dict, 
@@ -107,20 +74,16 @@ async def _async_load_rac_data(
     rac_data = {}
     qids, qs = zip(*queries.items())
 
-    # NOTE: we wont use gptr here so i just commented them
-    # if args.gptr_run_file:
-    #     # get documents from run file
-    #     retrieved = get_retrieved_docs_from_gptr_run_file(args, qids)
-    # else:
-    # if args.search_with_subqueries:
-    #     retrieved = await asyncio.gather(*[retrieve_with_subqueries(
-    #         args, queries_for_search[qid], retrieval_service_name, 
-    #         top_k_docs=k, top_k_passages=args.k_candidates) for qid in qids])
-    # else: # NOTE: default
-    retrieved = await asyncio.gather(*[retrieve_with_report_request(
-        args, queries_for_search[qid], retrieval_service_name, 
-        [t for t in raw_topics if t["request_id"]==qid][0], # get topic
-        top_k_docs=k, top_k_passages=args.k_candidates) for qid in qids])
+    retrieved = await asyncio.gather(*[
+        retrieve_with_report_request(
+            args, 
+            queries_for_search[qid], 
+            retrieval_service_name, 
+            [t for t in raw_topics if t["request_id"]==qid][0], # get topic
+            top_k_docs=k, 
+            top_k_passages=args.k_candidates
+        ) for qid in qids
+    ])
 
     if args.reranker == 'none':
         file_name = f"runs/{retrieval_service_name}.run"

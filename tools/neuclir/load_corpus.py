@@ -27,30 +27,13 @@ class Corpus(metaclass=Singleton):
             return None
         return self.corpus
     
-class ClaimsCorpus(metaclass=Singleton):
-    def __init__(self):
-        pass
-
-    def set_corpus(self, corpus):
-        self.corpus = corpus
-
-    def get_corpus(self):
-        if not hasattr(self, 'corpus'):
-            return None
-        return self.corpus
-
 def default_doc():
     return {"title": "Unknown", "text": "Document not found."}
 
 def load_corpus(args, path, path_prefix="*", load_from_pkl_file=True, is_claims=False):
 
-    filename = "corpus.pkl" if not is_claims else "corpus_claims.pkl"
-    
-    # Try to load corpus from singleton or from pickle file on disk
-    if is_claims:
-        corpus = ClaimsCorpus().get_corpus()
-    else:
-        corpus = Corpus().get_corpus()
+    filename = "corpus.pkl"
+    corpus = Corpus().get_corpus()
 
     if corpus:
         return corpus
@@ -61,10 +44,7 @@ def load_corpus(args, path, path_prefix="*", load_from_pkl_file=True, is_claims=
                 with open(f"{args.input}/{filename}", "rb") as file:
                     corpus = pickle.load(file)
                     # after loading from pickle file, save corpus in singleton for future use
-                    if is_claims:
-                        ClaimsCorpus().set_corpus(corpus)
-                    else:
-                        Corpus().set_corpus(corpus)
+                    Corpus().set_corpus(corpus)
                     return corpus
 
     # If the previous options are not available, load corpus from jsonl files on disk
@@ -80,7 +60,7 @@ def load_corpus(args, path, path_prefix="*", load_from_pkl_file=True, is_claims=
         with open(file, "r") as f:
             for line in tqdm(f):
                 try:
-                    corpus = read_claims_line(line, corpus) if is_claims else read_doc_line(line, corpus)
+                    corpus = read_doc_line(line, corpus)
                 except:
                     continue
 
@@ -88,10 +68,7 @@ def load_corpus(args, path, path_prefix="*", load_from_pkl_file=True, is_claims=
         with open(f"{args.input}/{filename}", "wb") as f:
             pickle.dump(corpus, f)
     
-    if is_claims:
-        ClaimsCorpus().set_corpus(corpus)
-    else:
-        Corpus().set_corpus(corpus)
+    Corpus().set_corpus(corpus)
 
     return corpus
 
