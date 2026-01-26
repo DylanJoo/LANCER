@@ -1,12 +1,15 @@
-from lancer.qg import question_generation
-from lancer.aj import answerability_judment
-from lancer.ca import coverage_based_aggregation
+from qg import question_generation
+from aj import answerability_judment
+from ca import coverage_based_aggregation
 
 def rerank(
-    run: dict, 
+    runs: dict, 
     queries: dict, 
     corpus: dict, 
     k: int = None,
+    n_subquestions: int = 2,
+    concat_original: bool = True,
+    use_oracle: bool = False,
     aggregation: str = 'sum',
     topics: dict = None,
     rerun_qg: bool = False, 
@@ -22,7 +25,7 @@ def rerank(
 
     ## 0. Initialize LLM 
     from llm_empty import LLM
-    llm = LLM(args)
+    llm = LLM()
 
     ## TODO: add outputing generate subQ 
     ## 1. sub-question generation
@@ -31,9 +34,9 @@ def rerank(
             llm=llm,
             queries=queries,
             topics=topics,
-            n_subquestions=n_questions,
+            n_subquestions=n_subquestions,
             use_oracle=use_oracle,
-            output_path=qg_path
+            # output_path=qg_path
         )
     else: # reuse the generated results
         with open(qg_path, "r") as f:
@@ -44,18 +47,25 @@ def rerank(
     if rerun_judge:
         ratings = answerability_judment(
             llm=llm, 
-            subquestions=subquestions,
-            documents=documents,
             queries=queries,
+            subquestions=all_subquestions,
+            documents=documents_all,
             concat_original=concat_original,
-            output_path=judge_path
+            # output_path=judge_path
         )
     else: # reuse the generated results
         with open(judge_path, "r") as f:
             ratings = load_ratings(judge_path)
 
     ## 3. Coverage-based aggregation
-    reranked_docs = coverage_based_aggregation(agg_method=aggregation)
+    reranked_run = {}
+    for qid in queries:
+        reranked_docs = coverage_based_aggregation(
+            docids=[docid for docid in runs[qid]],
+            ratings=ratings[qid],
+            agg_method=aggregation
+        )
+        reranked_run[qid] = reranked_docs
 
     ## 4. Save trec file
     # reranker_name = args.reranker.replace('/', ':')

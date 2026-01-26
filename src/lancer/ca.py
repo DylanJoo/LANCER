@@ -1,59 +1,60 @@
 import numpy as np
 
-def coverage_based_aggregation(agg_method):
+def coverage_based_aggregation(docids, ratings, agg_method):
 
     if agg_method.startswith('sum'):
         tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
-        ranked_docs, docid_to_score_rerank = rank_by_sum_of_crux_scores(ratings, tau)
+        ranked_docs, docid_to_score_rerank = rank_by_sum_of_crux_scores(docids, ratings, tau)
 
     if agg_method.startswith('greedy-sum'):
         tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
-        ranked_docs, docid_to_score_rerank = greedy_sum(ratings, tau)
+        ranked_docs, docid_to_score_rerank = greedy_sum(docids, ratings, tau)
 
     if agg_method.startswith('greedy-coverage'):
         tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
         # ranked_docs, docid_to_score_rerank_c = rank_by_maximizing_coverage(ratings)
-        ranked_docs, docid_to_score_rerank_c = greedy_coverage(ratings, tau)
+        ranked_docs, docid_to_score_rerank = greedy_coverage(docids, ratings, tau)
 
     if agg_method.startswith('greedy-alpha'): 
         tau = int(agg_method.split("tau=")[-1]) if 'tau' in agg_method else 1
-        ranked_docs, docid_to_score_rerank_c = greedy_alpha(ratings, tau)
+        ranked_docs, docid_to_score_rerank = greedy_alpha(docids, ratings, tau)
 
     if agg_method.startswith('rrf'): # NOTE: Shall we check the logic again?
-        ranked_docs, docid_to_score_rerank_c = rank_by_rrf(ratings)
+        ranked_docs, docid_to_score_rerank = rank_by_rrf(docids, ratings)
 
-    return ranked_docs[:k]
+    return ranked_docs, docid_to_score_rerank
 
 ## The logics of different aggregation methods
-def rank_by_sum_of_crux_scores(ratings, tau=0):
+def rank_by_sum_of_crux_scores(docids, ratings, tau=0):
+    print(ratings)
     if tau == 0:
-        sums = [sum(row) for row in ratings["ratings"]]
+        sums = [sum(row) for row in ratings]
     else:
         sums = []
-        for row in ratings["ratings"]:
+        for row in ratings:
             score = sum( [r * int(r >= tau) for i, r in enumerate(row)] )
             sums.append(score)
     indexed_sums = list(enumerate(sums))
     ranked = sorted(indexed_sums, key=lambda x: x[1], reverse=True)
     ranked_indices = [index for index, _ in ranked]
-    ranked_docs = [ratings["docids"][i] for i in ranked_indices]
+    ranked_docs = [docids[i] for i in ranked_indices]
 
     # create dict of docid -> score
-    docid_to_score = dict(zip(ratings["docids"], sums))
+    docid_to_score = dict(zip(docids, sums))
     return ranked_docs, docid_to_score
 
-def greedy_sum(ratings, tau=0):
-    m, n = len(ratings["ratings"]), len(ratings["ratings"][0])
+def greedy_sum(docids, ratings, tau=0):
+    m, n = len(ratings), len(ratings[0])
 
     # postprocess them
     matrix = []
     sums = []
-    for row in ratings["ratings"]:
+    for row in ratings:
         row = [r * int(r >= tau) for r in row]
         matrix.append(row)
         sums.append(sum(row))
 
-    ratings["ratings"] = matrix
+    ratings = matrix
 
     remaining_indices = np.argsort(sums).tolist()[::-1]
     reranked_indices = []
@@ -65,7 +66,7 @@ def greedy_sum(ratings, tau=0):
         ## check available docs
         gains = []
         for index in remaining_indices:
-            gain = sum([max(b-a, 0) for a, b in zip(best_so_far, ratings["ratings"][index])])
+            gain = sum([max(b-a, 0) for a, b in zip(best_so_far, ratings[index])])
             gains.append(gain)
 
         ## find the best one
@@ -73,23 +74,23 @@ def greedy_sum(ratings, tau=0):
         index = remaining_indices.pop(i)
         if gains[i] > 0:
             n = len(remaining_indices)
-            best_so_far = np.array([max(a, b) for a, b in zip(best_so_far, ratings["ratings"][index])])
+            best_so_far = np.array([max(a, b) for a, b in zip(best_so_far, ratings[index])])
             reranked_indices.append(index)
         else:
             omitted_indices.append(index)
 
     # prepare return
-    ranked_docs = [ratings["docids"][i] for i in reranked_indices + omitted_indices]
+    ranked_docs = [docids[i] for i in reranked_indices + omitted_indices]
 
     # create dict of docid -> score
     docid_to_score = {docid: 1/rank for rank, docid in enumerate(ranked_docs, start=1)}
 
     return ranked_docs, docid_to_score
 
-def greedy_alpha(ratings, tau=1):
+def greedy_alpha(docids, ratings, tau=1):
     alpha = 0.5 # the higher the more diverse
 
-    m, n = len(ratings["ratings"]), len(ratings["ratings"][0])
+    m, n = len(ratings), len(ratings[0])
 
     reranked_indices = []
     selected = [False] * m
@@ -109,7 +110,7 @@ def greedy_alpha(ratings, tau=1):
             # calculate the gains
             current_score = 0
             for j in range(n):
-                if ratings["ratings"][i][j] >= tau: # in ndeval, we only have binary relevance?
+                if ratings[i][j] >= tau: # in ndeval, we only have binary relevance?
                     current_score += subtopic_gain[j]
 
             # deal with tie? now we select the earlier one.
@@ -122,29 +123,29 @@ def greedy_alpha(ratings, tau=1):
 
         # update the gain
         for j in range(n):
-            if ratings["ratings"][where][j] >= tau:
+            if ratings[where][j] >= tau:
                 subtopic_gain[j] *= (1.0 - alpha)
     
     # prepare return
-    ranked_docs = [ratings["docids"][i] for i in reranked_indices]
+    ranked_docs = [docids[i] for i in reranked_indices]
 
     # create dict of docid -> score
     docid_to_score = {docid: 1/rank for rank, docid in enumerate(ranked_docs, start=1)}
 
     return ranked_docs, docid_to_score
 
-def greedy_coverage(ratings, tau=0):
-    m, n = len(ratings["ratings"]), len(ratings["ratings"][0])
+def greedy_coverage(docids, ratings, tau=0):
+    m, n = len(ratings), len(ratings[0])
 
     # postprocess them
     matrix = []
     sums = []
-    for row in ratings["ratings"]:
+    for row in ratings:
         row = [int(r >= tau) for r in row]
         matrix.append(row)
         sums.append(sum(row))
 
-    ratings["ratings"] = matrix
+    ratings = matrix
 
     remaining_indices = np.argsort(sums).tolist()[::-1]
     reranked_indices = []
@@ -156,7 +157,7 @@ def greedy_coverage(ratings, tau=0):
         ## check available docs
         gains = []
         for index in remaining_indices:
-            gain = sum([max(b-a, 0) for a, b in zip(best_so_far, ratings["ratings"][index])])
+            gain = sum([max(b-a, 0) for a, b in zip(best_so_far, ratings[index])])
             gains.append(gain)
 
         ## find the best one
@@ -164,55 +165,32 @@ def greedy_coverage(ratings, tau=0):
         index = remaining_indices.pop(i)
         if gains[i] > 0:
             n = len(remaining_indices)
-            best_so_far = np.array([max(a, b) for a, b in zip(best_so_far, ratings["ratings"][index])])
+            best_so_far = np.array([max(a, b) for a, b in zip(best_so_far, ratings[index])])
             reranked_indices.append(index)
         else:
             omitted_indices.append(index)
 
     # prepare return
-    ranked_docs = [ratings["docids"][i] for i in reranked_indices + omitted_indices]
+    ranked_docs = [docids[i] for i in reranked_indices + omitted_indices]
 
     # create dict of docid -> score
     docid_to_score = {docid: 1/rank for rank, docid in enumerate(ranked_docs, start=1)}
 
     return ranked_docs, docid_to_score
-# weights=[0.4, 0.4, 0.1, 0.05, 0.05], [0.7, 0.3]
-# def rank_by_sum_of_weighted_crux_scores(ratings, ratings_coverage=None,
-#                                         weights=[0.7, 0.3]):
-#     if ratings_coverage:
-#         sums = []
-#         for idx, row in enumerate(ratings["ratings"]):
-#             sum_low_granularity = sum(row) / len(row)
-#             row_high_granularity = ratings_coverage["ratings"][idx]
-#             sum_high_granularity = sum(row_high_granularity) / len(row_high_granularity)
-#             weighted_sum = weights[0]*sum_low_granularity + weights[1]*sum_high_granularity
-#             sums.append(weighted_sum)
-#     else:
-#         sums = [sum(v * w for v, w in zip(row, weights)) for row in ratings["ratings"]]
-#
-#     indexed_sums = list(enumerate(sums))
-#     ranked = sorted(indexed_sums, key=lambda x: x[1], reverse=True)
-#     ranked_indices = [index for index, _ in ranked]
-#     ranked_docs = [ratings["docids"][i] for i in ranked_indices]
-#
-#     # create dict of docid -> score
-#     docid_to_score = dict(zip(ratings["docids"], sums))
-#
-#     return ranked_docs, docid_to_score
 
-def rank_by_sum_of_high_quality_crux_scores(ratings):
-    sums = [sum(val for val in row if val >= 2) for row in ratings["ratings"]]
+def rank_by_sum_of_high_quality_crux_scores(docids, ratings):
+    sums = [sum(val for val in row if val >= 2) for row in ratings]
     indexed_sums = list(enumerate(sums))
     ranked = sorted(indexed_sums, key=lambda x: x[1], reverse=True)
     ranked_indices = [index for index, _ in ranked]
-    ranked_docs = [ratings["docids"][i] for i in ranked_indices]
+    ranked_docs = [docids[i] for i in ranked_indices]
 
     # create dict of docid -> score
-    docid_to_score = dict(zip(ratings["docids"], sums))
+    docid_to_score = dict(zip(docids, sums))
 
     return ranked_docs, docid_to_score
 
-def rank_by_rrf(ratings):
+def rank_by_rrf(docids, ratings):
     def reciprocal_rank_fusion(ratings, k=60):
         """
         ratings: numpy array (n_items x n_sources), higher score = better
@@ -231,21 +209,21 @@ def rank_by_rrf(ratings):
         fused_scores = np.sum(1.0 / (k + ranks), axis=1)
         return fused_scores
     
-    ratings_np = np.array(ratings["ratings"])
+    ratings_np = np.array(ratings)
     fused = reciprocal_rank_fusion(ratings_np)
     ranked_indices = np.argsort(-fused)
 
-    ranked_docs = [ratings["docids"][i] for i in ranked_indices]
+    ranked_docs = [docids[i] for i in ranked_indices]
 
     # create dict of docid -> score
     scores = [float(row) for row in fused]
-    docid_to_score = dict(zip(ratings["docids"], scores))
+    docid_to_score = dict(zip(docids, scores))
 
     return ranked_docs, docid_to_score
 
-def rank_by_maximizing_coverage(ratings):
+def rank_by_maximizing_coverage(docids, ratings):
     
-    rows = np.array(ratings["ratings"])
+    rows = np.array(ratings)
     selected_order, remaining_indices = find_docids_with_gains(rows)
 
     # When there is no more gain to be added, continue with
@@ -263,7 +241,7 @@ def rank_by_maximizing_coverage(ratings):
         selected_order.append(best_row)
         remaining_indices.remove(best_row)
 
-    ranked_docs = [ratings["docids"][i] for i in selected_order]
+    ranked_docs = [docids[i] for i in selected_order]
 
     # create dict of docid -> score
     # assign a score according to position in 'ordered_rows'
@@ -271,46 +249,20 @@ def rank_by_maximizing_coverage(ratings):
 
     return ranked_docs, docid_to_score
 
-# def rank_by_late_coverage_maximization(ratings, k, k_coverage):
-#
-#     rows = np.array(ratings["ratings"])
-#     selected_order, _ = find_docids_with_gains(rows)
-#     
-#     docids_with_gains = [ratings["docids"][i] for i in selected_order]
-#
-#     ranked_docs_by_sum, docid_to_score = rank_by_sum_of_crux_scores(ratings)
-#     # ranked_docs_by_sum = ranked_docs_by_sum[:k] # get top k docs ranked by sum
-#
-#     # Add docs that add gain, but are not in the top-k documents according to crux sums
-#     replacement_candidates = [docid for docid in docids_with_gains if docid not in ranked_docs_by_sum[:k]]
-#     num_needed = k_coverage - len(replacement_candidates)
-#     ranked_docs = ranked_docs_by_sum[:num_needed] + replacement_candidates + ranked_docs_by_sum[num_needed:]
-#     # ranked_docs = ranked_docs[:k]
-#
-#     # create dict of docid -> score
-#     final_docid_to_score = {k: v for k, v in docid_to_score.items() if k in ranked_docs}
-#     ranked_docid_to_score = sorted(final_docid_to_score.items(), key=lambda item: item[1], reverse=True)
-#     score_at_k_coverage = ranked_docid_to_score[k_coverage-len(replacement_candidates)][1]
-#     for docid in final_docid_to_score:
-#         if docid in replacement_candidates:
-#             final_docid_to_score[docid] = score_at_k_coverage
-#
-#     return ranked_docs, final_docid_to_score
-
-def rank_by_max_score(ratings):
-    maximums = [max(row) for row in ratings["ratings"]]
+def rank_by_max_score(docids, ratings):
+    maximums = [max(row) for row in ratings]
     indexed_maximums = list(enumerate(maximums))
     ranked = sorted(indexed_maximums, key=lambda x: x[1], reverse=True)
     ranked_indices = [index for index, _ in ranked]
-    ranked_docs = [ratings["docids"][i] for i in ranked_indices]
+    ranked_docs = [docids[i] for i in ranked_indices]
 
     # create dict of docid -> score
-    docid_to_score = dict(zip(ratings["docids"], maximums))
+    docid_to_score = dict(zip(docids, maximums))
 
     return ranked_docs, docid_to_score
 
 # NOTE: maybe sort them first is more efficient
-def find_docids_with_gains(rows, tau=0):
+def find_docids_with_gains(docids, rows, tau=0):
 
     # postprocess them
     sums = []

@@ -1,3 +1,4 @@
+import numpy as np
 import re
 
 def answerability_judment(
@@ -12,8 +13,8 @@ def answerability_judment(
     if concat_original:
         for qid in queries:
             query = queries[qid]
-            concatenated = [f"{query}\n{q}" for q in all_subquestions[qid]]
-            all_subquestions[qid] = concatenated
+            concatenated = [f"{query}\n{q}" for q in subquestions[qid]]
+            subquestions[qid] = concatenated
 
     ratings = {}
     for qid in queries:
@@ -24,8 +25,8 @@ def answerability_judment(
             for j, question in enumerate(subquestions[qid]):
                 prompt = prompt_rating_gen(question=question, context=document)
                 prompts.append(prompt)
-        outputs = llm.async_inference_chat(prompts)
-        output_ratings = [str2int(o) or o in outputs]
+        outputs = llm.generate_ratings(prompts)
+        output_ratings = [str2int(o) for o in outputs]
         nrows, ncols = len(documents[qid]), len(subquestions[qid])
         matrix = np.array(output_ratings).reshape(nrows, ncols)
         ratings[qid] = matrix.tolist()
@@ -57,8 +58,7 @@ def prompt_rating_gen(question="", context="", lang='eng'):
 
     Rating:
     """
-    p = template.replace("{language_setting}", language_setting).strip()
-    p = p.replace("{question}", question).strip()
+    p = template.replace("{question}", question).strip()
     if isinstance(context, dict):
         context = context.get('title', '') + ' ' + context.get('text', '')
     p = p.replace("{context}", context).strip()

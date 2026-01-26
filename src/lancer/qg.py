@@ -15,18 +15,21 @@ def question_generation(
 
     # prompts
     prompts = []
-    for query in queries:
+    for qid in queries:
         prompts.append(
             prompt_with_example(
-                problem_statement=query,
-                user_background=topics['background'],
-                title=topics['title'],
+                problem_statement=queries[qid],
+                user_background=topics[qid]['background'],
+                title=topics[qid]['title'],
                 n=n_subquestions
             )
         )
-    # generation
-    outputs = llm.async_inference_chat(prompts)
-    subquestions = extract_subtopics(outputs, n=n_subquestions)
+    outputs = llm.generate_questions(prompts)
+
+    subquestions = {}
+    for i, qid in enumerate(queries):
+        subquestions[qid] = extract_subtopics(outputs[i], n_subquestions)
+    print(subquestions)
     return subquestions
 
 def prompt_with_example(

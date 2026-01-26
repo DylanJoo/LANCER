@@ -15,6 +15,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--query", type=str)
     parser.add_argument("--agg", type=str, default="sum")
     parser.add_argument("--dataset_name", type=str, default="neuclir")
     parser.add_argument("--n_subquestions", type=int, default=2)

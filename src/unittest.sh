@@ -1,0 +1,12 @@
+python3 main.py  \
+    --query 
+    --concat_original \
+    --n_subquestions 2 \
+    --agg sum \
+    --host http://${service_endpoint} \
+    --llm_base_url http://localhost:8000/v1 \
+    --temperature 0.0 --top_p 1.0 \
+    --model $MODEL \
+    --reranker crux_reranking \
+    --service_name ${service_name} \
+    --dataset_name neuclir
