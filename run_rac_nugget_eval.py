@@ -123,38 +123,3 @@ def run_rac_nugget_eval(args):
     #         print(f"A-nDCG@20: {output_eval['crux_andor_0620']['alpha_nDCG']}")
     #     print(f"Cov@10: {output_eval['crux_andor_0620']['mean_coverage_at_10']}")
     #pprint.pprint(output_eval)
-
-# NOTE: dylan: based on the shell script you used. This snippet is not being used, right?
-# def main():
-#
-#     parser = argparse.ArgumentParser()
-#
-#     # ===========================================
-#     # ==== parameters for nugget evaluation =====
-#     # ===========================================
-#     parser.add_argument("--crux_dir", type=str, default="", help="Path where CRUX files are saved on disk")
-#     parser.add_argument("--crux_artifacts_path", type=str, default="/exp/scale25/artifacts/crux/crux-neuclir/crux_llama3.3-70b-instruct.jsonl", help="Path to CRUX artifacts jsonl file")
-#     # for additional AND/OR coverage metric use --crux_artifacts_path /exp/jturley/crux-scale/crux_andor_llama3.3-70b-instruct.jsonl
-#     parser.add_argument("--topics_path", type=str, default="/exp/scale25/neuclir/topics/neuclir24-test-request.jsonl", help="Path to topics file")
-#     parser.add_argument("--qrels", type=str, default="/exp/scale25/neuclir/eval/qrel/neuclir24-test-request.qrel", help="Path to qrel file")
-#     parser.add_argument("--crux_qrels", type=str, default="/exp/scale25/artifacts/crux/crux-neuclir/crux_llama3.3-70b-instruct.qrel", help="Path to crux qrel file")
-#     parser.add_argument("--crux_andor_qrels", type=str, default="/exp/jturley/crux-scale/crux_andor_min_llama3.3-70b-instruct.qrel", help="Path to crux AND/OR qrel file")
-#     parser.add_argument("--nuggets_dir", type=str, default="/exp/scale25/neuclir/eval/nuggets", help="Path to qrel file")
-#     parser.add_argument("--model", type=str, default="llama3.3-70b-instruct", help="Model to use")
-#     parser.add_argument("--tag", type=str, default="human", help="Tag of run (for saving)") # 'human' if evaluating againt ref nuggets 
-#     parser.add_argument("--dataset_name", type=str, default="neuclir", help="Name of the dataset (for saving)")
-#     parser.add_argument("--gptr_run_file", type=str, default=None, help="Specify a run file")
-#
-#     # search service parameters
-#     parser.add_argument("--host", default='http://10.162.95.158', type=str)
-#     parser.add_argument("--port", default='5000', type=str)
-#     parser.add_argument("--service_name", type=str, help="Retrieval service to use", default='plaidx-neuclir')
-#     parser.add_argument("--top_k", default=20, type=int)
-#     parser.add_argument("--search_with_subqueries", default=False, action="store_true", help="When set to True, search will be performed using quer")
-#
-#     args, _ = parser.parse_known_args()
-#     
-#     run_rac_nugget_eval(args)
-#     
-# if __name__ == "__main__":
-#     main()
