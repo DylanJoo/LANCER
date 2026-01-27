@@ -43,16 +43,13 @@ reranked_run = rerank(
     }
 )
 
-from crux
-
 # Save file
-# reranker_name = args.reranker.replace('/', ':')
-# reranker_name += ":oracle" if 'human' in args.tag else ""
-# reranker_name += f":agg_{args.agg}" if args.agg != 'sum' else ""
-# reranker_name += f":nq_{args.n_subquestions}" if args.n_subquestions != 2 else ""
-# file_name = f"runs/{args.service_name}+{reranker_name}.run"
-# with open(file_name, 'w') as f:
-#     for qid in rac_data:
-#         for rank, docid in enumerate(rac_data[qid]['docids'], start=1):
-#             f.write(f"{qid} Q0 {docid} {rank} {1/rank} {args.reranker}\n")
-# print(reranked_run)
+reranker_name = args.reranker.replace('/', ':')
+reranker_name += ":oracle" if 'human' in args.tag else ""
+reranker_name += f":agg_{args.agg}" if args.agg != 'sum' else ""
+reranker_name += f":nq_{args.n_subquestions}" if args.n_subquestions != 2 else ""
+file_name = f"runs/{args.service_name}+{reranker_name}.run"
+with open(file_name, 'w') as f:
+    for qid in rac_data:
+        for rank, docid in enumerate(rac_data[qid]['docids'], start=1):
+            f.write(f"{qid} Q0 {docid} {rank} {1/rank} {args.reranker}\n")
