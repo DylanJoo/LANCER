@@ -14,7 +14,7 @@ def answerability_judment(
     # Reset the LLM parameters
     llm.temperature = 0.0
     llm.top_p = 1.0
-    llm.max_tokens = 10
+    llm.max_tokens = 3
 
     # Concatenate the original query in the begining.
     if concat_original:

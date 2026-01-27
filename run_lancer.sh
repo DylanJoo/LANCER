@@ -25,15 +25,6 @@
 # done
 # echo "vLLM server is up and running on port 8000."
 
-# python src/lancer/run_neuclir.py \
-#     --reranker lancer \
-#     --run_path data/neuclir-runs/bm25-neuclir.run \
-#     --topic_path data/neuclir24-test-request.jsonl \
-#     --qg_path results/neuclir-subquestions/llama3.3-70b-instruct.json \
-#     --rerun_judge  \
-#     --n_subquestions 2 \
-#     --agg_method sum 
-
 python src/lancer/run_cruxmds.py \
     --reranker lancer \
     --run_path data/crux-mds-duc04-runs/bm25-crux-mds-duc04.run \
@@ -43,3 +34,11 @@ python src/lancer/run_cruxmds.py \
     --n_subquestions 2 \
     --agg_method sum 
 
+# python src/lancer/run_neuclir.py \
+#     --reranker lancer \
+#     --run_path data/neuclir-runs/bm25-neuclir.run \
+#     --topic_path data/neuclir24-test-request.jsonl \
+#     --qg_path results/neuclir-subquestions/llama3.3-70b-instruct.json \
+#     --rerun_judge  \
+#     --n_subquestions 2 \
+#     --agg_method sum 

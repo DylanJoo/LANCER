@@ -1,9 +1,9 @@
 import gzip
 import json
 
-lang = 'zho'
-input_file_path = f'/home/dju/datasets/neuclir1/{lang}.mt.eng-00000-of-00001.jsonl.gz'
-output_file_path = f'{lang}.processed_output.jsonl.gz'
+lang = 'rus'
+input_file_path = f'/home/hltcoe/jhueiju/datasets/neuclir1/{lang}.mt.eng-00000-of-00001.jsonl.gz'
+output_file_path = f'/home/hltcoe/jhueiju/datasets/neuclir1/{lang}.processed_output.jsonl.gz'
 processed_count = 0
 
 # Open the input file for reading (gzipped) and the output file for writing (gzipped)

@@ -2,7 +2,8 @@ import os
 import uuid
 import asyncio
 import openai
-from typing import List
+from typing import List, Union
+from transformers import AutoTokenizer
 
 class LLM:
 
@@ -23,6 +24,7 @@ class LLM:
         self.temperature = temperature
         self.top_p = top_p
         self.logprobs = logprobs
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, use_fast=False)
 
         self.client = openai.OpenAI(
             api_key=os.environ.get('OPENAI_API_KEY', api_key),
@@ -42,17 +44,28 @@ class LLM:
     def generate_ratings(self, prompts):
         return self.generate(prompts)
 
-    ## NOTE: check vllm's contrastined decoding.
-    ## NOTE: see the attention.
-    def generate(self, prompts, binary_probs=False, dist_logp=False) -> List:
-        if isinstance(prompts, str):
-            prompts = [prompts]
+    ## NOTE: see if we want to repalce the judgment with autollmreranker
+    def generate(
+        self, 
+        user_prompts: Union[List[str]] = None,
+        system_prompt: str = "You are a helpful, honest, and harmless assistant."
+    ):
+
+        if isinstance(user_prompts, str):
+            user_prompts = [user_prompts]
+
+        prompts = [self.tokenizer.apply_chat_template(
+            conversation=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": prompt}
+            ],
+            tokenize=False,
+            add_generation_prompt=True
+        ) for prompt in user_prompts]
         
         return self.loop.run_until_complete(
-                self._agenerate(prompts, 
-                                use_binary_probs=binary_probs,
-                                use_dist_probs=dist_logp)
-                )
+                self._agenerate(prompts, use_binary_probs=False, use_dist_probs=False)
+        )
 
     async def _agenerate(self, prompts, use_binary_probs=False, use_dist_probs=False):
         request_ids = [str(uuid.uuid4()) for _ in prompts]

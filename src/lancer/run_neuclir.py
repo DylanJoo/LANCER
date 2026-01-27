@@ -11,6 +11,7 @@ def main(args):
         for line in f:
             item = json.loads(line)
             topics[item['request_id']] = item
+            break
 
     runs = {}
     with open(args.run_path, 'r') as f:
@@ -21,7 +22,7 @@ def main(args):
             runs[qid][docid] = float(score)
 
     corpus = {}
-    ds = load_dataset('json', data_files='/home/dju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
+    ds = load_dataset('json', data_files='/home/hltcoe/jhueiju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
     corpus = {example["id"]: {"title": example["title"], "text": example["text"]} for example in ds}
     del ds
 
@@ -35,7 +36,7 @@ def main(args):
         n_subquestions=args.n_subquestions,
         aggregation=args.agg_method,
         rerun_qg=args.rerun_qg, qg_path=args.qg_path,
-        rerun_judge=args.rerun_judge, qg_path=args.judge_path,
+        rerun_judge=args.rerun_judge, judge_path=args.judge_path,
         vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct'}
     )
         # vllm_kwargs={'temperature': 0.8, 'max_tokens': 512, 'top_p': 1.0}
@@ -50,7 +51,6 @@ def main(args):
     with open(reranked_run_path, 'w') as f:
         for qid in reranked_run:
             for rank, (docid, score) in enumerate(reranked_run[qid].items(), start=1):
-                print(rank, docid, score)
                 f.write(f"{qid} Q0 {docid} {rank} {score} {reranker_name}\n")
 
 

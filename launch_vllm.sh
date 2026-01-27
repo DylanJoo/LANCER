@@ -14,7 +14,7 @@ conda activate ecir2026
 MODEL=meta-llama/Llama-3.3-70B-Instruct
 
 NCCL_P2P_DISABLE=1 VLLM_SKIP_P2P_CHECK=1 vllm serve $MODEL \
-    --max-model-len 1024  \
+    --max-model-len 8096  \
     --port 8000  \
     --dtype bfloat16 \
     --disable-custom-all-reduce \

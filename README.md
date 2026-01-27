@@ -10,8 +10,12 @@ Each dataset includes: (1) topic/query (2) document coputs and (3) reference nug
 - [crux-mds](data/crux-mds-test-request.jsonl)
 
 2. Document corpus:
-- [neuclir](https://huggingface.co/datasets/neuclir/neuclir1) (PS: we use the translated English version of the documents)
-- [crux-mds](https://huggingface.co/datasets/DylanJHJ/crux-mds-corpus) (PS: we combine the train and test corpus)
+* [neuclir1-mtdocs](https://huggingface.co/datasets/neuclir/neuclir1):
+We use the translated English version of the documents. Since the data for has some parsing issue, we recommend to directly download the three datasets via wget. 
+We fix the dataset and relase the [preprocessing code](data/preprocessing_codes).
+
+- [crux-mds-corpus](https://huggingface.co/datasets/DylanJHJ/crux-mds-corpus):
+We combine the train and test corpus because our retrieved documents are from these two corpoara.
 
 3. Reference nugget: 
 We adopt the [crux-eval](https://github.io/DylanJoo/crux) evaluation toolkit to evaluate nugget coverage

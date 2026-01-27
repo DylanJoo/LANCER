@@ -29,7 +29,6 @@ def rerank(
     from llm_request import LLM
     llm = LLM(api_key='EMPTY', **vllm_kwargs)
 
-    ## TODO: add outputing generate subQ 
     ## 1. sub-question generation
     if rerun_qg:
         all_subquestions = question_generation(
@@ -45,7 +44,6 @@ def rerank(
         with open(qg_path, "r") as f:
             all_subquestions = json.loads(f.read())
 
-    ## TODO: add outputing generated ratings
     ## 2. Answerability judgment
     if rerun_judge:
         ratings = answerability_judment(

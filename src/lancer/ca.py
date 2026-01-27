@@ -22,10 +22,12 @@ def coverage_based_aggregation(docids, ratings, agg_method):
     if agg_method.startswith('rrf'): # NOTE: Shall we check the logic again?
         ranked_docs, docid_to_score_rerank = rank_by_rrf(docids, ratings)
 
-    # sorted the dict by score descendingly
-    docid_to_score_rerank = dict(
-        sorted(docid_to_score_rerank.items(), key=lambda item: item[1], reverse=True)
-    )
+    # sorted the dict by score descendingly (deprecated) because this will have many tied output
+    # docid_to_score_rerank = dict(
+    #     sorted(docid_to_score_rerank.items(), key=lambda item: item[1], reverse=True)
+    # )
+    rr_scores = [1 / (i + 1) for i in range(len(ranked_docs))]
+    docid_to_score_rerank = dict(zip(ranked_docs, rr_scores))
     return ranked_docs, docid_to_score_rerank
 
 ## The logics of different aggregation methods

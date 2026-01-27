@@ -51,7 +51,6 @@ def main(args):
     with open(reranked_run_path, 'w') as f:
         for qid in reranked_run:
             for rank, (docid, score) in enumerate(reranked_run[qid].items(), start=1):
-                print(rank, docid, score)
                 f.write(f"{qid} Q0 {docid} {rank} {score} {reranker_name}\n")
 
 
