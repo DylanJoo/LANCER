@@ -1,3 +1,5 @@
+import json
+from tqdm import tqdm
 import numpy as np
 import re
 
@@ -7,6 +9,7 @@ def answerability_judment(
     documents,
     queries,
     concat_original: bool = True,
+    output_file: str = None,
 ):
 
     # Reset the LLM parameters
@@ -22,7 +25,7 @@ def answerability_judment(
             subquestions[qid] = concatenated
 
     ratings = {}
-    for qid in queries:
+    for qid in tqdm(queries, desc="Answerability Judgment"):
         query = queries[qid]
 
         prompts = []
@@ -35,6 +38,9 @@ def answerability_judment(
         nrows, ncols = len(documents[qid]), len(subquestions[qid])
         matrix = np.array(output_ratings).reshape(nrows, ncols)
         ratings[qid] = matrix.tolist()
+
+    if output_file:
+        json.dump(ratings, open(output_file, "w"), indent=4)
 
     return ratings
 
