@@ -39,6 +39,7 @@ Please ensure crux evaluation is installed with the dataset downloaded. See the 
 ```
 bash evaluate_first_stage.sh
 ```
+| Dataset                | Run File                | Metric  | Score  | Metric  | Score  | Metric      | Score  | Metric | Score  |
 |------------------------|-----|-------|---------|---------------|--------|
 data/neuclir-runs        | bm25-neuclir.run | P@10 | 0.6526 | nDCG@10 | 0.6767 | alpha_nDCG@10 | 0.5295 | Cov@10 | 0.6407 | 
 data/neuclir-runs        | lsr-milco-neuclir.run | P@10 | 0.8158 | nDCG@10 | 0.8305 | alpha_nDCG@10 | 0.6294 | Cov@10 | 0.7367 | 
