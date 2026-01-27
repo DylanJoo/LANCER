@@ -34,9 +34,9 @@ def main(args):
         k=100,
         n_subquestions=args.n_subquestions,
         aggregation=args.agg_method,
-        qg_path=None,
-        judge_path=None,
-        vllm_kwargs={'max_tokens': 512}
+        rerun_qg=args.rerun_qg, qg_path=args.qg_path,
+        rerun_judge=args.rerun_judge, qg_path=args.judge_path,
+        vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct'}
     )
         # vllm_kwargs={'temperature': 0.8, 'max_tokens': 512, 'top_p': 1.0}
 
@@ -51,7 +51,7 @@ def main(args):
         for qid in reranked_run:
             for rank, (docid, score) in enumerate(reranked_run[qid].items(), start=1):
                 print(rank, docid, score)
-                f.write(f"{qid} Q0 {docid} {score} {rank} {reranker_name}\n")
+                f.write(f"{qid} Q0 {docid} {rank} {score} {reranker_name}\n")
 
 
 if __name__ == "__main__":
@@ -62,5 +62,11 @@ if __name__ == "__main__":
     parser.add_argument('--use_oracle', action='store_true', help='Whether to use oracle sub-questions')
     parser.add_argument('--n_subquestions', type=int, help='Number of sub-questions to generate')
     parser.add_argument('--agg_method', type=str, help='Aggregation method for reranking')
+
+    # precomputed
+    parser.add_argument('--rerun_qg', action='store_true')
+    parser.add_argument('--rerun_judge', action='store_true')
+    parser.add_argument('--qg_path', type=str, default='temp.qg.json')
+    parser.add_argument('--judge_path', type=str, default='temp.judge.json')
     args = parser.parse_args()
     main(args)

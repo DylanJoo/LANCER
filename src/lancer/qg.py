@@ -9,7 +9,6 @@ def question_generation(
     topics: dict = None,
     n_subquestions: int = 2,
     use_oracle: bool = False,
-    output_file: str = None,
 ):
     if use_oracle:
         subquestions = load_subtopic()
@@ -31,9 +30,6 @@ def question_generation(
     subquestions = {}
     for i, qid in enumerate(queries):
         subquestions[qid] = extract_subtopics(outputs[i], n_subquestions)
-
-    if output_file:
-        json.dump(subquestions, open(output_file, "w"), indent=2)
 
     return subquestions
 

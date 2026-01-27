@@ -1,3 +1,4 @@
+import json
 from qg import question_generation
 from aj import answerability_judment
 from ca import coverage_based_aggregation
@@ -37,8 +38,9 @@ def rerank(
             topics=topics,
             n_subquestions=n_subquestions,
             use_oracle=use_oracle,
-            # output_path=qg_path
         )
+        json.dump(all_subquestions, open(qg_path, "w"), indent=4)
+
     else: # reuse the generated results
         with open(qg_path, "r") as f:
             all_subquestions = json.loads(f.read())
@@ -52,8 +54,9 @@ def rerank(
             subquestions=all_subquestions,
             documents=documents_all,
             concat_original=concat_original,
-            # output_path=judge_path
         )
+        json.dump(ratings, open(judge_path, "w"), indent=4)
+
     else: # reuse the generated results
         with open(judge_path, "r") as f:
             ratings = load_ratings(judge_path)
