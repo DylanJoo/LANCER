@@ -1,3 +1,4 @@
+import logging
 import re
 
 # TODO: move the topk-truncation at the later stage, making it more flexible to different truncation
@@ -5,7 +6,7 @@ import re
 def question_generation(
     llm, 
     queries: dict, 
-    topics: dict, 
+    topics: dict = None,
     n_subquestions: int = 2,
     use_oracle: bool = False,
 ):
@@ -19,8 +20,8 @@ def question_generation(
         prompts.append(
             prompt_with_example(
                 problem_statement=queries[qid],
-                user_background=topics[qid]['background'],
-                title=topics[qid]['title'],
+                user_background=topics[qid]['background'] if topics else "",
+                title=topics[qid]['title'] if topics else "",
                 n=n_subquestions
             )
         )
@@ -29,12 +30,11 @@ def question_generation(
     subquestions = {}
     for i, qid in enumerate(queries):
         subquestions[qid] = extract_subtopics(outputs[i], n_subquestions)
-    print(subquestions)
     return subquestions
 
 def prompt_with_example(
-    user_background, 
-    problem_statement=None,
+    problem_statement,
+    user_background=None,
     title=None,
     n=2
 ):
@@ -77,7 +77,11 @@ def extract_subtopics(llm_output, n):
         extracted = llm_output
 
     subtopics = extracted.split("\n")
-    subtopics = [s for s in subtopics if (s and s not in ["START OF LIST", "END OF LIST"])]
+    subtopics = [s.strip() for s in subtopics if (s and s not in ["START OF LIST", "END OF LIST"])]
+    subtopics = [re.sub(r'^[\-\*\d\.\)\s]+', '', s) for s in subtopics]
+    subtopics = [s for s in subtopics if s != ""]
+    if len(subtopics) > n:
+        print(f" Truncating subtopics from {len(subtopics)} to {n}.")
     subtopics = subtopics[:n]
     return subtopics
 

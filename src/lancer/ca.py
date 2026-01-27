@@ -26,7 +26,6 @@ def coverage_based_aggregation(docids, ratings, agg_method):
 
 ## The logics of different aggregation methods
 def rank_by_sum_of_crux_scores(docids, ratings, tau=0):
-    print(ratings)
     if tau == 0:
         sums = [sum(row) for row in ratings]
     else:

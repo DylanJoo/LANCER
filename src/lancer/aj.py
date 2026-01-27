@@ -9,6 +9,11 @@ def answerability_judment(
     concat_original: bool = True,
 ):
 
+    # Reset the LLM parameters
+    llm.temperature = 0.0
+    llm.top_p = 1.0
+    llm.max_tokens = 10
+
     # Concatenate the original query in the begining.
     if concat_original:
         for qid in queries:

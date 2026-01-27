@@ -12,10 +12,11 @@ def rerank(
     use_oracle: bool = False,
     aggregation: str = 'sum',
     topics: dict = None,
-    rerun_qg: bool = False, 
-    rerun_judge: bool = False, 
+    rerun_qg: bool = True, 
+    rerun_judge: bool = True, 
     qg_path: str = None,
     judge_path: str = None,
+    vllm_kwargs: dict = {},
 ):
 
     # Data preparation
@@ -24,8 +25,8 @@ def rerank(
         documents_all[qid] = [corpus[docid] for docid in runs[qid]]
 
     ## 0. Initialize LLM 
-    from llm_empty import LLM
-    llm = LLM()
+    from llm_request import LLM
+    llm = LLM(api_key='EMPTY', **vllm_kwargs)
 
     ## TODO: add outputing generate subQ 
     ## 1. sub-question generation
@@ -60,21 +61,11 @@ def rerank(
     ## 3. Coverage-based aggregation
     reranked_run = {}
     for qid in queries:
-        reranked_docs = coverage_based_aggregation(
+        _, reranked_docs = coverage_based_aggregation(
             docids=[docid for docid in runs[qid]],
             ratings=ratings[qid],
             agg_method=aggregation
         )
         reranked_run[qid] = reranked_docs
 
-    ## 4. Save trec file
-    # reranker_name = args.reranker.replace('/', ':')
-    # reranker_name += ":oracle" if 'human' in args.tag else ""
-    # reranker_name += f":agg_{args.agg}" if args.agg != 'sum' else ""
-    # reranker_name += f":nq_{args.n_subquestions}" if args.n_subquestions != 2 else ""
-    # file_name = f"runs/{args.service_name}+{reranker_name}.run"
-    # with open(file_name, 'w') as f:
-    #     for qid in rac_data:
-    #         for rank, docid in enumerate(rac_data[qid]['docids'], start=1):
-    #             f.write(f"{qid} Q0 {docid} {rank} {1/rank} {args.reranker}\n")
     return reranked_run
