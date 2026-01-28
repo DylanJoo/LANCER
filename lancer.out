@@ -1,69 +1,0 @@
-Waiting for vLLM server (PID=3265648) to start...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server not yet available, retrying in 10 seconds...
-vLLM server is up and running on port 8000.
-Answerability Judgment:   0%|          | 0/19 [00:00<?, ?it/s]Answerability Judgment:   5%|▌         | 1/19 [01:38<29:40, 98.91s/it]Answerability Judgment:  11%|█         | 2/19 [03:35<31:00, 109.43s/it]Answerability Judgment:  16%|█▌        | 3/19 [05:21<28:44, 107.80s/it]Answerability Judgment:  21%|██        | 4/19 [06:37<23:45, 95.06s/it] Answerability Judgment:  26%|██▋       | 5/19 [09:25<28:21, 121.51s/it]Answerability Judgment:  32%|███▏      | 6/19 [10:56<24:06, 111.28s/it]Answerability Judgment:  37%|███▋      | 7/19 [13:49<26:14, 131.19s/it]Answerability Judgment:  42%|████▏     | 8/19 [16:02<24:12, 132.03s/it]Answerability Judgment:  47%|████▋     | 9/19 [17:53<20:53, 125.33s/it]Answerability Judgment:  53%|█████▎    | 10/19 [19:28<17:22, 115.84s/it]Answerability Judgment:  58%|█████▊    | 11/19 [20:52<14:09, 106.21s/it]Answerability Judgment:  58%|█████▊    | 11/19 [21:43<15:48, 118.54s/it]
-Traceback (most recent call last):
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/run_neuclir.py", line 71, in <module>
-    main(args)
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/run_neuclir.py", line 29, in main
-    reranked_run = rerank(
-                   ^^^^^^^
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/wrapper.py", line 54, in rerank
-    ratings = answerability_judment(
-              ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/aj.py", line 35, in answerability_judment
-    outputs = llm.generate_ratings(prompts)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/llm_request.py", line 45, in generate_ratings
-    return self.generate(prompts)
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/llm_request.py", line 66, in generate
-    return self.loop.run_until_complete(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/llm_request.py", line 89, in _agenerate
-    outputs = await asyncio.gather(*[
-              ^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/asyncio/threads.py", line 25, in to_thread
-    return await loop.run_in_executor(None, func_call)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/concurrent/futures/thread.py", line 58, in run
-    result = self.fn(*self.args, **self.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/lancer-legacy/src/lancer/llm_request.py", line 74, in _get_output
-    response = self.client.completions.create(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/openai/resources/completions.py", line 541, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/openai/_base_client.py", line 1242, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/hltcoe/jhueiju/.conda/envs/ecir2026/lib/python3.11/site-packages/openai/_base_client.py", line 1037, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.BadRequestError: Error code: 400 - {'object': 'error', 'message': "This model's maximum context length is 8192 tokens. However, you requested 8204 tokens (8201 in the messages, 3 in the completion). Please reduce the length of the messages or completion.", 'type': 'BadRequestError', 'param': None, 'code': 400}

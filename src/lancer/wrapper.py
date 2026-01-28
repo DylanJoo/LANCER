@@ -44,7 +44,8 @@ def rerank(
             all_subquestions = {}
             with open(qg_path, 'r') as f:
                 for line in f:
-                    all_subquestions[item['id']] = item['subquestions']
+                    items = json.loads(line.strip())
+                    all_subquestions[items['id']] = items['subquestions']
         else:
             with open(qg_path, "r") as f:
                 all_subquestions = json.loads(f.read())

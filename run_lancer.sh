@@ -39,6 +39,7 @@ echo "vLLM server is up and running on port 8000."
 #         --agg_method sum 
 # done
 
+# for retrieval in bm25 lsr-milco qwen3-embed-8b; do
 for retrieval in bm25; do
     python src/lancer/run_neuclir.py \
         --reranker lancer \

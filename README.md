@@ -38,8 +38,8 @@ pip install vllm
 We provide the evaluation results of LANCER and several baselines on the two datasets.
 We use the [crux-eval](https://github.io/DylanJoo/crux) to evaluate. Each dataset has 4 reported metrics: P/nDCG/A-nDCG/Cov. All metrics are truncated at rank 10.
 
-For example, to evaluate the first-stage retrieved results, we use the script below (``bash eval_first_stage.sh''):
-```bash
+For example, to evaluate the first-stage retrieved results, we use the script below (``bash eval_first_stage.sh``):
+```
 export CRUX_ROOT=/home/hltcoe/jhueiju/datasets/crux
 
 for run_file in data/neuclir-runs/*.run;do
@@ -71,6 +71,9 @@ Please ensure crux evaluation is installed with the dataset downloaded. See the 
 | crux-mds-duc04-runs | lsr-crux-mds-duc04.run            | P@10 | 0.6800 | nDCG@10 | 0.7035 | alpha_nDCG@10 | 0.5579 | Cov@10 | 0.6241 | 
 | crux-mds-duc04-runs | qwen3-embed-8b-crux-mds-duc04.run | P@10 | 0.7380 | nDCG@10 | 0.7586 | alpha_nDCG@10 | 0.6078 | Cov@10 | 0.6637 | 
 
+#### The LANCER results
+We conduct the experiments of baseline rearnking using [autorerank](https://github.io/APRIL). We compare with pointwise/setwise/pointwise.
 
-#### Generated subquestions
-#### Oracle setting: LANCER with oracle sub-questions
+#### Other results 
+- Generated subquestions: We have saved the sub-questions we generated and used for LANCER.
+- LANCER's runs: See [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs); [results/neuclir-runs](results/neuclir-runs)

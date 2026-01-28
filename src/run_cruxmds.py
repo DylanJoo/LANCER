@@ -52,7 +52,7 @@ def main(args):
             max_doc_length=800 if (method_name=='listwise' or method_name=='rankgpt') else 1024, 
        )
         reranked_run = reranker.rerank(run=runs, queries=queries, corpus=corpus, query_batch_size=64)
-        reranker_name = arg.reranker.replace('/', '.')
+        reranker_name = args.reranker.replace('/', '.')
 
     ## Save file
     reranked_run_path = args.run_path.replace('data/', 'results/')
