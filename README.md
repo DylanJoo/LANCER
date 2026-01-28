@@ -34,15 +34,33 @@ pip install transformers
 pip install vllm
 ```
 
-### Results
+### Evaluation scripts
 We provide the evaluation results of LANCER and several baselines on the two datasets.
-Each dataset has 4 reported metrics: P/nDCG/A-nDCG/Cov. All metrics are truncated at rank 10.
+We use the [crux-eval](https://github.io/DylanJoo/crux) to evaluate. Each dataset has 4 reported metrics: P/nDCG/A-nDCG/Cov. All metrics are truncated at rank 10.
 
-#### The first-stage retrieved results
+For example, to evaluate the first-stage retrieved results, we use the script below (``bash eval_first_stage.sh''):
+```bash
+export CRUX_ROOT=/home/hltcoe/jhueiju/datasets/crux
+
+for run_file in data/neuclir-runs/*.run;do
+    python -m crux.evaluation.rac_eval \
+        --run $run_file \
+        --qrel $CRUX_ROOT/crux-neuclir/qrels/neuclir24-test-request.qrel \
+        --judge $CRUX_ROOT/crux-neuclir/judge/ratings.human.jsonl 
+done
+
+for run_file in data/crux-mds-duc04-runs/*.run;do
+    python -m crux.evaluation.rac_eval \
+        --run $run_file \
+        --qrel $CRUX_ROOT/crux-mds-duc04/qrels/div_qrels-tau3.txt \
+        --filter_by_oracle \
+        --judge $CRUX_ROOT/crux-mds-duc04/judge 
+done
+```
+
+#### The first-stage retrieval results
 Please ensure crux evaluation is installed with the dataset downloaded. See the dataseet instruction in [crux](https://github.io/DylanJoo/crux).
-```
-bash evaluate_first_stage.sh
-```
+
 | Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
 |---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
 | neuclir-runs        | bm25-neuclir.run                  | P@10 | 0.6526 | nDCG@10 | 0.6767 | alpha_nDCG@10 | 0.5295 | Cov@10 | 0.6407 | 
@@ -52,3 +70,7 @@ bash evaluate_first_stage.sh
 | crux-mds-duc04-runs | bm25-crux-mds-duc04.run           | P@10 | 0.5140 | nDCG@10 | 0.5298 | alpha_nDCG@10 | 0.4454 | Cov@10 | 0.5444 | 
 | crux-mds-duc04-runs | lsr-crux-mds-duc04.run            | P@10 | 0.6800 | nDCG@10 | 0.7035 | alpha_nDCG@10 | 0.5579 | Cov@10 | 0.6241 | 
 | crux-mds-duc04-runs | qwen3-embed-8b-crux-mds-duc04.run | P@10 | 0.7380 | nDCG@10 | 0.7586 | alpha_nDCG@10 | 0.6078 | Cov@10 | 0.6637 | 
+
+
+#### Generated subquestions
+#### Oracle setting: LANCER with oracle sub-questions

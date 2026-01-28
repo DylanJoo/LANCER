@@ -1,6 +1,4 @@
 import json
-from collections import defaultdict
-from wrapper import rerank
 from datasets import load_dataset
 import argparse
 
@@ -27,26 +25,36 @@ def main(args):
     corpus.update({example["id"]: {"title": "", "text": example["contents"]} for example in test_corpus})
 
     ## Reranking
-    reranked_run = rerank(
-        runs=runs,
-        queries=queries,
-        topics=None,
-        corpus=corpus,
-        k=100,
-        n_subquestions=args.n_subquestions,
-        use_oracle=args.use_oracle,
-        aggregation=args.agg_method,
-        rerun_qg=args.rerun_qg, qg_path=args.qg_path,
-        rerun_judge=args.rerun_judge, judge_path=args.judge_path,
-        vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct'}
-    )
-        # vllm_kwargs={'temperature': 0.8, 'max_tokens': 512, 'top_p': 1.0}
+    if args.reranker == 'lancer':
+        from lancer import rerank
+        reranked_run = rerank(
+            runs=runs,
+            queries=queries,
+            topics=None,
+            corpus=corpus,
+            k=100,
+            n_subquestions=args.n_subquestions,
+            aggregation=args.agg_method,
+            rerun_qg=args.rerun_qg, qg_path=args.qg_path,
+            rerun_judge=args.rerun_judge, judge_path=args.judge_path,
+            vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct'}
+        )
+        reranker_name = args.reranker
+        reranker_name += ":oracle" if args.use_oracle else ""
+        reranker_name += f":agg_{args.agg_method}:nq_{args.n_subquestions}"
+
+    if 'autorerank' in args.reranker:
+        from reranking.wrapper import AutoLLMReranker
+        _, method_name, model_name = args.reranker.split(':')
+        reranker = AutoLLMReranker.from_prebuilt(
+            method_name, model_name, 
+            llm={'max_model_len': 8196, 'backend': 'request'}, 
+            max_doc_length=800 if (method_name=='listwise' or method_name=='rankgpt') else 1024, 
+       )
+        reranked_run = reranker.rerank(run=runs, queries=queries, corpus=corpus, query_batch_size=64)
+        reranker_name = arg.reranker.replace('/', '.')
 
     ## Save file
-    reranker_name = args.reranker
-    reranker_name += ":oracle" if args.use_oracle else ""
-    reranker_name += f":agg_{args.agg_method}"
-    reranker_name += f":nq_{args.n_subquestions}"
     reranked_run_path = args.run_path.replace('data/', 'results/')
     reranked_run_path = reranked_run_path.replace('.run', f':{reranker_name}.run')
     with open(reranked_run_path, 'w') as f:
@@ -60,11 +68,13 @@ if __name__ == "__main__":
     parser.add_argument('--reranker', type=str, default='lancer', help='lancer or autollreranker')
     parser.add_argument('--run_path', type=str)
     parser.add_argument('--topic_path', type=str)
+
+    # parameters for lancer
     parser.add_argument('--use_oracle', action='store_true', help='Whether to use oracle sub-questions')
     parser.add_argument('--n_subquestions', type=int, help='Number of sub-questions to generate')
     parser.add_argument('--agg_method', type=str, help='Aggregation method for reranking')
 
-    # precomputed
+    # adjust this for rerun the the generation pipeline
     parser.add_argument('--rerun_qg', action='store_true', default=False)
     parser.add_argument('--rerun_judge', action='store_true', default=False)
     parser.add_argument('--qg_path', type=str, default='temp.qg.json')

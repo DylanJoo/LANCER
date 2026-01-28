@@ -11,7 +11,6 @@ def main(args):
         for line in f:
             item = json.loads(line)
             topics[item['request_id']] = item
-            break
 
     runs = {}
     with open(args.run_path, 'r') as f:

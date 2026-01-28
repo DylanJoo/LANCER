@@ -1,7 +1,7 @@
 import gzip
 import json
 
-lang = 'fas' # 'zho', 'rus'
+lang = 'rus' # 'fas', 'zho', 'rus'
 input_file_path = f'/home/hltcoe/jhueiju/datasets/neuclir1/{lang}.mt.eng-00000-of-00001.jsonl.gz'
 output_file_path = f'/home/hltcoe/jhueiju/datasets/neuclir1/{lang}.processed_output.jsonl.gz'
 processed_count = 0
@@ -20,6 +20,8 @@ with gzip.open(input_file_path, 'rt', encoding='utf-8') as infile, \
             # Example: Remove the problematic timestamp key
             if 'timestamp' in record:
                 del record['timestamp']
+            if 'date' in record:
+                del record['date']
             
             # Example: Add a new key
             record['processed'] = True

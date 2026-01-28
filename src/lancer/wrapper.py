@@ -8,11 +8,11 @@ def rerank(
     queries: dict, 
     corpus: dict, 
     k: int = None,
+    topics: dict = None,
     n_subquestions: int = 2,
     concat_original: bool = True,
     use_oracle: bool = False,
     aggregation: str = 'sum',
-    topics: dict = None,
     rerun_qg: bool = True, 
     rerun_judge: bool = True, 
     qg_path: str = None,
@@ -36,13 +36,18 @@ def rerank(
             queries=queries,
             topics=topics,
             n_subquestions=n_subquestions,
-            use_oracle=use_oracle,
         )
         json.dump(all_subquestions, open(qg_path, "w"), indent=4)
 
     else: # reuse the generated results
-        with open(qg_path, "r") as f:
-            all_subquestions = json.loads(f.read())
+        if use_oracle:
+            all_subquestions = {}
+            with open(qg_path, 'r') as f:
+                for line in f:
+                    all_subquestions[item['id']] = item['subquestions']
+        else:
+            with open(qg_path, "r") as f:
+                all_subquestions = json.loads(f.read())
 
     ## 2. Answerability judgment
     if rerun_judge:

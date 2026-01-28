@@ -2,18 +2,12 @@ import json
 import re
 
 # TODO: move the topk-truncation at the later stage, making it more flexible to different truncation
-# TODO: fix the first two settings
 def question_generation(
     llm, 
     queries: dict, 
     topics: dict = None,
     n_subquestions: int = 2,
-    use_oracle: bool = False,
 ):
-    if use_oracle:
-        subquestions = load_subtopic()
-        return subquestions
-
     # prompts
     prompts = []
     for qid in queries:
