@@ -67,21 +67,35 @@ Please ensure crux evaluation is installed with the dataset downloaded. See the 
 | neuclir-runs        | lsr-milco-neuclir.run             | P@10 | 0.8158 | nDCG@10 | 0.8305 | alpha_nDCG@10 | 0.6294 | Cov@10 | 0.7367 | 
 | neuclir-runs        | plaidx-neuclir.run                | P@10 | 0.5895 | nDCG@10 | 0.6126 | alpha_nDCG@10 | 0.4184 | Cov@10 | 0.4945 | 
 | neuclir-runs        | qwen3-embed-8b-neuclir.run        | P@10 | 0.8684 | nDCG@10 | 0.8862 | alpha_nDCG@10 | 0.6269 | Cov@10 | 0.6948 | 
+
+| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
+|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
 | crux-mds-duc04-runs | bm25-crux-mds-duc04.run           | P@10 | 0.5140 | nDCG@10 | 0.5298 | alpha_nDCG@10 | 0.4454 | Cov@10 | 0.5444 | 
 | crux-mds-duc04-runs | lsr-crux-mds-duc04.run            | P@10 | 0.6800 | nDCG@10 | 0.7035 | alpha_nDCG@10 | 0.5579 | Cov@10 | 0.6241 | 
 | crux-mds-duc04-runs | qwen3-embed-8b-crux-mds-duc04.run | P@10 | 0.7380 | nDCG@10 | 0.7586 | alpha_nDCG@10 | 0.6078 | Cov@10 | 0.6637 | 
 
 #### The LANCER results
-We conduct the experiments of baseline rearnking using [autorerank](https://github.io/APRIL). We compare with pointwise/setwise/pointwise.
+We conduct the baseline reranking using [autorerank](https://github.io/APRIL). We compare with pointwise/setwise/pointwise.
+
+| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
+|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
+| crux-mds-duc04-runs | bm25-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run           | P@10 | 0.7460 | nDCG@10 | 0.7578 | alpha_nDCG@10 | 0.5909 | Cov@10 | 0.6541 | 
+| crux-mds-duc04-runs | bm25-lancer:agg_sum:nq_2.run                                          | P@10 | 0.7280 | nDCG@10 | 0.7388 | alpha_nDCG@10 | 0.6075 | Cov@10 | 0.6645 | 
+| crux-mds-duc04-runs | bm25-lancer:oracle:agg_sum:nq_2.run                                   | P@10 | 0.7680 | nDCG@10 | 0.7997 | alpha_nDCG@10 | 0.7177 | Cov@10 | 0.7054 | 
+| crux-mds-duc04-runs | lsr-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run            | P@10 | 0.8300 | nDCG@10 | 0.8218 | alpha_nDCG@10 | 0.6332 | Cov@10 | 0.6957 | 
+| crux-mds-duc04-runs | lsr-lancer:agg_sum:nq_2.run                                           | P@10 | 0.7820 | nDCG@10 | 0.7906 | alpha_nDCG@10 | 0.6378 | Cov@10 | 0.6833 | 
+| crux-mds-duc04-runs | qwen3-embed-8b-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run | P@10 | 0.8420 | nDCG@10 | 0.8295 | alpha_nDCG@10 | 0.6325 | Cov@10 | 0.6998 | 
+| crux-mds-duc04-runs | qwen3-embed-8b-lancer:agg_sum:nq_2.run                                | P@10 | 0.7980 | nDCG@10 | 0.8050 | alpha_nDCG@10 | 0.6407 | Cov@10 | 0.6929 | 
+
 
 #### Other articfacts for reproduction
 You can reproduce LANCER results with  the subquestions we generated or the oracle sub-questions.
 
 - Generated subquestions: 
-[crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json](crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json), 
-[neuclir-subquestions/llama3.3-70b-instruct.json](neuclir-subquestions/llama3.3-70b-instruct.json)
+[crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json](results/crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json), 
+[neuclir-subquestions/llama3.3-70b-instruct.json](results/neuclir-subquestions/llama3.3-70b-instruct.json)
 - Oracle subquestions: 
-[crux-mds-duc04-subquestions/subquestions.oracle.jsonl](crux-mds-duc04-subquestions/subquestions.oracle.jsonl), 
-[neuclir-subquestions/subquestions.oracle.jsonl](neuclir-subquestions/subquestions.oracle.jsonl)
+[crux-mds-duc04-subquestions/subquestions.oracle.jsonl](results/crux-mds-duc04-subquestions/subquestions.oracle.jsonl), 
+[neuclir-subquestions/subquestions.oracle.jsonl](results/neuclir-subquestions/subquestions.oracle.jsonl)
 
 - Reranked results: See all of them in [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [results/neuclir-runs](results/neuclir-runs).
