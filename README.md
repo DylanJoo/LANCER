@@ -74,6 +74,14 @@ Please ensure crux evaluation is installed with the dataset downloaded. See the 
 #### The LANCER results
 We conduct the experiments of baseline rearnking using [autorerank](https://github.io/APRIL). We compare with pointwise/setwise/pointwise.
 
-#### Other results 
-- Generated subquestions: We have saved the sub-questions we generated and used for LANCER.
-- LANCER's runs: See [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs); [results/neuclir-runs](results/neuclir-runs)
+#### Other articfacts for reproduction
+You can reproduce LANCER results with  the subquestions we generated or the oracle sub-questions.
+
+- Generated subquestions: 
+[crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json](crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json), 
+[neuclir-subquestions/llama3.3-70b-instruct.json](neuclir-subquestions/llama3.3-70b-instruct.json)
+- Oracle subquestions: 
+[crux-mds-duc04-subquestions/subquestions.oracle.jsonl](crux-mds-duc04-subquestions/subquestions.oracle.jsonl), 
+[neuclir-subquestions/subquestions.oracle.jsonl](neuclir-subquestions/subquestions.oracle.jsonl)
+
+- Reranked results: See all of them in [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [results/neuclir-runs](results/neuclir-runs).
