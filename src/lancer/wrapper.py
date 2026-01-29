@@ -20,11 +20,6 @@ def rerank(
     vllm_kwargs: dict = {},
 ):
 
-    # Data preparation
-    documents_all = {}
-    for qid in queries:
-        documents_all[qid] = [corpus[docid] for docid in runs[qid]]
-
     ## 0. Initialize LLM 
     llm = LLM(api_key='EMPTY', **vllm_kwargs)
 
@@ -44,6 +39,11 @@ def rerank(
 
     ## 2. Answerability judgment
     if rerun_judge:
+
+        documents_all = {}
+        for qid in queries:
+            documents_all[qid] = [corpus[docid] for docid in runs[qid]]
+
         ratings = answerability_judment(
             llm=llm, 
             queries=queries,
