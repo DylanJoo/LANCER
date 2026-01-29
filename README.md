@@ -26,12 +26,13 @@ We adopt the [crux-eval](https://github.io/DylanJoo/crux) evaluation toolkit to 
 We use the crux evaluation toolkit to load the data and evaluate results. 
 ```
 pip intsall git+https://github.com/DylanJoo/crux.git
+pip install ir_measures>=0.3.7
 pip install ir-measures[pyndeval]
 pip install datasets
-pip install ir_measures>=0.3.7
 pip install pyserini
 pip install transformers
 pip install vllm
+pip intsall git+https://github.com/DylanJoo/APRIL.git
 ```
 
 ### Evaluation scripts

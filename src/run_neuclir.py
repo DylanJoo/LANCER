@@ -34,6 +34,7 @@ def main(args):
             topics=topics,
             corpus=corpus,
             n_subquestions=args.n_subquestions,
+            concat_original=False if args.use_oracle else True,
             aggregation=args.agg_method,
             rerun_qg=args.rerun_qg, qg_path=args.qg_path,
             rerun_judge=args.rerun_judge, judge_path=args.judge_path,
@@ -41,7 +42,8 @@ def main(args):
         )
         reranker_name = args.reranker
         reranker_name += ":oracle" if args.use_oracle else ""
-        reranker_name += f":agg_{args.agg_method}:nq_{args.n_subquestions}"
+        reranker_name += ":agg_{args.agg_method}"
+        reranker_name += "nq_{args.n_subquestions}" if args.use_oracle is False else ""
 
     if 'autorerank' in args.reranker:
         from reranking.wrapper import AutoLLMReranker
@@ -51,6 +53,7 @@ def main(args):
             llm={'max_tokens': 3, 'backend': 'request', 'base_url': args.base_url},
             max_doc_length=800 if (method_name=='listwise' or method_name=='rankgpt') else 1024, 
        )
+        queries = {qid: topics[qid]['background'] + " " topics[qid]['problem_statement'] for qid in topics},
         reranked_run = reranker.rerank(run=runs, queries=queries, corpus=corpus, query_batch_size=64)
         reranker_name = args.reranker.replace('/', '.')
 

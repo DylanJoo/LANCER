@@ -14,7 +14,7 @@ class LLM:
         model_name_or_path: str = 'meta-llama/Llama-3.2-1B-Instruct',
         temperature=0.0,
         top_p=1.0,
-        logprobs=20,
+        logprobs=None,
         max_tokens=10,
         gpu_memory_utilization=0.9,
         **kwargs

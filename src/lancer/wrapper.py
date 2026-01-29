@@ -63,7 +63,7 @@ def rerank(
 
     else: # reuse the generated results
         with open(judge_path, "r") as f:
-            ratings = load_ratings(judge_path)
+            ratings = json.loads(f.read())
 
     ## 3. Coverage-based aggregation
     reranked_run = {}

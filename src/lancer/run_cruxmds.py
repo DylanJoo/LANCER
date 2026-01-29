@@ -1,5 +1,4 @@
 import json
-from collections import defaultdict
 from wrapper import rerank
 from datasets import load_dataset
 import argparse
@@ -16,6 +15,8 @@ def main(args):
     with open(args.run_path, 'r') as f:
         for line in f:
             qid, _, docid, rank, score, _ = line.strip().split()
+            if int(rank) > args.k:
+                continue
             if qid not in runs:
                 runs[qid] = {}
             runs[qid][docid] = float(score)
@@ -35,18 +36,18 @@ def main(args):
         k=100,
         n_subquestions=args.n_subquestions,
         use_oracle=args.use_oracle,
+        concat_original=False if args.use_oracle else True,
         aggregation=args.agg_method,
         rerun_qg=args.rerun_qg, qg_path=args.qg_path,
         rerun_judge=args.rerun_judge, judge_path=args.judge_path,
         vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct'}
     )
-        # vllm_kwargs={'temperature': 0.8, 'max_tokens': 512, 'top_p': 1.0}
-
-    ## Save file
     reranker_name = args.reranker
     reranker_name += ":oracle" if args.use_oracle else ""
     reranker_name += f":agg_{args.agg_method}"
-    reranker_name += f":nq_{args.n_subquestions}"
+    reranker_name += f"nq_{args.n_subquestions}" if args.use_oracle is False else ""
+
+    ## Save file
     reranked_run_path = args.run_path.replace('data/', 'results/')
     reranked_run_path = reranked_run_path.replace('.run', f':{reranker_name}.run')
     with open(reranked_run_path, 'w') as f:
@@ -60,6 +61,7 @@ if __name__ == "__main__":
     parser.add_argument('--reranker', type=str, default='lancer', help='lancer or autollreranker')
     parser.add_argument('--run_path', type=str)
     parser.add_argument('--topic_path', type=str)
+    parser.add_argument('--k', type=int, default=100)
     parser.add_argument('--use_oracle', action='store_true', help='Whether to use oracle sub-questions')
     parser.add_argument('--n_subquestions', type=int, help='Number of sub-questions to generate')
     parser.add_argument('--agg_method', type=str, help='Aggregation method for reranking')

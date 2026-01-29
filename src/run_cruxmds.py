@@ -14,6 +14,8 @@ def main(args):
     with open(args.run_path, 'r') as f:
         for line in f:
             qid, _, docid, rank, score, _ = line.strip().split()
+            if int(rank) > args.k:
+                continue
             if qid not in runs:
                 runs[qid] = {}
             runs[qid][docid] = float(score)
@@ -32,23 +34,24 @@ def main(args):
             queries=queries,
             topics=None,
             corpus=corpus,
-            k=100,
             n_subquestions=args.n_subquestions,
+            concat_original=False if args.use_oracle else True,
             aggregation=args.agg_method,
             rerun_qg=args.rerun_qg, qg_path=args.qg_path,
             rerun_judge=args.rerun_judge, judge_path=args.judge_path,
-            vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct'}
+            vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct', 'base_url': args.base_url}
         )
         reranker_name = args.reranker
         reranker_name += ":oracle" if args.use_oracle else ""
-        reranker_name += f":agg_{args.agg_method}:nq_{args.n_subquestions}"
+        reranker_name += f":agg_{args.agg_method}"
+        reranker_name += f"nq_{args.n_subquestions}" if args.use_oracle is False else ""
 
     if 'autorerank' in args.reranker:
         from reranking.wrapper import AutoLLMReranker
         _, method_name, model_name = args.reranker.split(':')
         reranker = AutoLLMReranker.from_prebuilt(
             method_name, model_name, 
-            llm={'max_model_len': 8196, 'backend': 'request'}, 
+            llm={'max_tokens': 3, 'backend': 'request', 'base_url': args.base_url},
             max_doc_length=800 if (method_name=='listwise' or method_name=='rankgpt') else 1024, 
        )
         reranked_run = reranker.rerank(run=runs, queries=queries, corpus=corpus, query_batch_size=64)
@@ -68,13 +71,17 @@ if __name__ == "__main__":
     parser.add_argument('--reranker', type=str, default='lancer', help='lancer or autollreranker')
     parser.add_argument('--run_path', type=str)
     parser.add_argument('--topic_path', type=str)
+    parser.add_argument("--k", default=100, type=int)
+
+    # parameters for vllm
+    parser.add_argument("--base_url", default='http://localhost:8000/v1')
 
     # parameters for lancer
     parser.add_argument('--use_oracle', action='store_true', help='Whether to use oracle sub-questions')
     parser.add_argument('--n_subquestions', type=int, help='Number of sub-questions to generate')
     parser.add_argument('--agg_method', type=str, help='Aggregation method for reranking')
 
-    # adjust this for rerun the the generation pipeline
+    # parameters for adjuget rerun of the LANCER pipeline
     parser.add_argument('--rerun_qg', action='store_true', default=False)
     parser.add_argument('--rerun_judge', action='store_true', default=False)
     parser.add_argument('--qg_path', type=str, default='temp.qg.json')

@@ -61,6 +61,7 @@ if __name__ == "__main__":
     parser.add_argument('--use_oracle', action='store_true', help='Whether to use oracle sub-questions')
     parser.add_argument('--n_subquestions', type=int, help='Number of sub-questions to generate')
     parser.add_argument('--agg_method', type=str, help='Aggregation method for reranking')
+    parser.add_argument('--k', type=int, default=100)
 
     # precomputed
     parser.add_argument('--rerun_qg', action='store_true')
