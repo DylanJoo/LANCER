@@ -1,16 +1,5 @@
 <h1>LANCER: LLM Reranking for Nugget Coverage</h1>
 
-### Citation
-This paper has been accepted at the European Conference on Information Retrieval (ECIR) 2026. If you use or build upon our work, please cite us as follows:
-
-```
-@inproceedings{Ju2026LANCER,
-  title={LANCER: LLM Reranking for Nugget Coverage},
-  author={Jia-Huei Ju and François G. Landry and Eugene Yang and Suzan Verberne and Andrew Yates},
-  booktitle={ECIR},
-  year={2026}
-}
-```
 
 ### Prerequisite
 We use the crux evaluation toolkit to load the data and evaluate results.
@@ -108,3 +97,16 @@ You can reproduce LANCER results with the subquestions we generated or the oracl
 [neuclir-subquestions/subquestions.oracle.jsonl](results/neuclir-subquestions/subquestions.oracle.jsonl)
 
 - Reranked results: See all of them in [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [results/neuclir-runs](results/neuclir-runs).
+
+
+### Citation
+This paper has been accepted at the European Conference on Information Retrieval (ECIR) 2026. If you use or build upon our work, please cite us as follows:
+
+```
+@inproceedings{Ju2026LANCER,
+  title={LANCER: LLM Reranking for Nugget Coverage},
+  author={Jia-Huei Ju and François G. Landry and Eugene Yang and Suzan Verberne and Andrew Yates},
+  booktitle={ European Conference on Information Retrieval},
+  year={2026}
+}
+```
