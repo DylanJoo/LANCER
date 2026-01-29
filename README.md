@@ -31,6 +31,23 @@ For NeuCLIR, we use the translated English version of the documents. Note that t
 * [crux-mds-corpus](https://huggingface.co/datasets/DylanJHJ/crux-mds-corpus):
 We combine the train and test subset into one.
 
+5. Baseline LLM reranking:
+
+You can adopt baseline LLM reranking methods such as pointwise reranking. See the slurm script [run_autorerank_pointwise.sh](run_autorerank_pointwise.sh) for an example. The script uses vLLM to serve the LLM and runs pointwise reranking on both datasets.
+
+In the script, `MODEL` is set to `meta-llama/Llama-3.3-70B-Instruct` and `retrieval` iterates over the first-stage retrieval methods (e.g., `bm25`, `lsr`, `qwen3-embed-8b`):
+```bash
+python src/run_cruxmds.py \
+    --reranker autorerank:point:$MODEL \
+    --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
+    --topic_path data/crux-mds-duc04.request.jsonl
+
+python src/run_neuclir.py \
+    --reranker autorerank:point:$MODEL \
+    --run_path data/neuclir-runs/${retrieval}-neuclir.run \
+    --topic_path data/neuclir24-test-request.jsonl
+```
+
 ### Evaluation scripts
 We provide the evaluation results of LANCER and several baselines on the two datasets. Each dataset has 4 reported metrics: P/nDCG/A-nDCG/Cov. All metrics are truncated at rank 10.
 
