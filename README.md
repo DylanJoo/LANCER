@@ -12,6 +12,7 @@ pip install transformers
 pip install vllm
 pip intsall git+https://github.com/DylanJoo/APRIL.git
 ```
+Installing these libraries should work. We also release the [requirements.yml](requirements.yml) just in case we miss some trivial dependencies.
 
 ### Data
 We evalaute on the NeuCLIR 2024 report generation (neuclir) and CRUX Multi-Document Summarization (crux-mds) DUC04 datasets.
