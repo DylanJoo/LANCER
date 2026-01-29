@@ -1,7 +1,8 @@
 import json
-from qg import question_generation
-from aj import answerability_judment
-from ca import coverage_based_aggregation
+from lancer.qg import question_generation
+from lancer.aj import answerability_judment
+from lancer.ca import coverage_based_aggregation
+from lancer.llm_request import LLM
 
 def rerank(
     runs: dict, 
@@ -25,7 +26,6 @@ def rerank(
         documents_all[qid] = [corpus[docid] for docid in runs[qid]]
 
     ## 0. Initialize LLM 
-    from llm_request import LLM
     llm = LLM(api_key='EMPTY', **vllm_kwargs)
 
     ## 1. sub-question generation
@@ -39,15 +39,8 @@ def rerank(
         json.dump(all_subquestions, open(qg_path, "w"), indent=4)
 
     else: # reuse the generated results
-        if use_oracle:
-            all_subquestions = {}
-            with open(qg_path, 'r') as f:
-                for line in f:
-                    items = json.loads(line.strip())
-                    all_subquestions[items['id']] = items['subquestions']
-        else:
-            with open(qg_path, "r") as f:
-                all_subquestions = json.loads(f.read())
+        with open(qg_path, "r") as f:
+            all_subquestions = json.loads(f.read())
 
     ## 2. Answerability judgment
     if rerun_judge:
