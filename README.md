@@ -57,7 +57,7 @@ for run_file in data/crux-mds-duc04-runs/*.run;do
 done
 ```
 
-#### The first-stage retrieval results
+### Results
 Please ensure crux evaluation is installed with the dataset downloaded. See the dataset instruction in [crux-eval](https://github.com/DylanJoo/crux).
 
 | Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
@@ -73,19 +73,6 @@ Please ensure crux evaluation is installed with the dataset downloaded. See the 
 | crux-mds-duc04-runs | lsr-crux-mds-duc04.run            | P@10 | 0.6800 | nDCG@10 | 0.7035 | alpha_nDCG@10 | 0.5579 | Cov@10 | 0.6241 | 
 | crux-mds-duc04-runs | qwen3-embed-8b-crux-mds-duc04.run | P@10 | 0.7380 | nDCG@10 | 0.7586 | alpha_nDCG@10 | 0.6078 | Cov@10 | 0.6637 | 
 
-#### The LANCER results
-We conduct the baseline reranking using [autorerank](https://github.com/DylanJoo/APRIL). We compare with pointwise/setwise/pointwise.
-
-| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
-|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
-| crux-mds-duc04-runs | bm25-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run           | P@10 | 0.7460 | nDCG@10 | 0.7578 | alpha_nDCG@10 | 0.5909 | Cov@10 | 0.6541 | 
-| crux-mds-duc04-runs | bm25-lancer:agg_sum:nq_2.run                                          | P@10 | 0.7280 | nDCG@10 | 0.7388 | alpha_nDCG@10 | 0.6075 | Cov@10 | 0.6645 | 
-| crux-mds-duc04-runs | bm25-lancer:oracle:agg_sum:nq_2.run                                   | P@10 | 0.7680 | nDCG@10 | 0.7997 | alpha_nDCG@10 | 0.7177 | Cov@10 | 0.7054 | 
-| crux-mds-duc04-runs | lsr-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run            | P@10 | 0.8300 | nDCG@10 | 0.8218 | alpha_nDCG@10 | 0.6332 | Cov@10 | 0.6957 | 
-| crux-mds-duc04-runs | lsr-lancer:agg_sum:nq_2.run                                           | P@10 | 0.7820 | nDCG@10 | 0.7906 | alpha_nDCG@10 | 0.6378 | Cov@10 | 0.6833 | 
-| crux-mds-duc04-runs | qwen3-embed-8b-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run | P@10 | 0.8420 | nDCG@10 | 0.8295 | alpha_nDCG@10 | 0.6325 | Cov@10 | 0.6998 | 
-| crux-mds-duc04-runs | qwen3-embed-8b-lancer:agg_sum:nq_2.run                                | P@10 | 0.7980 | nDCG@10 | 0.8050 | alpha_nDCG@10 | 0.6407 | Cov@10 | 0.6929 | 
-
 #### Other artifacts for reproduction
 You can reproduce LANCER results with the subquestions we generated or the oracle sub-questions.
 
@@ -95,13 +82,11 @@ You can reproduce LANCER results with the subquestions we generated or the oracl
 - Oracle subquestions: 
 [crux-mds-duc04-subquestions/subquestions.oracle.jsonl](results/crux-mds-duc04-subquestions/subquestions.oracle.jsonl), 
 [neuclir-subquestions/subquestions.oracle.jsonl](results/neuclir-subquestions/subquestions.oracle.jsonl)
-
-- Reranked results: See all of them in [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [results/neuclir-runs](results/neuclir-runs).
-
+- Reranked results: 
+See all of them in [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [results/neuclir-runs](results/neuclir-runs).
 
 ### Citation
 This paper has been accepted at the European Conference on Information Retrieval (ECIR) 2026. If you use or build upon our work, please cite us as follows:
-
 ```
 @inproceedings{Ju2026LANCER,
   title={LANCER: LLM Reranking for Nugget Coverage},
