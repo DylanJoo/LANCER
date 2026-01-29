@@ -32,8 +32,9 @@ For NeuCLIR, we use the translated English version of the documents. Note that t
 We combine the train and test subset into one.
 
 ### Run LANCER
-- Launch a vllm service
-```
+#### 1. Launch vLLM service
+First, start a vLLM server to serve the LLM used for sub-question generation and relevance judgment:
+```bash
 MODEL=meta-llama/Llama-3.3-70B-Instruct
 NCCL_P2P_DISABLE=1 VLLM_SKIP_P2P_CHECK=1 vllm serve $MODEL \
     --max-model-len 8192  \
@@ -52,11 +53,17 @@ done
 echo "vLLM server is up and running on port 8000."
 ```
 
-- Run LANCER with differernt first-stage retrieval. The first-stage results are provided: [data](data/)
-We can skip the sub-question generation stage by specifying `qg_path` as pre-generated sub-question file.
+#### 2. Run LANCER with LLM-generated sub-questions
+Run LANCER with different first-stage retrieval methods. The first-stage results are provided in [data](data/). The reranked results can be found in [results](results).
 
-The reranked results can be found in [results](results).
-```
+**Key parameters:**
+- `--qg_path`: Path to pre-generated sub-questions file (skips sub-question generation stage)
+- `--n_subquestions`: Number of sub-questions to use
+- `--rerun_judge`: Re-run the LLM relevance judgment stage
+- `--agg_method`: Aggregation method for combining sub-question scores (e.g., `sum`)
+
+```bash
+# CRUX-MDS (DUC'04) dataset
 for retrieval in bm25 lsr qwen3-embed-8b; do
     python src/run_cruxmds.py \
         --reranker lancer \
@@ -68,6 +75,7 @@ for retrieval in bm25 lsr qwen3-embed-8b; do
         --agg_method sum 
 done
 
+# NeuCLIR'24 dataset
 for retrieval in bm25 lsr-milco qwen3-embed-8b; do
     python src/run_neuclir.py \
         --reranker lancer \
@@ -76,6 +84,71 @@ for retrieval in bm25 lsr-milco qwen3-embed-8b; do
         --qg_path results/neuclir-subquestions/llama3.3-70b-instruct.json \
         --rerun_judge  \
         --n_subquestions 2 \
+        --agg_method sum 
+done
+```
+
+#### 3. Run LANCER Oracle (with ground-truth sub-questions)
+LANCER Oracle uses ground-truth sub-questions instead of LLM-generated ones. This provides an upper-bound performance and is useful for ablation studies.
+
+**Key differences from standard LANCER:**
+- `--use_oracle`: Flag to enable oracle mode
+- `--qg_path`: Points to oracle sub-questions file (e.g., `subquestions.oracle.json`)
+
+```bash
+# CRUX-MDS (DUC'04) dataset with oracle sub-questions
+for retrieval in bm25 lsr qwen3-embed-8b; do
+    python src/run_cruxmds.py \
+        --reranker lancer \
+        --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
+        --topic_path data/crux-mds-duc04.request.jsonl \
+        --use_oracle \
+        --qg_path results/crux-mds-duc04-subquestions/subquestions.oracle.json \
+        --rerun_judge \
+        --agg_method sum 
+done
+
+# NeuCLIR'24 dataset with oracle sub-questions
+for retrieval in bm25 lsr-milco qwen3-embed-8b; do
+    python src/run_neuclir.py \
+        --reranker lancer \
+        --run_path data/neuclir-runs/${retrieval}-neuclir.run \
+        --topic_path data/neuclir24-test-request.jsonl \
+        --use_oracle \
+        --qg_path results/neuclir-subquestions/subquestions.oracle.json \
+        --rerun_judge  \
+        --agg_method sum 
+done
+```
+
+#### 4. Run LANCER Oracle (offline mode with pre-computed ratings)
+For faster experimentation, you can use pre-computed oracle ratings to skip the LLM judgment stage entirely:
+
+**Additional parameter:**
+- `--judge_path`: Path to pre-computed relevance ratings file
+
+```bash
+# CRUX-MDS (DUC'04) with pre-computed oracle ratings
+for retrieval in bm25 lsr qwen3-embed-8b; do
+    python src/run_cruxmds.py \
+        --reranker lancer \
+        --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
+        --topic_path data/crux-mds-duc04.request.jsonl \
+        --use_oracle \
+        --qg_path results/crux-mds-duc04-subquestions/subquestions.oracle.json \
+        --judge_path results/crux-mds-duc04-ratings/ratings.oracle.${retrieval}.json \
+        --agg_method sum 
+done
+
+# NeuCLIR'24 with pre-computed oracle ratings
+for retrieval in lsr-milco qwen3-embed-8b; do
+    python src/run_neuclir.py \
+        --reranker lancer \
+        --run_path data/neuclir-runs/${retrieval}-neuclir.run \
+        --topic_path data/neuclir24-test-request.jsonl \
+        --use_oracle \
+        --qg_path results/neuclir-subquestions/subquestions.oracle.json \
+        --judge_path results/neuclir-ratings/ratings.oracle.${retrieval}.json \
         --agg_method sum 
 done
 ```
