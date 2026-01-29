@@ -93,6 +93,7 @@ Run LANCER using different first-stage retrieval methods. Pre-computed first-sta
 | `--qg_path` | Path to pre-generated sub-questions file (used when `--rerun_qg` is not set) |
 | `--n_subquestions` | Number of sub-questions to use |
 | `--rerun_judge` | Re-run the LLM relevance judgment stage |
+| `--corpus_path` | **(NeuCLIR only)** Path to NeuCLIR1 corpus files. Required when `--rerun_judge` is set. Download from [neuclir/neuclir1](https://huggingface.co/datasets/neuclir/neuclir1/tree/main/data) |
 | `--agg_method` | Aggregation method for combining scores (e.g., `sum`) |
 
 > **Note:** The examples below use pre-generated sub-questions via `--qg_path`. To run the sub-question generation step with the LLM instead, add `--rerun_qg` to the command. When `--rerun_qg` is specified, the generated sub-questions will be saved to the path specified by `--qg_path`.
@@ -120,6 +121,7 @@ for retrieval in bm25 lsr-milco qwen3-embed-8b; do
         --reranker lancer \
         --run_path data/neuclir-runs/${retrieval}-neuclir.run \
         --topic_path data/neuclir24-test-request.jsonl \
+        --corpus_path /path/to/neuclir1/*.processed_output.jsonl.gz \
         --qg_path results/neuclir-subquestions/llama3.3-70b-instruct.json \
         --rerun_judge \
         --n_subquestions 2 \
@@ -161,6 +163,7 @@ for retrieval in bm25 lsr-milco qwen3-embed-8b; do
         --reranker lancer \
         --run_path data/neuclir-runs/${retrieval}-neuclir.run \
         --topic_path data/neuclir24-test-request.jsonl \
+        --corpus_path /path/to/neuclir1/*.processed_output.jsonl.gz \
         --use_oracle \
         --qg_path results/neuclir-subquestions/subquestions.oracle.json \
         --rerun_judge \
