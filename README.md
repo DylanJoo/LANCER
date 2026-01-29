@@ -1,15 +1,11 @@
 # LANCER: LLM Reranking for Nugget Coverage
 
 [![ECIR 2026](https://img.shields.io/badge/ECIR-2026-blue.svg)](https://ecir2026.org)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-**LANCER** is a novel LLM-based reranking framework that optimizes document ranking for nugget coverage in retrieval-augmented generation tasks.
+**LANCER** leverages LLMs to rerank documents by decomposing complex queries into sub-questions and evaluating document relevance based on nugget coverage.
 
----
-## Overview
-
-LANCER leverages LLMs to rerank documents by decomposing complex queries into sub-questions and evaluating document relevance based on nugget coverage.
 ---
 
 ## Installation
@@ -27,8 +23,6 @@ pip install pyserini
 pip install transformers
 pip install vllm
 ```
-
-### Prerequisites
 
 We use the crux framework for evaluation. APRIL is used for implementing baseline LLM reranking methods.
 
