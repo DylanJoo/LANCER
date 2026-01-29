@@ -1,196 +1,98 @@
+<h1>LANCER: LLM Reranking for Nugget Coverage</h1>
+
 ### Prerequisite
-
-You can install the required packages with:
+We use the crux evaluation toolkit to load the data and evaluate results.
 ```
-pip install -r requirements.txt
+pip intsall git+https://github.com/DylanJoo/crux.git
+pip install ir_measures>=0.3.7
+pip install ir-measures[pyndeval]
+pip install datasets
+pip install pyserini
+pip install transformers
+pip install vllm
+pip intsall git+https://github.com/DylanJoo/APRIL.git
 ```
+Installing these libraries should work. We also release the [requirements.yml](requirements.yml) just in case we miss some trivial dependencies.
 
-# Evaluating retrieval - Report Generation
+### Data
+We evalaute on the NeuCLIR 2024 report generation (neuclir) and CRUX Multi-Document Summarization (crux-mds) DUC04 datasets.
+Each dataset includes:
 
-IR evaluation metrics can be computed by running the following:
+1. Topic (query): 
+- [neuclir](data/neuclir24-test-request.jsonl)
+- [crux-mds](data/crux-mds-duc04.request.jsonl)
 
+2. Document corpus:
+* [neuclir1-mtdocs](https://huggingface.co/datasets/neuclir/neuclir1/tree/main/data):
+For NeuCLIR, we use the translated English version of the documents. Note that the original data has some parsing issues, we recommend to directly download the datasets via wget. Then, you can fix the parsing error with the codes: [preprocessing code](data/preprocessing_codes).
+
+- [crux-mds-corpus](https://huggingface.co/datasets/DylanJHJ/crux-mds-corpus):
+We combine the train and test subset into one.
+
+### Evaluation scripts
+We provide the evaluation results of LANCER and several baselines on the two datasets. Each dataset has 4 reported metrics: P/nDCG/A-nDCG/Cov. All metrics are truncated at rank 10.
+
+We use the [crux-eval](https://github.io/DylanJoo/crux) to evaluate. 
+Please refer to [crux-eval](https://github.com/DylanJoo/crux?tab=readme-ov-file#preparation) for more details. You will need `git clone` the entire Huggingface dataset repo. Then, you will need to setup the `CRUX_ROOT=/your_downloaded_dir/` before evaluation
+
+For example, to evaluate the first-stage retrieved results, we use the script below (``bash eval_first_stage.sh``):
 ```
-python3 run_rac_nugget_eval.py \
---host http://127.0.0.1 \
---port 443 \
---service_name plaidx-neuclir \
---dataset_name neuclir
-```
+export CRUX_ROOT=/datasets/crux
 
-This will compute evaluation metrics using the NeuCLIR reference nuggets test set (neuclir24-test-request.jsonl). The script expects that a search service is running on the specified host and port, and that the service can accept requests in the same format as the PLAID-X search service.
-
-# Evaluating retrieval - NeuCLIR topics retrieval
-Setting the initial limit as 50 (retry with increased limit till maximum 500).
-```bash
-#  DONT use public endpoint: --search_endpoint https://scale25.hltcoe.org
-python neuclir_ir_eval.py \
-    --service_endpoint 10.162.95.158:5000 \
-    --service_name plaidx-neuclir \
-    --limit 1000 \
-    --output_dir results.plaidx
-
-# results.plaidx/ir_result.json
-{
-    "2022": {
-        "zho": 0.49819554036552616,
-        "rus": 0.475934498970835,
-        "fas": 0.4442176517213668
-    },
-    "2023": {
-        "zho": 0.45467164407992805,
-        "rus": 0.5050548618457017,
-        "fas": 0.5051494408547021,
-        "mlir": 0.40227682169926543
-    },
-    "2024": {
-        "zho": 0.5291277922852041,
-        "rus": 0.4893684473514584,
-        "fas": 0.5831951736456751,
-        "mlir": 0.46445297716404205
-    }
-}
-```
-
-# CRUX reranking - Evaluation on NeuCLIR Data (Report Generation)
-
-To evaluate CRUX reranking on NeuCLIR data (report generation IR metrics), run the following (after changing parameters to point to the search service):
-
-```
-python3 run_crux_reranker_eval.py \
---host http://127.0.0.1 \
---port 443 \
---service_name plaidx-neuclir \
---dataset_name neuclir
-```
-
-# CRUX
-
-### Prepare source multi-document summarization dataset
-- NeuCLIR: nothing to do, files will be read from `/exp/scale25/neuclir`.
-- researchy_questions:
-Download the dataset to a local path (as this is a big dataset, you likely want to download it somewhere on `/exp/<user-id>`). You can download the dataset from huggingface by running: `python3 -m data.download_researchy_dataset` and setting the download path at the top of the file.
-
-### Answerability
-
-Here is an example command to obtain sub-question scores:
-
-```
-python3 -m augmentation.gen_ratings \
-    --shard_dir <crux_dir> --shard_size 1000 \
-    --config configs/scale.llama3-70b.yaml \
-    --split test \
-    --model llama3.3-70b-instruct \
-    --model_tag metallama3.3-70b \
-	--port 4000 \
-    --tag ratings-gen/70b \
-    --load_mode api \
-	--temperature 0 --top_p 1 \
-    --max_new_tokens 3 \
-	--output_dir <crux_dir> \
-    --ampere_gpu
-```
-
-# Other Instructions
-
-### Prepare source multi-document summarization dataset
-- Multi-News and DUC'04: 
-We also upload these two raw datasets in our huggingface dataset repo. See the original dataset and their terms of use: [Multi-News](https://huggingface.co/datasets/alexfabbri/multi_news) and [DUC'04](https://www-nlpir.nist.gov/projects/duc/data.html).
-
-### Evaluation data generation
-We have already shared all the dataset (raw, intermediate and final data) in [Huggingface repo](#). But you can also follow the steps to generate and customize. 
-
-## Passages, topics, questions 
-Here is an example of generating passages. And you will find the generated data in 
-`<path-to-crux>/shard_data/psg-gen/metallama3.1-8b-{train/test/testb}-${shard_i}.json`
-    * Passages (mulit-news train and test)
-	* Topics and Questions (multi-news test and DUC'04)
-	* To run them in parallel, you can set the `shard` parameter and assign the `shard size (size of one shard)`
-
-```
-python3 -m augmentation.gen_passages  \
-	--shard ${shard_i} --shard_size 1000 \
-	--multi_news_file <path-to-multi_news> \
-	--config configs/mds-decontextualize.llama3-8b.yaml \
-	--split train \
-	--model meta-llama/Meta-Llama-3.1-8B-Instruct \
-	--model_tag metallama3.1-8b \
-	--tag psgs-gen \
-	--load_mode vllm \
-	--temperature 0.7 \
-	--max_new_tokens 640 \
-	--output_dir <path-to-crux>/shard_data/
-	--ampere_gpu
-done
-```
-The topic/question generation can be found in `script/`
-
-### Answerability
-
-```
-for split in train test;do
-python3 -m augmentation.gen_ratings \
-	--shard_dir <path-to-crux>/shard_data --shard_size 1000 \
-	--config configs/mds-decontextualize.llama3-8b.yaml \
-	--split ${split} \
-	--model meta-llama/Meta-Llama-3.1-8B-Instruct \
-	--model_tag metallama3.1-8b \
-	--tag ratings-gen \
-	--load_mode vllm \
-	--temperature 0 --top_p 1 \
-	--max_new_tokens 3 \
-	--output_dir <path-to-crux>/shard_data \
-	--ampere_gpu
+for run_file in data/neuclir-runs/*.run;do
+    python -m crux.evaluation.rac_eval \
+        --run $run_file \
+        --qrel $CRUX_ROOT/crux-neuclir/qrels/neuclir24-test-request.qrel \
+        --judge $CRUX_ROOT/crux-neuclir/judge/ratings.human.jsonl 
 done
 
-python3 -m augmentation.gen_ratings \
-    --shard_dir <path-to-crux>/shard_data --shard_size 1000 \
-    --config configs/mds-decontextualize.llama3-8b.yaml \
-    --split testb \
-    --model meta-llama/Meta-Llama-3.1-8B-Instruct \
-    --model_tag metallama3.1-8b \
-    --tag ratings-gen/8b \
-    --load_mode vllm \
-	--temperature 0 --top_p 1 \
-    --max_new_tokens 3 \
-	--output_dir <path-to-crux>/shard_data \
-    --ampere_gpu
+for run_file in data/crux-mds-duc04-runs/*.run;do
+    python -m crux.evaluation.rac_eval \
+        --run $run_file \
+        --qrel $CRUX_ROOT/crux-mds-duc04/qrels/div_qrels-tau3.txt \
+        --filter_by_oracle \
+        --judge $CRUX_ROOT/crux-mds-duc04/judge 
+done
 ```
 
-### Data example
-```
-# Topic:
-# Questions:
-# Passages (oracle) and ratings:
-```
+#### The first-stage retrieval results
+Please ensure crux evaluation is installed with the dataset downloaded. See the dataseet instruction in [crux](https://github.io/DylanJoo/crux).
 
-- Compile them into the crux data scheme (default answerability tau is 3)
-Once we had the ratings, we can create the subsets of `required`, `partially redundant` and `fully redundant`.
+| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
+|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
+| neuclir-runs        | bm25-neuclir.run                  | P@10 | 0.6526 | nDCG@10 | 0.6767 | alpha_nDCG@10 | 0.5295 | Cov@10 | 0.6407 | 
+| neuclir-runs        | lsr-milco-neuclir.run             | P@10 | 0.8158 | nDCG@10 | 0.8305 | alpha_nDCG@10 | 0.6294 | Cov@10 | 0.7367 | 
+| neuclir-runs        | plaidx-neuclir.run                | P@10 | 0.5895 | nDCG@10 | 0.6126 | alpha_nDCG@10 | 0.4184 | Cov@10 | 0.4945 | 
+| neuclir-runs        | qwen3-embed-8b-neuclir.run        | P@10 | 0.8684 | nDCG@10 | 0.8862 | alpha_nDCG@10 | 0.6269 | Cov@10 | 0.6948 | 
 
-```
-bash create_context_ranking_data.sh
-```
+| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
+|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
+| crux-mds-duc04-runs | bm25-crux-mds-duc04.run           | P@10 | 0.5140 | nDCG@10 | 0.5298 | alpha_nDCG@10 | 0.4454 | Cov@10 | 0.5444 | 
+| crux-mds-duc04-runs | lsr-crux-mds-duc04.run            | P@10 | 0.6800 | nDCG@10 | 0.7035 | alpha_nDCG@10 | 0.5579 | Cov@10 | 0.6241 | 
+| crux-mds-duc04-runs | qwen3-embed-8b-crux-mds-duc04.run | P@10 | 0.7380 | nDCG@10 | 0.7586 | alpha_nDCG@10 | 0.6078 | Cov@10 | 0.6637 | 
 
-- Get documents and passages
-```
-bash create_dataset.sh
-```
+#### The LANCER results
+We conduct the baseline reranking using [autorerank](https://github.io/APRIL). We compare with pointwise/setwise/pointwise.
 
-- Data statisitcs
-```
-## context
-python -m tools.get_stats --dataset_dir /home/dju/datasets/crux --split testb
+| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
+|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
+| crux-mds-duc04-runs | bm25-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run           | P@10 | 0.7460 | nDCG@10 | 0.7578 | alpha_nDCG@10 | 0.5909 | Cov@10 | 0.6541 | 
+| crux-mds-duc04-runs | bm25-lancer:agg_sum:nq_2.run                                          | P@10 | 0.7280 | nDCG@10 | 0.7388 | alpha_nDCG@10 | 0.6075 | Cov@10 | 0.6645 | 
+| crux-mds-duc04-runs | bm25-lancer:oracle:agg_sum:nq_2.run                                   | P@10 | 0.7680 | nDCG@10 | 0.7997 | alpha_nDCG@10 | 0.7177 | Cov@10 | 0.7054 | 
+| crux-mds-duc04-runs | lsr-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run            | P@10 | 0.8300 | nDCG@10 | 0.8218 | alpha_nDCG@10 | 0.6332 | Cov@10 | 0.6957 | 
+| crux-mds-duc04-runs | lsr-lancer:agg_sum:nq_2.run                                           | P@10 | 0.7820 | nDCG@10 | 0.7906 | alpha_nDCG@10 | 0.6378 | Cov@10 | 0.6833 | 
+| crux-mds-duc04-runs | qwen3-embed-8b-autorerank:point:meta-llama.Llama-3.3-70B-Instruct.run | P@10 | 0.8420 | nDCG@10 | 0.8295 | alpha_nDCG@10 | 0.6325 | Cov@10 | 0.6998 | 
+| crux-mds-duc04-runs | qwen3-embed-8b-lancer:agg_sum:nq_2.run                                | P@10 | 0.7980 | nDCG@10 | 0.8050 | alpha_nDCG@10 | 0.6407 | Cov@10 | 0.6929 | 
 
-## ranking qrels
-cat ${DATASET_DIR}/crux/ranking_3/test_qrels_oracle_context_pr.txt  | cut -f 4 -d ' ' | sort | uniq -c 
-```
 
-### Baseline settings
-* The first-stage retrieval: BM25, contriever-MS, SPLADE-MS
-```
-Indexing and Retrieve top-100
-```
+#### Other articfacts for reproduction
+You can reproduce LANCER results with  the subquestions we generated or the oracle sub-questions.
 
-* The former-stage augmentation: vanilla, BART-summarization, ReComp summarization
+- Generated subquestions: 
+[crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json](results/crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json), 
+[neuclir-subquestions/llama3.3-70b-instruct.json](results/neuclir-subquestions/llama3.3-70b-instruct.json)
+- Oracle subquestions: 
+[crux-mds-duc04-subquestions/subquestions.oracle.jsonl](results/crux-mds-duc04-subquestions/subquestions.oracle.jsonl), 
+[neuclir-subquestions/subquestions.oracle.jsonl](results/neuclir-subquestions/subquestions.oracle.jsonl)
 
-### Main findings
-* Table2: The oracle retrieval context for baseline retrievla-augmentation
+- Reranked results: See all of them in [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [results/neuclir-runs](results/neuclir-runs).

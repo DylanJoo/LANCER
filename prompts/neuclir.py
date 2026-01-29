@@ -386,64 +386,6 @@ def prompt_rating_gen_reranking(question="", context="", lang='eng', topic=None,
         p = p.replace("{problem_statement}", topic["problem_statement"]).strip()
     return p
 
-def prompt_rating_gen_claims(question="", context="", lang='eng', topic=None, **kargs):
-    if lang == 'eng':
-        language_setting = ''
-    else:
-        language_setting = ' The question is asked in English, but the context is provided in either English, Chinese, Persian, or Russian.'
-    template = """
-    Instruction: Determine whether the question can be answered based on the provided context?{language_setting} The context is provided as a set of statements, numbered from 1 to n. Rate the context on a scale from 0 to 5 according to the guideline below. Do not write anything except the rating.
-
-    Guideline: 
-    - 5: The context is highly relevant, complete, and accurate to the question.
-    - 4: The context is mostly relevant and complete but may have minor gaps or inaccuracies to the question.
-    - 3: The context is partially relevant and complete, with noticeable gaps or inaccuracies to the question.
-    - 2: The context has limited relevance and completeness, with significant gaps or inaccuracies to the question.
-    - 1: The context is minimally relevant or complete, with substantial shortcomings to the question.
-    - 0: The context is not relevant or complete at all.
-    
-    Question: {question}
-
-    Context: {context} 
-
-    Rating:
-    """
-    p = template.replace("{language_setting}", language_setting).strip()
-    p = p.replace("{question}", question).strip()
-    
-    context = ' '.join(f"{i+1}. {s}" for i, s in enumerate(context))
-    p = p.replace("{context}", context).strip()
-    
-    return p
-
-def prompt_rating_gen_claims_as_subdocs(question="", context="", lang='eng', **kargs):
-    if lang == 'eng':
-        language_setting = ''
-    else:
-        language_setting = ' The question is asked in English, but the context is provided in either English, Chinese, Persian, or Russian.'
-    template = """
-    Instruction: Determine whether the question can be answered by the provided claim?{language_setting}. Rate the claim on a scale from 0 to 5 according to the guideline below. Do not write anything except the rating.
-
-    Guideline: 
-    - 5: The claim is highly relevant, complete, and accurate to the question.
-    - 4: The claim is mostly relevant and complete but may have minor gaps or inaccuracies to the question.
-    - 3: The claim is partially relevant and complete, with noticeable gaps or inaccuracies to the question.
-    - 2: The claim has limited relevance and completeness, with significant gaps or inaccuracies to the question.
-    - 1: The claim is minimally relevant or complete, with substantial shortcomings to the question.
-    - 0: The claim is not relevant or complete at all.
-    
-    Question: {question}
-
-    Claim: {context} 
-
-    Rating:
-    """
-    p = template.replace("{language_setting}", language_setting).strip()
-    p = p.replace("{question}", question).strip()
-    p = p.replace("{context}", context).strip()
-    
-    return p
-
 def prompt_subquestion_gen_reranking_detailed(
         user_background, problem_statement, title,
         k=10):

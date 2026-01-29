@@ -1,5 +1,0 @@
-datasets
-ir_measures>=0.3.7
-pyserini
-transformers
-vllm

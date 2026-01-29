@@ -1,9 +1,0 @@
-## bm25-neuclir | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6125 |0.6952 |0.8474 |0.1074 |0.8598 |
-## qwen3-neuclir | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6509 |0.6838 |0.8684 |0.1134 |0.8835 |
-## lsr-neuclir | -> autorerank:rankgpt:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.7123 |0.7488 |0.9053 |0.1214 |0.9234 |
-## bm25-neuclir | -> autorerank:point:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6699 |0.7217 |0.8947 |0.1163 |0.8931 |
-## qwen3-neuclir | -> autorerank:point:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6329 |0.6959 |0.8632 |0.1102 |0.8506 |
-## lsr-neuclir | -> autorerank:point:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6643 |0.7286 |0.9053 |0.1167 |0.9069 |
-## bm25-neuclir | -> autorerank:setmaxheaptopk:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6449 |0.7133 |0.8158 |0.1045 |0.8417 |
-## qwen3-neuclir | -> autorerank:setmaxheaptopk:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6848 |0.7115 |0.8053 |0.1093 |0.8459 |
-## lsr-neuclir | -> autorerank:setmaxheaptopk:meta-llama/Llama-3.3-70B-Instruct  | Human     | 0.6859 |0.7209 |0.8947 |0.1177 |0.9098 |
