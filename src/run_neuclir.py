@@ -4,11 +4,12 @@ import argparse
 
 def main(args):
     ## Load Datasets 
-    queries = {}
+    topics = {}
     with open(args.topic_path, 'r') as f:
         for line in f:
             item = json.loads(line)
-            queries[item['id']] = item['request']
+            topics[item['request_id']] = item
+    queries = {qid: topics[qid]['background'] for qid in topics}
 
     runs = {}
     with open(args.run_path, 'r') as f:
@@ -21,10 +22,9 @@ def main(args):
             runs[qid][docid] = float(score)
 
     corpus = {}
-    train_corpus = load_dataset('DylanJHJ/crux-mds-corpus', split='train')
-    test_corpus = load_dataset('DylanJHJ/crux-mds-corpus', split='test')
-    corpus.update({example["id"]: {"title": "", "text": example["contents"]} for example in train_corpus})
-    corpus.update({example["id"]: {"title": "", "text": example["contents"]} for example in test_corpus})
+    ds = load_dataset('json', data_files='/home/hltcoe/jhueiju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
+    corpus = {example["id"]: {"title": example["title"], "text": example["text"]} for example in ds}
+    del ds
 
     ## Reranking
     if args.reranker == 'lancer':
@@ -32,14 +32,15 @@ def main(args):
         reranked_run = rerank(
             runs=runs,
             queries=queries,
-            topics=None,
+            topics=topics,
             corpus=corpus,
             n_subquestions=args.n_subquestions,
+            use_oracle=args.use_oracle,
             concat_original=False if args.use_oracle else True,
             aggregation=args.agg_method,
             rerun_qg=args.rerun_qg, qg_path=args.qg_path,
             rerun_judge=args.rerun_judge, judge_path=args.judge_path,
-            vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct', 'base_url': args.base_url}
+            vllm_kwargs={'max_tokens': 512, 'model_name_or_path': args.model, 'base_url': args.base_url}
         )
         reranker_name = args.reranker
         reranker_name += ":oracle" if args.use_oracle else ""

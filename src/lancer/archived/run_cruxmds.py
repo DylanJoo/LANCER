@@ -1,5 +1,4 @@
 import json
-from wrapper import rerank
 from datasets import load_dataset
 import argparse
 
@@ -28,6 +27,7 @@ def main(args):
     corpus.update({example["id"]: {"title": "", "text": example["contents"]} for example in test_corpus})
 
     ## Reranking
+    from wrapper import rerank
     reranked_run = rerank(
         runs=runs,
         queries=queries,

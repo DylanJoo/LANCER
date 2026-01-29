@@ -7,7 +7,6 @@ def rerank(
     runs: dict, 
     queries: dict, 
     corpus: dict, 
-    k: int = None,
     topics: dict = None,
     n_subquestions: int = 2,
     concat_original: bool = True,

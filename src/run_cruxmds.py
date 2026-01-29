@@ -4,11 +4,11 @@ import argparse
 
 def main(args):
     ## Load Datasets 
-    topics = {}
+    queries = {}
     with open(args.topic_path, 'r') as f:
         for line in f:
             item = json.loads(line)
-            topics[item['request_id']] = item
+            queries[item['id']] = item['request']
 
     runs = {}
     with open(args.run_path, 'r') as f:
@@ -21,29 +21,31 @@ def main(args):
             runs[qid][docid] = float(score)
 
     corpus = {}
-    ds = load_dataset('json', data_files='/home/hltcoe/jhueiju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
-    corpus = {example["id"]: {"title": example["title"], "text": example["text"]} for example in ds}
-    del ds
+    train_corpus = load_dataset('DylanJHJ/crux-mds-corpus', split='train')
+    test_corpus = load_dataset('DylanJHJ/crux-mds-corpus', split='test')
+    corpus.update({example["id"]: {"title": "", "text": example["contents"]} for example in train_corpus})
+    corpus.update({example["id"]: {"title": "", "text": example["contents"]} for example in test_corpus})
 
     ## Reranking
     if args.reranker == 'lancer':
         from lancer import rerank
         reranked_run = rerank(
             runs=runs,
-            queries={qid: topics[qid]['problem_statement'] for qid in topics},
-            topics=topics,
+            queries=queries,
+            topics=None,
             corpus=corpus,
             n_subquestions=args.n_subquestions,
+            use_oracle=args.use_oracle,
             concat_original=False if args.use_oracle else True,
             aggregation=args.agg_method,
             rerun_qg=args.rerun_qg, qg_path=args.qg_path,
             rerun_judge=args.rerun_judge, judge_path=args.judge_path,
-            vllm_kwargs={'max_tokens': 512, 'model_name_or_path': 'meta-llama/Llama-3.3-70B-Instruct', 'base_url': args.base_url}
+            vllm_kwargs={'max_tokens': 512, 'model_name_or_path': args.model, 'base_url': args.base_url}
         )
         reranker_name = args.reranker
         reranker_name += ":oracle" if args.use_oracle else ""
-        reranker_name += ":agg_{args.agg_method}"
-        reranker_name += "nq_{args.n_subquestions}" if args.use_oracle is False else ""
+        reranker_name += f":agg_{args.agg_method}"
+        reranker_name += f"nq_{args.n_subquestions}" if args.use_oracle is False else ""
 
     if 'autorerank' in args.reranker:
         from reranking.wrapper import AutoLLMReranker
@@ -53,7 +55,6 @@ def main(args):
             llm={'max_tokens': 3, 'backend': 'request', 'base_url': args.base_url},
             max_doc_length=800 if (method_name=='listwise' or method_name=='rankgpt') else 1024, 
        )
-        queries = {qid: topics[qid]['background'] + " " topics[qid]['problem_statement'] for qid in topics},
         reranked_run = reranker.rerank(run=runs, queries=queries, corpus=corpus, query_batch_size=64)
         reranker_name = args.reranker.replace('/', '.')
 
@@ -75,6 +76,7 @@ if __name__ == "__main__":
 
     # parameters for vllm
     parser.add_argument("--base_url", default='http://localhost:8000/v1')
+    parser.add_argument("--model", type=str, default='meta-llama/Llama-3.3-70B-Instruct')
 
     # parameters for lancer
     parser.add_argument('--use_oracle', action='store_true', help='Whether to use oracle sub-questions')
