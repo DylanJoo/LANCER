@@ -7,24 +7,6 @@
 **LANCER** is a novel LLM-based reranking framework that optimizes document ranking for nugget coverage in retrieval-augmented generation tasks.
 
 ---
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Installation](#installation)
-- [Datasets](#datasets)
-- [Usage](#usage)
-  - [Launch vLLM Service](#1-launch-vllm-service)
-  - [Run LANCER with LLM-generated Sub-questions](#2-run-lancer-with-llm-generated-sub-questions)
-  - [Run LANCER Oracle](#3-run-lancer-oracle-with-ground-truth-sub-questions)
-  - [Run LANCER Oracle Offline](#4-run-lancer-oracle-offline-mode)
-- [Evaluation](#evaluation)
-- [Results](#results)
-- [Reproducibility Artifacts](#reproducibility-artifacts)
-- [Citation](#citation)
-
----
-
 ## Overview
 
 LANCER leverages Large Language Models (LLMs) to rerank documents by decomposing complex queries into sub-questions and evaluating document relevance based on nugget coverage. This approach is particularly effective for:
@@ -42,13 +24,13 @@ Install the required dependencies using pip:
 
 ```bash
 # Core dependencies
-pip install git+https://github.com/DylanJoo/crux.git
 pip install ir_measures>=0.3.7
 pip install ir-measures[pyndeval]
 pip install datasets
 pip install pyserini
 pip install transformers
 pip install vllm
+pip install git+https://github.com/DylanJoo/crux.git
 pip install git+https://github.com/DylanJoo/APRIL.git
 ```
 
@@ -78,7 +60,7 @@ We evaluate LANCER on two datasets:
 
 ## Usage
 
-### 1. Launch vLLM Service
+### 1. Launch vLLM Service (Optional for 4)
 
 Start a vLLM server to serve the LLM for sub-question generation and relevance judgment:
 
@@ -264,27 +246,6 @@ for run_file in data/crux-mds-duc04-runs/*.run; do
         --judge $CRUX_ROOT/crux-mds-duc04/judge
 done
 ```
-
----
-
-## Results
-
-### NeuCLIR 2024
-
-| Run File | P@10 | nDCG@10 | α-nDCG@10 | Cov@10 |
-|----------|------|---------|-----------|--------|
-| bm25-neuclir.run | 0.6526 | 0.6767 | 0.5295 | 0.6407 |
-| lsr-milco-neuclir.run | 0.8158 | 0.8305 | 0.6294 | 0.7367 |
-| plaidx-neuclir.run | 0.5895 | 0.6126 | 0.4184 | 0.4945 |
-| qwen3-embed-8b-neuclir.run | 0.8684 | 0.8862 | 0.6269 | 0.6948 |
-
-### CRUX-MDS DUC'04
-
-| Run File | P@10 | nDCG@10 | α-nDCG@10 | Cov@10 |
-|----------|------|---------|-----------|--------|
-| bm25-crux-mds-duc04.run | 0.5140 | 0.5298 | 0.4454 | 0.5444 |
-| lsr-crux-mds-duc04.run | 0.6800 | 0.7035 | 0.5579 | 0.6241 |
-| qwen3-embed-8b-crux-mds-duc04.run | 0.7380 | 0.7586 | 0.6078 | 0.6637 |
 
 ---
 
