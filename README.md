@@ -1,29 +1,7 @@
 <h1>LANCER: LLM Reranking for Nugget Coverage</h1>
----
-
-### Data
-We use the NeuCLIR 2024 report generation (neuclir) and CRUX Multi-Document Summarization (crux-mds) datasets for evaluation.
-Each dataset includes: (1) topic/query (2) document coputs and (3) reference nuggets (i.e., multiple subquestions or question-answer pairs)
-
-1. Topic/query:
-- [neuclir](data/neuclir24-test-request.jsonl)
-- [crux-mds](data/crux-mds-test-request.jsonl)
-
-2. Document corpus:
-* [neuclir1-mtdocs](https://huggingface.co/datasets/neuclir/neuclir1):
-We use the translated English version of the documents. Since the data for has some parsing issue, we recommend to directly download the three datasets via wget. 
-We fix the dataset and relase the [preprocessing code](data/preprocessing_codes).
-
-- [crux-mds-corpus](https://huggingface.co/datasets/DylanJHJ/crux-mds-corpus):
-We combine the train and test corpus because our retrieved documents are from these two corpoara.
-
-3. Reference nugget: 
-We adopt the [crux-eval](https://github.io/DylanJoo/crux) evaluation toolkit to evaluate nugget coverage
-- [neuclir (TBD)](data/neuclir24-test-nuggets.jsonl)
-- [crux-mds (TBD)](data/crux-mds-test-nuggets.jsonl)
 
 ### Prerequisite
-We use the crux evaluation toolkit to load the data and evaluate results. 
+We use the crux evaluation toolkit to load the data and evaluate results.
 ```
 pip intsall git+https://github.com/DylanJoo/crux.git
 pip install ir_measures>=0.3.7
@@ -35,13 +13,30 @@ pip install vllm
 pip intsall git+https://github.com/DylanJoo/APRIL.git
 ```
 
+### Data
+We evalaute on the NeuCLIR 2024 report generation (neuclir) and CRUX Multi-Document Summarization (crux-mds) DUC04 datasets.
+Each dataset includes:
+
+1. Topic (query): 
+- [neuclir](data/neuclir24-test-request.jsonl)
+- [crux-mds](data/crux-mds-duc04.request.jsonl)
+
+2. Document corpus:
+* [neuclir1-mtdocs](https://huggingface.co/datasets/neuclir/neuclir1/tree/main/data):
+For NeuCLIR, we use the translated English version of the documents. Note that the original data has some parsing issues, we recommend to directly download the datasets via wget. Then, you can fix the parsing error with the codes: [preprocessing code](data/preprocessing_codes).
+
+- [crux-mds-corpus](https://huggingface.co/datasets/DylanJHJ/crux-mds-corpus):
+We combine the train and test subset into one.
+
 ### Evaluation scripts
-We provide the evaluation results of LANCER and several baselines on the two datasets.
-We use the [crux-eval](https://github.io/DylanJoo/crux) to evaluate. Each dataset has 4 reported metrics: P/nDCG/A-nDCG/Cov. All metrics are truncated at rank 10.
+We provide the evaluation results of LANCER and several baselines on the two datasets. Each dataset has 4 reported metrics: P/nDCG/A-nDCG/Cov. All metrics are truncated at rank 10.
+
+We use the [crux-eval](https://github.io/DylanJoo/crux) to evaluate. 
+Please refer to [crux-eval](https://github.com/DylanJoo/crux?tab=readme-ov-file#preparation) for more details. You will need `git clone` the entire Huggingface dataset repo. Then, you will need to setup the `CRUX_ROOT=/your_downloaded_dir/` before evaluation
 
 For example, to evaluate the first-stage retrieved results, we use the script below (``bash eval_first_stage.sh``):
 ```
-export CRUX_ROOT=/home/hltcoe/jhueiju/datasets/crux
+export CRUX_ROOT=/datasets/crux
 
 for run_file in data/neuclir-runs/*.run;do
     python -m crux.evaluation.rac_eval \
