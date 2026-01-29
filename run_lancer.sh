@@ -1,6 +1,7 @@
 #!/bin/sh
 #SBATCH --job-name=lancer
 #SBATCH --partition=gpu
+#SBATCH --nodelist=rack7n05,rack8n05
 #SBATCH --gres=gpu:a100:2
 #SBATCH --cpus-per-task=64
 #SBATCH --mem=128G
@@ -13,7 +14,7 @@ conda activate ecir2026
 
 MODEL=meta-llama/Llama-3.3-70B-Instruct
 NCCL_P2P_DISABLE=1 VLLM_SKIP_P2P_CHECK=1 vllm serve $MODEL \
-    --max-model-len 8192  \
+    --max-model-len 8196  \
     --port 8000  \
     --dtype bfloat16 \
     --disable-custom-all-reduce \

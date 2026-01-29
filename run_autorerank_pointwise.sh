@@ -1,5 +1,6 @@
 #!/bin/sh
 #SBATCH --job-name=autorerank
+#SBATCH --nodelist=rack7n05,rack8n05
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:a100:2
 #SBATCH --cpus-per-task=64
@@ -15,7 +16,7 @@ MODEL=meta-llama/Llama-3.3-70B-Instruct
 
 # Start LLM 
 NCCL_P2P_DISABLE=1 VLLM_SKIP_P2P_CHECK=1 vllm serve $MODEL \
-    --max-model-len 8192  \
+    --max-model-len 8196  \
     --port 8000  \
     --dtype bfloat16 \
     --disable-custom-all-reduce \
