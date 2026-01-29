@@ -22,9 +22,10 @@ def main(args):
             runs[qid][docid] = float(score)
 
     corpus = {}
-    ds = load_dataset('json', data_files='/home/hltcoe/jhueiju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
-    corpus = {example["id"]: {"title": example["title"], "text": example["text"]} for example in ds}
-    del ds
+    if args.rerun_judge:
+        ds = load_dataset('json', data_files='/home/hltcoe/jhueiju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
+        corpus = {example["id"]: {"title": example["title"], "text": example["text"]} for example in ds}
+        del ds
 
     ## Reranking
     if args.reranker == 'lancer':
@@ -76,6 +77,7 @@ if __name__ == "__main__":
 
     # parameters for vllm
     parser.add_argument("--base_url", default='http://localhost:8000/v1')
+    parser.add_argument("--model", type=str, default='meta-llama/Llama-3.3-70B-Instruct')
 
     # parameters for lancer
     parser.add_argument('--use_oracle', action='store_true', help='Whether to use oracle sub-questions')
