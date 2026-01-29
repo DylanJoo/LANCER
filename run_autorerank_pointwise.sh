@@ -30,12 +30,12 @@ until curl -s http://localhost:8000/v1/models >/dev/null; do
 done
 echo "vLLM server is up and running on port 8000."
 
-# for retrieval in bm25 lsr qwen3-embed-8b; do
-#     python src/run_cruxmds.py \
-#         --reranker autorerank:point:$MODEL \
-#         --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
-#         --topic_path data/crux-mds-duc04.request.jsonl
-# done
+for retrieval in bm25 lsr qwen3-embed-8b; do
+    python src/run_cruxmds.py \
+        --reranker autorerank:point:$MODEL \
+        --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
+        --topic_path data/crux-mds-duc04.request.jsonl
+done
 
 for retrieval in bm25 lsr-milco qwen3-embed-8b; do
     python src/run_neuclir.py \

@@ -15,7 +15,7 @@ MODEL=meta-llama/Llama-3.3-70B-Instruct
 
 ## Start LLM 
 NCCL_P2P_DISABLE=1 VLLM_SKIP_P2P_CHECK=1 vllm serve $MODEL \
-    --max-model-len 10240  \
+    --max-model-len 20480  \
     --port 8000  \
     --dtype bfloat16 \
     --disable-custom-all-reduce \
@@ -37,9 +37,9 @@ for retrieval in bm25 lsr qwen3-embed-8b; do
         --topic_path data/crux-mds-duc04.request.jsonl
 done
 
-# for retrieval in bm25 lsr-milco qwen3-embed-8b; do
-#     python src/run_neuclir.py \
-#         --reranker autorerank:rankgpt:rankgpt:$MODEL \
-#         --run_path data/neuclir-runs/${retrieval}-neuclir.run \
-#         --topic_path data/neuclir24-test-request.jsonl
-# done
+for retrieval in bm25 lsr-milco qwen3-embed-8b; do
+    python src/run_neuclir.py \
+        --reranker autorerank:rankgpt:rankgpt:$MODEL \
+        --run_path data/neuclir-runs/${retrieval}-neuclir.run \
+        --topic_path data/neuclir24-test-request.jsonl
+done

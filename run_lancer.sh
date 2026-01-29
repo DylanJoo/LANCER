@@ -28,25 +28,24 @@ until curl -s http://localhost:8000/v1/models >/dev/null; do
 done
 echo "vLLM server is up and running on port 8000."
 
-for retrieval in bm25 lsr qwen3-embed-8b; do
-    python src/lancer/run_cruxmds.py \
-        --reranker lancer \
-        --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
-        --topic_path data/crux-mds-duc04.request.jsonl \
-        --qg_path results/crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json \
-        --rerun_judge  \
-        --n_subquestions 2 \
-        --agg_method sum 
-done
-
-# for retrieval in bm25 lsr-milco qwen3-embed-8b; do
-# for retrieval in bm25; do
-#     python src/lancer/run_neuclir.py \
+# for retrieval in bm25 lsr qwen3-embed-8b; do
+#     python src/lancer/run_cruxmds.py \
 #         --reranker lancer \
-#         --run_path data/neuclir-runs/${retrieval}-neuclir.run \
-#         --topic_path data/neuclir24-test-request.jsonl \
-#         --qg_path results/neuclir-subquestions/llama3.3-70b-instruct.json \
+#         --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
+#         --topic_path data/crux-mds-duc04.request.jsonl \
+#         --qg_path results/crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json \
 #         --rerun_judge  \
 #         --n_subquestions 2 \
 #         --agg_method sum 
 # done
+
+for retrieval in bm25 lsr-milco qwen3-embed-8b; do
+    python src/run_neuclir.py \
+        --reranker lancer \
+        --run_path data/neuclir-runs/${retrieval}-neuclir.run \
+        --topic_path data/neuclir24-test-request.jsonl \
+        --qg_path results/neuclir-subquestions/llama3.3-70b-instruct.json \
+        --rerun_judge  \
+        --n_subquestions 2 \
+        --agg_method sum 
+done
