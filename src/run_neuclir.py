@@ -25,6 +25,7 @@ def main(args):
     if args.rerun_judge:
         # TODO: Update the path below to your local NeuCLIR1 corpus location.
         # Download from: https://huggingface.co/datasets/neuclir/neuclir1/tree/main/data
+        # There are three copora that are translated from three different languages. 
         ds = load_dataset('json', data_files='/home/hltcoe/jhueiju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
         corpus = {example["id"]: {"title": example["title"], "text": example["text"]} for example in ds}
         del ds
