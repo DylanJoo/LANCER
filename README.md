@@ -264,7 +264,7 @@ We evaluate using four metrics (all truncated at rank 10):
 2. Clone the Huggingface dataset repository (see [preparation guide](https://github.com/DylanJoo/crux?tab=readme-ov-file#preparation))
 3. Set the `CRUX_ROOT` environment variable
 
-### Evaluate First-stage Results
+### Evaluate Retrieval/Reranked Results
 
 ```bash
 export CRUX_ROOT=/datasets/crux
