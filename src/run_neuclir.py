@@ -3,13 +3,6 @@ from datasets import load_dataset
 import argparse
 
 def main(args):
-    # Validate arguments
-    if args.rerun_judge and not args.corpus_path:
-        raise ValueError(
-            "--corpus_path is required when --rerun_judge is set. "
-            "Download the NeuCLIR1 corpus from https://huggingface.co/datasets/neuclir/neuclir1/tree/main/data"
-        )
-    
     ## Load Datasets 
     topics = {}
     with open(args.topic_path, 'r') as f:
@@ -30,7 +23,9 @@ def main(args):
 
     corpus = {}
     if args.rerun_judge:
-        ds = load_dataset('json', data_files=args.corpus_path, num_proc=3, split='train')
+        # TODO: Update the path below to your local NeuCLIR1 corpus location.
+        # Download from: https://huggingface.co/datasets/neuclir/neuclir1/tree/main/data
+        ds = load_dataset('json', data_files='/home/hltcoe/jhueiju/datasets/neuclir1/*.processed_output.jsonl.gz', num_proc=3, split='train')
         corpus = {example["id"]: {"title": example["title"], "text": example["text"]} for example in ds}
         del ds
 
@@ -80,9 +75,6 @@ if __name__ == "__main__":
     parser.add_argument('--reranker', type=str, default='lancer', help='lancer or autollreranker')
     parser.add_argument('--run_path', type=str)
     parser.add_argument('--topic_path', type=str)
-    parser.add_argument('--corpus_path', type=str, 
-                        help='Path to NeuCLIR1 corpus files (e.g., "/path/to/neuclir1/*.processed_output.jsonl.gz"). '
-                             'Download from https://huggingface.co/datasets/neuclir/neuclir1/tree/main/data')
     parser.add_argument("--k", default=100, type=int)
 
     # parameters for vllm
