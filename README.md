@@ -81,10 +81,10 @@ You can reproduce LANCER results with the subquestions we generated or the oracl
 [crux-mds-duc04-subquestions/qwen3-next-80b-a3b-instruct.json](results/crux-mds-duc04-subquestions/qwen3-next-80b-instruct.json), 
 [neuclir-subquestions/llama3.3-70b-instruct.json](results/neuclir-subquestions/llama3.3-70b-instruct.json)
 - Oracle subquestions: 
-[crux-mds-duc04-subquestions/subquestions.oracle.jsonl](results/crux-mds-duc04-subquestions/subquestions.oracle.jsonl), 
-[neuclir-subquestions/subquestions.oracle.jsonl](results/neuclir-subquestions/subquestions.oracle.jsonl)
+[crux-mds-duc04-subquestions/subquestions.oracle.json](results/crux-mds-duc04-subquestions/subquestions.oracle.json), 
+[neuclir-subquestions/subquestions.oracle.json](results/neuclir-subquestions/subquestions.oracle.json)
 - Reranked results: 
-See all of them in [results/crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [results/neuclir-runs](results/neuclir-runs).
+See all of them in [crux-mds-duc04-runs](results/crux-mds-duc04-runs) and [neuclir-runs](results/neuclir-runs).
 
 ### Citation
 This paper has been accepted at the European Conference on Information Retrieval (ECIR) 2026. If you use or build upon our work, please cite us as follows:
