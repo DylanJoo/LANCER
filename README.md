@@ -95,10 +95,13 @@ Run LANCER using different first-stage retrieval methods. Pre-computed first-sta
 
 | Parameter | Description |
 |-----------|-------------|
-| `--qg_path` | Path to pre-generated sub-questions file (skips generation stage) |
+| `--rerun_qg` | Re-run the LLM sub-question generation stage (generates new sub-questions instead of loading from `--qg_path`) |
+| `--qg_path` | Path to pre-generated sub-questions file (used when `--rerun_qg` is not set) |
 | `--n_subquestions` | Number of sub-questions to use |
 | `--rerun_judge` | Re-run the LLM relevance judgment stage |
 | `--agg_method` | Aggregation method for combining scores (e.g., `sum`) |
+
+> **Note:** The examples below use pre-generated sub-questions via `--qg_path`. To run the sub-question generation step with the LLM instead, add `--rerun_qg` to the command. When `--rerun_qg` is specified, the generated sub-questions will be saved to the path specified by `--qg_path`.
 
 #### CRUX-MDS (DUC'04)
 
