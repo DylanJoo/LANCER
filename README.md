@@ -9,11 +9,7 @@
 ---
 ## Overview
 
-LANCER leverages Large Language Models (LLMs) to rerank documents by decomposing complex queries into sub-questions and evaluating document relevance based on nugget coverage. This approach is particularly effective for:
-
-- **Report generation tasks** (e.g., NeuCLIR 2024)
-- **Multi-document summarization** (e.g., DUC'04)
-
+LANCER leverages LLMs to rerank documents by decomposing complex queries into sub-questions and evaluating document relevance based on nugget coverage.
 ---
 
 ## Installation
@@ -30,6 +26,13 @@ pip install datasets
 pip install pyserini
 pip install transformers
 pip install vllm
+```
+
+### Prerequisites
+
+We use the crux framework for evaluation. APRIL is used for implementing baseline LLM reranking methods.
+
+```bash
 pip install git+https://github.com/DylanJoo/crux.git
 pip install git+https://github.com/DylanJoo/APRIL.git
 ```
