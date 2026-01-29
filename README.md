@@ -211,6 +211,40 @@ for retrieval in lsr-milco qwen3-embed-8b; do
 done
 ```
 
+### 5. Run Baseline LLM Reranking Methods
+
+We provide baseline LLM reranking methods using the [APRIL](https://github.com/DylanJoo/APRIL.git) framework. The supported methods include pointwise, listwise (RankGPT), and setwise reranking. Below is an example using pointwise reranking.
+
+#### Reranker Parameter Format
+
+| Format | Description |
+|--------|-------------|
+| `autorerank:point:MODEL` | Pointwise reranking |
+| `autorerank:rankgpt:MODEL` | Listwise reranking (RankGPT) |
+| `autorerank:setwise:MODEL` | Setwise reranking |
+
+#### CRUX-MDS (DUC'04)
+
+```bash
+for retrieval in bm25 lsr qwen3-embed-8b; do
+    python src/run_cruxmds.py \
+        --reranker autorerank:point:meta-llama/Llama-3.3-70B-Instruct \
+        --run_path data/crux-mds-duc04-runs/${retrieval}-crux-mds-duc04.run \
+        --topic_path data/crux-mds-duc04.request.jsonl
+done
+```
+
+#### NeuCLIR'24
+
+```bash
+for retrieval in bm25 lsr-milco qwen3-embed-8b; do
+    python src/run_neuclir.py \
+        --reranker autorerank:point:meta-llama/Llama-3.3-70B-Instruct \
+        --run_path data/neuclir-runs/${retrieval}-neuclir.run \
+        --topic_path data/neuclir24-test-request.jsonl
+done
+```
+
 ---
 
 ## Evaluation
