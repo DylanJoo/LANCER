@@ -56,6 +56,7 @@ for run_file in data/crux-mds-duc04-runs/*.run;do
         --judge $CRUX_ROOT/crux-mds-duc04/judge 
 done
 ```
+Installing these libraries should work. We also release the [requirements.yml](requirements.yml) just in case we miss some trivial dependencies.
 
 ### Results
 Please ensure crux evaluation is installed with the dataset downloaded. See the dataset instruction in [crux-eval](https://github.com/DylanJoo/crux).
