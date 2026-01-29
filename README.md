@@ -61,18 +61,18 @@ Installing these libraries should work. We also release the [requirements.yml](r
 ### Results
 Please ensure crux evaluation is installed with the dataset downloaded. See the dataset instruction in [crux-eval](https://github.com/DylanJoo/crux).
 
-| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
-|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
-| neuclir-runs        | bm25-neuclir.run                  | P@10 | 0.6526 | nDCG@10 | 0.6767 | alpha_nDCG@10 | 0.5295 | Cov@10 | 0.6407 | 
-| neuclir-runs        | lsr-milco-neuclir.run             | P@10 | 0.8158 | nDCG@10 | 0.8305 | alpha_nDCG@10 | 0.6294 | Cov@10 | 0.7367 | 
-| neuclir-runs        | plaidx-neuclir.run                | P@10 | 0.5895 | nDCG@10 | 0.6126 | alpha_nDCG@10 | 0.4184 | Cov@10 | 0.4945 | 
-| neuclir-runs        | qwen3-embed-8b-neuclir.run        | P@10 | 0.8684 | nDCG@10 | 0.8862 | alpha_nDCG@10 | 0.6269 | Cov@10 | 0.6948 | 
+| Dataset             | Run File                          | P@10   | nDCG@10 | alpha_nDCG@10 | Cov@10 |
+|---------------------|-----------------------------------|--------|---------|---------------|--------|
+| neuclir-runs        | bm25-neuclir.run                  | 0.6526 | 0.6767  | 0.5295        | 0.6407 |
+| neuclir-runs        | lsr-milco-neuclir.run             | 0.8158 | 0.8305  | 0.6294        | 0.7367 |
+| neuclir-runs        | plaidx-neuclir.run                | 0.5895 | 0.6126  | 0.4184        | 0.4945 |
+| neuclir-runs        | qwen3-embed-8b-neuclir.run        | 0.8684 | 0.8862  | 0.6269        | 0.6948 |
 
-| Dataset             | Run File                          | Metric | Score   | Metric | Score   | Metric | Score       | Metric | Score  |
-|---------------------|------------------------           |--------|---------|--------|---------|--------|-------------|--------|--------|
-| crux-mds-duc04-runs | bm25-crux-mds-duc04.run           | P@10 | 0.5140 | nDCG@10 | 0.5298 | alpha_nDCG@10 | 0.4454 | Cov@10 | 0.5444 | 
-| crux-mds-duc04-runs | lsr-crux-mds-duc04.run            | P@10 | 0.6800 | nDCG@10 | 0.7035 | alpha_nDCG@10 | 0.5579 | Cov@10 | 0.6241 | 
-| crux-mds-duc04-runs | qwen3-embed-8b-crux-mds-duc04.run | P@10 | 0.7380 | nDCG@10 | 0.7586 | alpha_nDCG@10 | 0.6078 | Cov@10 | 0.6637 | 
+| Dataset             | Run File                          | P@10   | nDCG@10 | alpha_nDCG@10 | Cov@10 |
+|---------------------|-----------------------------------|--------|---------|---------------|--------|
+| crux-mds-duc04-runs | bm25-crux-mds-duc04.run           | 0.5140 | 0.5298  | 0.4454        | 0.5444 |
+| crux-mds-duc04-runs | lsr-crux-mds-duc04.run            | 0.6800 | 0.7035  | 0.5579        | 0.6241 |
+| crux-mds-duc04-runs | qwen3-embed-8b-crux-mds-duc04.run | 0.7380 | 0.7586  | 0.6078        | 0.6637 |
 
 #### Other artifacts for reproduction
 You can reproduce LANCER results with the subquestions we generated or the oracle sub-questions.
