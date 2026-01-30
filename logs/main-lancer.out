@@ -1,8 +1,0 @@
-## bm25 | -> crux_reranking:sum:2 | Human     | 0.6509 |0.7204 |0.8421 |0.1098 |0.8556 |
-## plaidx-neuclir | -> crux_reranking:sum:2 | Human     | 0.5923 |0.6678 |0.7684 |0.1002 |0.7806 |
-## qwen3-neuclir | -> crux_reranking:sum:2 | Human     | 0.6589 |0.7403 |0.8474 |0.1078 |0.8573 |
-## lsr-neuclir-mt | -> crux_reranking:sum:2 | Human     | 0.6804 |0.7533 |0.8842 |0.1187 |0.9001 |
-## lsr-neuclir | -> crux_reranking:sum:2 | Human     | 0.6791 |0.7655 |0.9263 |0.1255 |0.9224 |
-## bm25-mds-duc04 | -> crux_reranking:sum:2 | crux_0620 | 0.5445 |0.5587 |0.5840 |0.1718 |0.6287 |
-## qwen3-mds-duc04 | -> crux_reranking:sum:2 | crux_0620 | 0.5825 |0.5987 |0.6880 |0.2087 |0.7191 |
-## lsr-mds-duc04 | -> crux_reranking:sum:2 | crux_0620 | 0.5738 |0.5987 |0.6660 |0.1984 |0.6967 |

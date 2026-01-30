@@ -105,15 +105,11 @@ for run_file in data/crux-mds-duc04-runs/*.run;do
         --judge $CRUX_ROOT/crux-mds-duc04/judge 
 done
 ```
-
-### Results
-Please ensure crux evaluation is installed with the dataset downloaded. See the dataset instruction in [crux-eval](https://github.com/DylanJoo/crux).
-
+For example, we report the first-stage retrieval results below
 | Dataset             | Run File                          | P@10   | nDCG@10 | alpha_nDCG@10 | Cov@10 |
 |---------------------|-----------------------------------|--------|---------|---------------|--------|
 | neuclir-runs        | bm25-neuclir.run                  | 0.6526 | 0.6767  | 0.5295        | 0.6407 |
 | neuclir-runs        | lsr-milco-neuclir.run             | 0.8158 | 0.8305  | 0.6294        | 0.7367 |
-| neuclir-runs        | plaidx-neuclir.run                | 0.5895 | 0.6126  | 0.4184        | 0.4945 |
 | neuclir-runs        | qwen3-embed-8b-neuclir.run        | 0.8684 | 0.8862  | 0.6269        | 0.6948 |
 
 | Dataset             | Run File                          | P@10   | nDCG@10 | alpha_nDCG@10 | Cov@10 |
