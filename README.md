@@ -23,7 +23,6 @@ pip install pyserini
 pip install transformers
 pip install vllm
 ```
-
 We use the crux framework for evaluation. APRIL is used for implementing baseline LLM reranking methods.
 
 ```bash
@@ -89,8 +88,7 @@ Run LANCER using different first-stage retrieval methods. Pre-computed first-sta
 
 | Parameter | Description |
 |-----------|-------------|
-| `--rerun_qg` | Re-run the LLM sub-question generation stage (generates new sub-questions instead of loading from `--qg_path`) |
-| `--qg_path` | Path to pre-generated sub-questions file (used when `--rerun_qg` is not set) |
+| `--qg_path` | Path to pre-generated sub-questions file (skips generation stage) |
 | `--n_subquestions` | Number of sub-questions to use |
 | `--rerun_judge` | Re-run the LLM relevance judgment stage |
 | `--agg_method` | Aggregation method for combining scores (e.g., `sum`) |
@@ -258,8 +256,7 @@ We evaluate using four metrics (all truncated at rank 10):
 2. Clone the Huggingface dataset repository (see [preparation guide](https://github.com/DylanJoo/crux?tab=readme-ov-file#preparation))
 3. Set the `CRUX_ROOT` environment variable
 
-### Evaluate Retrieval/Reranked Results
-
+For example, you can evaluate the first-stage retrieval results like:
 ```bash
 export CRUX_ROOT=/datasets/crux
 
@@ -280,12 +277,6 @@ for run_file in data/crux-mds-duc04-runs/*.run; do
         --judge $CRUX_ROOT/crux-mds-duc04/judge
 done
 ```
-For example, we report the first-stage retrieval results below
-| Dataset             | Run File                          | P@10   | nDCG@10 | alpha_nDCG@10 | Cov@10 |
-|---------------------|-----------------------------------|--------|---------|---------------|--------|
-| neuclir-runs        | bm25-neuclir.run                  | 0.6526 | 0.6767  | 0.5295        | 0.6407 |
-| neuclir-runs        | lsr-milco-neuclir.run             | 0.8158 | 0.8305  | 0.6294        | 0.7367 |
-| neuclir-runs        | qwen3-embed-8b-neuclir.run        | 0.8684 | 0.8862  | 0.6269        | 0.6948 |
 
 ---
 
