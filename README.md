@@ -1,15 +1,11 @@
 # LANCER: LLM Reranking for Nugget Coverage
 
 [![ECIR 2026](https://img.shields.io/badge/ECIR-2026-blue.svg)](https://ecir2026.org)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-**LANCER** is a novel LLM-based reranking framework that optimizes document ranking for nugget coverage in retrieval-augmented generation tasks.
+**LANCER** leverages LLMs to rerank documents by decomposing complex queries into sub-questions and evaluating document relevance based on nugget coverage.
 
----
-## Overview
-
-LANCER leverages LLMs to rerank documents by decomposing complex queries into sub-questions and evaluating document relevance based on nugget coverage.
 ---
 
 ## Installation
@@ -27,9 +23,6 @@ pip install pyserini
 pip install transformers
 pip install vllm
 ```
-
-### Prerequisites
-
 We use the crux framework for evaluation. APRIL is used for implementing baseline LLM reranking methods.
 
 ```bash
@@ -99,6 +92,8 @@ Run LANCER using different first-stage retrieval methods. Pre-computed first-sta
 | `--n_subquestions` | Number of sub-questions to use |
 | `--rerun_judge` | Re-run the LLM relevance judgment stage |
 | `--agg_method` | Aggregation method for combining scores (e.g., `sum`) |
+
+> **Note:** The examples below use pre-generated sub-questions via `--qg_path`. To run the sub-question generation step with the LLM instead, add `--rerun_qg` to the command. When `--rerun_qg` is specified, the generated sub-questions will be saved to the path specified by `--qg_path`.
 
 #### CRUX-MDS (DUC'04)
 
@@ -261,8 +256,7 @@ We evaluate using four metrics (all truncated at rank 10):
 2. Clone the Huggingface dataset repository (see [preparation guide](https://github.com/DylanJoo/crux?tab=readme-ov-file#preparation))
 3. Set the `CRUX_ROOT` environment variable
 
-### Evaluate First-stage Results
-
+For example, you can evaluate the first-stage retrieval results like:
 ```bash
 export CRUX_ROOT=/datasets/crux
 

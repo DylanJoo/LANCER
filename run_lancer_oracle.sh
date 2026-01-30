@@ -1,6 +1,7 @@
 #!/bin/sh
-#SBATCH --job-name=lancer-o
+#SBATCH --job-name=24hr
 #SBATCH --partition=gpu
+#SBATCH --nodelist=rack7n05,rack8n05
 #SBATCH --gres=gpu:a100:2
 #SBATCH --cpus-per-task=64
 #SBATCH --mem=128G
