@@ -12,7 +12,7 @@ for retrieval in bm25 lsr qwen3-embed-8b; do
         --agg_method sum 
 done
 
-for retrieval in lsr-milco qwen3-embed-8b; do
+for retrieval in bm25 lsr-milco qwen3-embed-8b; do
     python src/run_neuclir.py \
         --reranker lancer \
         --run_path data/neuclir-runs/${retrieval}-neuclir.run \
