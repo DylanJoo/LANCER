@@ -45,7 +45,7 @@ def main(args):
         reranker_name = args.reranker
         reranker_name += ":oracle" if args.use_oracle else ""
         reranker_name += f":agg_{args.agg_method}"
-        reranker_name += f"nq_{args.n_subquestions}" if args.use_oracle is False else ""
+        reranker_name += f":nq_{args.n_subquestions}" if args.use_oracle is False else ""
 
     if 'autorerank' in args.reranker:
         from reranking.wrapper import AutoLLMReranker
